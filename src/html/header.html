@@ -8,17 +8,18 @@
             </a>
             <nav>
                 <ul>
-                    <li class="pr-70 catalog menuopen">
+                    <li class="pr-70 catalog dropdownbutton">
                         <a href="">
                             <button>
-                                <svg class="_open" width="20" height="20" viewBox="0 0 20 20">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
                                     <use xlink:href='img/svg/icons.svg#catalog' />
                                 </svg>
-                                <svg class="_close" width="12" height="12" viewBox="0 0 12 12">
+                                <!-- <svg class="_close"  width="20" height="20" viewBox="0 0 20 20">
                                     <use xlink:href="@img/svg/icons.svg#close"></use>
-                                </svg>
+                                </svg> -->
                             </button>
-                            <span>Каталог</span>
+                            <span class="_open">Каталог</span>
+                            <!-- <span class="_close">Закрыть</span> -->
                         </a>
                         <div class="dropdown-menu">
                             <div class="dropdown-menu__flex" data-tabs-area>
@@ -97,7 +98,7 @@
                     <li class="pr-70">
                         <a href="">О нас</a>
                     </li>
-                    <li class="pr-70 services menuopen">
+                    <li class="pr-70 services dropdownbutton">
                         <a href="">Услуги</a>
                         <button>
                             <svg width="9" height="8" viewBox="0 0 9 8">

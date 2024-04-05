@@ -4,7 +4,7 @@
     justify-content: space-between;
 
     height: auto;
-    border-radius: 6px;
+    border-radius: 4px;
     border: 1px solid #e6e6e6;
     padding: 25px;
     transition: background-color 0.3s ease 0s;
@@ -15,7 +15,10 @@
 
     button {
         margin-left: auto;
-        transition: border-radius 0.3s ease 0s;
+
+        svg {
+            fill: $blue;
+        }
     }
 
     @media (any-hover: hover) {
@@ -23,12 +26,13 @@
             color: $white;
             background-color: $blue;
 
-            svg {
-                fill: $blue;
-            }
-
             button {
+                margin-left: auto;
                 border-radius: 50%;
+
+                svg {
+                    fill: $blue;
+                }
             }
         }
     }
