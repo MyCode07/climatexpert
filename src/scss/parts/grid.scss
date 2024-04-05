@@ -1,0 +1,130 @@
+.grid {
+    display: grid;
+    grid-template-rows: auto;
+
+    &-4 {
+        grid-template-columns: repeat(4, 1fr);
+
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+
+    &-2 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+
+    &-12 {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        gap: 100px 16px;
+
+        @media (max-width: 1024px) {
+            gap: 80px 16px;
+        }
+
+        @media (max-width: 768px) {
+            gap: 50px 16px;
+        }
+
+        .grid-column-8 {
+            grid-column: span 8;
+
+            @media (max-width: 1024px) {
+                grid-column: span 12;
+            }
+
+            .portfolio-card__img {
+                height: auto;
+                padding-bottom: 60%;
+            }
+        }
+
+        .grid-column-4 {
+            grid-column: span 4;
+
+            @media (max-width: 1024px) {
+                grid-column: span 6;
+            }
+
+            .portfolio-card__img {
+                height: auto;
+                padding-bottom: 80%;
+            }
+        }
+
+        .grid-column-6 {
+            grid-column: span 6;
+
+            @media (max-width: 1024px) {
+                grid-column: span 3;
+            }
+
+            .portfolio-card__img {
+                height: auto;
+                padding-bottom: 80%;
+            }
+        }
+
+        .grid-column-12 {
+            grid-column: span 12;
+
+            .portfolio-card__img {
+                height: auto;
+                padding-bottom: 50%;
+            }
+        }
+
+        .grid-column-3 {
+            grid-column: span 3;
+
+            @media (max-width: 1024px) {
+                grid-column: span 8;
+            }
+
+            .portfolio-card__img {
+                height: auto;
+                padding-bottom: 80%;
+
+                @media (max-width: 1024px) {
+                    grid-column: span 8;
+                }
+            }
+        }
+
+        .grid-column-9 {
+            grid-column: span 9;
+
+            @media (max-width: 1024px) {
+                grid-column: span 4;
+            }
+
+            .portfolio-card__img {
+                padding-bottom: 70%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-card {
+                grid-column: span 12;
+
+                &__img {
+                    height: auto;
+                    padding-bottom: 80%;
+                }
+            }
+        }
+
+        .grid-item-height-60 {
+            .portfolio-card__img {
+                padding-bottom: 50%;
+            }
+        }
+    }
+}

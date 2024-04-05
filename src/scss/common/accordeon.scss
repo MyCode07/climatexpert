@@ -1,0 +1,65 @@
+.accordion {
+    // .accordion__item
+
+    &__item {
+        &[data-open] {
+            .accordion__item-content {
+                grid-template-rows: 1fr;
+            }
+            .accordion__item-title {
+                svg {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        // .accordion__item-title
+
+        &-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            cursor: pointer;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    svg {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+
+            svg {
+                width: fit-content;
+                transition: all 0.3s ease 0s;
+            }
+        }
+
+        // .accordion__item-content
+
+        &-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s;
+
+            // .accordion__item-content-height
+
+            &-height {
+                overflow: hidden;
+
+                div {
+                    & > :not(:last-child) {
+                    }
+                    p {
+                    }
+                }
+            }
+        }
+    }
+
+    // .accordion__open
+
+    &__open {
+    }
+}
