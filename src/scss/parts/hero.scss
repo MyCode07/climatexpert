@@ -1,0 +1,67 @@
+.hero {
+    position: relative;
+    @include adaptive-value("margin-bottom", 150, 50, 1);
+
+    &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 82, 205, 0.25) 0%, rgba(0, 82, 205, 0.25) 100%);
+    }
+    // .hero__container
+
+    &__container {
+    }
+
+    // .hero__body
+
+    &__body {
+        padding-top: 270px;
+        padding-bottom: 170px;
+        position: relative;
+        z-index: 2;
+
+        @include adaptive-value("padding-top", 270, 200, 1);
+        @include adaptive-value("padding-bottom", 170, 50, 1);
+
+        p {
+            max-width: 550px;
+            width: 100%;
+            color: $white;
+            @include adaptive-value("font-size", 20, 16, 1);
+            line-height: 1.4;
+            display: block;
+            margin: 40px 0;
+
+            @media (max-width: 768px) {
+                margin-bottom: 80px;
+            }
+        }
+    }
+
+    h1 {
+        @media (max-width: 768px) {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+.bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+._container {
+}
+._btn {
+}

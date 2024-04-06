@@ -4,9 +4,6 @@
     justify-content: space-between;
     position: relative;
     z-index: -1;
-    @include adaptive-value("margin-top", 100, 50, 1);
-    @include adaptive-value("margin-bottom", 100, 50, 1);
-
 
     @media (any-hover: hover) {
         &:hover {
@@ -21,23 +18,5 @@
     &-text {
         display: flex;
         justify-content: space-between;
-
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            @include adaptive-value("width", 300, 200, 1);
-            @include adaptive-value("height", 300, 200, 1);
-            background: #f7f7f7;
-            overflow: hidden;
-            margin-right: 3px;
-
-            color: #000;
-            font-family: Inter;
-            @include adaptive-value("font-size", 18, 12, 1);
-            @include adaptive-value("line-height", 18, 12, 1);
-            font-weight: 700;
-            text-transform: uppercase;
-        }
     }
 }

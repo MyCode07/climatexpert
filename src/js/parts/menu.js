@@ -110,6 +110,7 @@ function aniamteDropDown(dropDown, type = 'show') {
 
 const openCatalogBtns = document.querySelectorAll('[data-open-catalog]');
 const catalogMenu = document.querySelector('.catalog-menu')
+
 if (openCatalogBtns.length) {
     openCatalogBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -148,7 +149,7 @@ if (openCatalogBtns) {
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
-    if ((!targetEl.classList.contains('services-link') && !targetEl.closest('.services-link'))) {
+    if ((!targetEl.classList.contains('services-link') && !targetEl.closest('.services-link') && !targetEl.closest('[data-open-catalog]'))) {
         openServicesBtns.classList.remove('_active');
         header.classList.remove('_active');
         unLockPadding();

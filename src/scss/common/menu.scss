@@ -1,3 +1,318 @@
+.menu {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $white;
+    overflow-y: auto;
+    transform: translate(0, -150%);
+    pointer-events: none;
+    transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+    display: none;
+
+    padding-top: 75px;
+    padding-bottom: 50px;
+
+    @media (max-width: 1024px) {
+        display: block;
+    }
+
+    @media (max-width: 600px) {
+        padding-top: 127px;
+    }
+
+    * {
+        color: $blue;
+    }
+
+    &._open {
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+
+    // .menu__container
+
+    &__container {
+        height: 100%;
+    }
+
+    // .menu__body
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100%;
+    }
+
+    nav {
+        margin-bottom: 50px;
+
+        @media (min-width: 1025px) {
+            &:before {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 1px;
+                height: 100%;
+                background-color: $stroke;
+            }
+        }
+
+        & > ul {
+            width: 50%;
+            position: relative;
+
+            @media (max-width: 1024px) {
+                width: 100%;
+
+                & > :not(:last-child) {
+                    margin-bottom: 25px;
+                }
+            }
+
+            & > li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                button {
+                    width: 90px;
+                    padding-right: 25px;
+
+                    @media (max-width: 1024px) {
+                        padding-right: 0;
+                        width: 60px;
+                    }
+
+                    svg {
+                        stroke: $blue;
+                        width: 20px;
+                        height: 20px;
+                        margin-left: auto;
+                        display: block;
+                        transition: all 0.3s ease 0s;
+                    }
+                }
+
+                @media (min-width: 1025px) {
+                    & > a {
+                        padding: 25px 0 25px 50px;
+                        flex: 1 1 auto;
+
+                        position: relative;
+
+                        @include adaptive-value("font-size", 34, 24, 1);
+
+                        @media (max-width: 1440px) {
+                            padding: 25px 0 25px 25px;
+                        }
+
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            left: -50px;
+                            top: 0;
+                            width: calc(100% + 140px);
+                            height: 100%;
+                            background-color: $blue;
+                            opacity: 0;
+                            transition: opacity 0.3s ease 0s;
+                            z-index: -1;
+                        }
+                    }
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            & > a {
+                                color: $white;
+
+                                &:before {
+                                    opacity: 1;
+                                }
+                            }
+
+                            & > button svg {
+                                stroke: $white;
+                            }
+                        }
+                    }
+
+                    &[data-open] {
+                        & > a {
+                            color: $white;
+
+                            &:before {
+                                opacity: 1;
+                            }
+                        }
+
+                        & > button svg {
+                            stroke: $white;
+                        }
+
+                        ul {
+                            display: block;
+                            display: grid;
+                        }
+                    }
+
+                    ul {
+                        position: absolute;
+                        width: 100%;
+                        left: 100%;
+                        top: 0;
+
+                        height: calc(100vh - 150px);
+
+                        padding: 0 50px 50px 50px;
+
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        align-content: flex-start;
+                        gap: 10px;
+
+                        display: none;
+                        overflow-y: auto;
+
+                        @media (max-width: 1440px) {
+                            padding: 0 25px 50px 25px;
+                        }
+
+                        li {
+                            a {
+                                display: block;
+                                width: 100%;
+                                font-size: 18px;
+
+                                border-radius: 4px;
+                                border: 1px solid $stroke;
+                                height: 200px;
+                                padding: 25px;
+
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+
+                                transition: all 0.3s ease 0s;
+
+                                @media (any-hover: hover) {
+                                    &:hover {
+                                        background-color: $blue;
+                                        color: $white;
+
+                                        &:after {
+                                            background-image: url("@img/icons/link-arrow-white.svg");
+                                        }
+                                    }
+                                }
+
+                                &:after {
+                                    content: "";
+                                    margin-left: auto;
+                                    display: block;
+                                    width: 20px;
+                                    height: 20px;
+                                    background-image: url("@img/icons/link-arrow.svg");
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                }
+
+                                @media (max-width: 1440px) {
+                                    height: 160px;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 1024px) {
+                    flex-wrap: wrap;
+
+                    & > a {
+                        max-width: calc(100% - 60px);
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+
+                    &[data-open] {
+                        ul {
+                            max-height: 100vh;
+                        }
+
+                        svg {
+                            transform: rotate(45deg);
+                        }
+                    }
+
+                    ul {
+                        width: 100%;
+                        flex: 0 0 100%;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: all 0.3s ease 0s;
+
+                        & > :first-child {
+                            margin-top: 25px;
+                        }
+
+                        & > :last-child {
+                            margin-bottom: 25px;
+                        }
+
+                        & > :not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // .menu__contacts
+
+    &__contacts {
+        padding-top: 25px;
+        border-top: 1px solid $stroke;
+        margin-bottom: 50px;
+
+        & > :not(:last-child) {
+            margin-bottom: 25px;
+        }
+
+        span {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.2;
+            opacity: 0.5;
+        }
+
+        a {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+    }
+
+    // .menu__socialmedias
+
+    &__socialmedias {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+}
+._container {
+}
+
 .catalog-menu {
     position: fixed;
     z-index: 5;
@@ -6,7 +321,7 @@
     width: 100vw;
     height: 100vh;
     background-color: $white;
-    transform: translate(0, -110%);
+    transform: translate(0, -150%);
     pointer-events: none;
     transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
 
@@ -17,8 +332,17 @@
 
     padding-top: 150px;
 
+    @media (max-width: 1440px) {
+        padding-top: 105px;
+    }
+
     @media (max-width: 1024px) {
         overflow-y: auto;
+        padding-top: 75px;
+    }
+
+    @media (max-width: 600px) {
+        padding-top: 127px;
     }
 
     // .catalog-menu__container
@@ -61,7 +385,6 @@
             @media (max-width: 1024px) {
                 width: 100%;
                 padding: 0 15px;
-
                 & > :not(:last-child) {
                     margin-bottom: 25px;
                 }
@@ -98,7 +421,7 @@
 
                         position: relative;
 
-                        @include adaptive-value("font-size", 34, 20, 1);
+                        @include adaptive-value("font-size", 34, 24, 1);
 
                         @media (max-width: 1440px) {
                             padding: 25px 0 25px 25px;
@@ -291,6 +614,10 @@
             width: 100%;
         }
 
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
         a {
             height: 200px;
             display: flex;
@@ -299,9 +626,9 @@
 
             text-transform: uppercase;
             color: $white;
-            padding: 50px;
+            padding: 25px 50px;
 
-            @include adaptive-value("font-size", 24, 18, 1);
+            @include adaptive-value("font-size", 24, 20, 1);
 
             &:first-child {
                 background-color: $blue;
@@ -311,13 +638,225 @@
                 background-color: $black;
             }
 
+            span {
+                transition: transform 0.3s ease 0s;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    span {
+                        transform: translate(0, -15px);
+                    }
+                }
+            }
+
             @media (max-width: 1440px) {
-                height: 160px;
+                height: 150px;
                 padding: 25px;
             }
 
             @media (max-width: 1024px) {
                 padding: 15px;
+            }
+        }
+    }
+}
+
+.search-menu {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: calc(100vh - 192px);
+
+    background-color: $white;
+    transform: translate(0, -150%);
+    pointer-events: none;
+    transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+    color: $blue;
+    overflow: hidden;
+
+    @media (max-width: 1440px) {
+        height: calc(100vh - 156px);
+    }
+
+    &._open {
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+
+    top: 97px;
+
+    @media (max-width: 1440px) {
+        top: 105px;
+    }
+
+    @media (max-width: 1024px) {
+        overflow-y: auto;
+        top: 75px;
+    }
+
+    @media (max-width: 600px) {
+        top: 127px;
+    }
+
+    // .search-menu__container
+
+    &__container {
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    // .search-menu__body
+
+    &__body {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        min-height: 100%;
+
+        @media (max-width: 1440px) {
+        }
+    }
+
+    // .search-menu__top
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 25px;
+        border-bottom: 1px solid $stroke;
+        position: relative;
+
+        @media (max-width: 768px) {
+            padding-bottom: 15px;
+            gap: 15px;
+            padding-top: 40px;
+        }
+
+        div,
+        a {
+            white-space: nowrap;
+            text-transform: uppercase;
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+        }
+
+        h3 {
+            @include adaptive-value("font-size", 34, 18, 1);
+            white-space: nowrap;
+
+            @media (max-width: 768px) {
+                order: -1;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        a {
+            display: block;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 50px;
+
+        @media (max-width: 1024px) {
+            margin-top: 25px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr;
+        }
+
+        a {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 4px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @media (max-width: 1024px) {
+                padding: 15px;
+            }
+
+            @media (max-width: 768px) {
+                height: 250px;
+            }
+
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                transition: transform 0.8s ease 0s;
+            }
+
+            h3 {
+                margin-bottom: 25px;
+            }
+
+            span {
+                @include adaptive-value("font-size", 24, 18, 1);
+                font-weight: 500;
+                line-height: 1;
+                text-transform: uppercase;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    img {
+                        transform: scale(1.2);
+                    }
+                    button {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            button {
+                background-color: $white;
+                width: 100%;
+                height: 70px;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease 0s;
+
+                @media (max-width: 1024px) {
+                    height: 60px;
+                }
+                opacity: 0;
+                color: $blue;
+                font-weight: 500;
+                text-transform: uppercase;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        background-color: $blue;
+                        color: $white;
+                    }
+                }
             }
         }
     }
