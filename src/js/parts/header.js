@@ -1,12 +1,10 @@
-
-
 export const stickyHeader = () => {
     const header = document.querySelector('header');
     const offer = document.querySelector('.offer');
 
     if (!header) return
 
-    const headerheigth = 141;
+    const headerheigth = header.getBoundingClientRect().height;
 
 
     const sticky = () => {
