@@ -8,7 +8,7 @@ import { replaceDomElements } from "./static/replace.js";
 // import { termsTabAction } from "./parts/term-tabs.js";
 
 // import "./parts/sliders.js";
-// import "./parts/popup.js";
+import "./parts/popup.js";
 import "./parts/header.js";
 import "./parts/menu.js";
 import "./parts/tabs.js";

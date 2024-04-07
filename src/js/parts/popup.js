@@ -1,50 +1,45 @@
 import { isMobile } from "../utils/isMobile.js";
 import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
-const popupAll = document.querySelectorAll('.popup');
-const popupOpenButtons = document.querySelectorAll('[data-open-popup]');
+// const wrapper = document.querySelector('.wrapper');
+const partnershipPopup = document.querySelector('.popup#main');
 
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
 
-if (popupOpenButtons.length) {
-    popupOpenButtons.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-            e.preventDefault();
-            const id = btn.getAttribute('id');
-            const popup = document.querySelector(`.popup[data-id="${id}"]`);
+    if (targetEl.hasAttribute('data-open-popup')) {
+        e.preventDefault();
+        const id = targetEl.getAttribute('data-id');
+        const popup = document.querySelector(`.popup#${id}`);
 
-            if (popup) {
-                popup.classList.add('_open');
-                document.body.classList.add('_noscroll');
+        if (popup) {
+            popup.classList.add('_open')
+            // wrapper.classList.add('_overlay')
 
-                if (!isMobile.any()) {
-                    lockPadding()
-                }
-            }
-        })
-    })
-}
-
-if (popupAll.length) {
-    popupAll.forEach(popup => {
-        const popupClose = popup.querySelector('.popup__close');
-
-        if (!popup.classList.contains('loader')) {
-            popupClose.addEventListener('click', function () {
-                popup.classList.remove('_open');
-                document.body.classList.remove('_noscroll');
-
-                if (!isMobile.any()) {
-                    unLockPadding()
-                }
-            })
-
-            popup.addEventListener('click', function (e) {
-                if (e.target.classList.contains('popup')) {
-                    popup.classList.remove('_open')
-                    document.body.classList.remove('_noscroll');
-                    unLockPadding()
-                }
-            })
+            lockPadding();
         }
-    })
+    }
+
+    if (targetEl.classList.contains('popup')) {
+        targetEl.classList.remove('_open')
+        closePopup(targetEl)
+    }
+
+    if (targetEl.classList.contains('popup__close') || targetEl.hasAttribute('data-close-popup')) {
+        const popup = targetEl.closest('.popup');
+        closePopup(popup)
+    }
+})
+
+
+function closePopup(popup) {
+    popup.classList.remove('_open')
+
+    if (popup.id != partnershipPopup.id && partnershipPopup.classList.contains('_open')) {
+        //
+    }
+    else {
+        // wrapper.classList.remove('_overlay')
+        unLockPadding();
+    }
 }

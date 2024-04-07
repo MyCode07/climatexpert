@@ -1,13 +1,49 @@
-<div class="popup _fixed " id="thanks">
+<div class="popup" id="main">
     <div class="popup__container _container">
-        <div class="popup__body">
-            <button class="popup__close">
-                <svg width="34" height="34" viewBox="0 0 34 34">
-                    <use xlink:href='img/svg/icons.svg#close' />
-                </svg>
-            </button>
-            <div class="popup__content">
-
+        <div class="form">
+            <div class="form__flex">
+                <div class="form__flex-left">
+                    <div class="form__top">
+                        <h3>обратная связь</h3>
+                        <button class="popup__close">
+                            <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.842401 12.6569L6.49926 7M12.1561 1.34315L6.49926 7M6.49926 7L0.842401 1.34315L12.1561 12.6569"
+                                    stroke="#0052CD" stroke-width="1.2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p>Опишите кратко интересующее вас оборудование или услугу.
+                        Наши технические специалисты совместно с менеджерами продаж подготовят для вас коммерческое
+                        предложение.</p>
+                    <form action="" method="post" role="form">
+                        <div class="form__item" data-required="">
+                            <input type="text" name="NAME" placeholder="Имя *">
+                        </div>
+                        <div class="form__item" data-required="">
+                            <input type="text" name="PHONE" class="_mask-phone" placeholder="Телефон *"
+                                inputmode="text">
+                        </div>
+                        <div class="form__item" data-required="">
+                            <textarea name="MESSAGE" placeholder="Сообщение *"></textarea>
+                        </div>
+                        <div class="form__bottom">
+                            <span>Согласие на обработку
+                                <a href="#" target="_blank">персональных данных</a> и
+                                <a href="#" target="_blank">Политика конфиденциальности.</a>
+                            </span>
+                            <button class="_btn _btn-blue">
+                                <div>Отправить</div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="form__flex-right">
+                    <div class="form__img">
+                        <img src="@img/popup-img.png" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
