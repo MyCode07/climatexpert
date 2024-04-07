@@ -67,7 +67,7 @@ h2 {
     color: $blue;
     font-weight: 600;
     line-height: 1;
-    @include adaptive-value("font-size", 70, 30, 1);
+    @include adaptive-value("font-size", 70, 26, 1);
 }
 
 h3 {
