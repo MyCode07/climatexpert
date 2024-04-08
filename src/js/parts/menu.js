@@ -118,12 +118,15 @@ if (openCatalogBtns.length) {
             catalogMenu.classList.toggle('_open');
             btn.classList.toggle('_active');
             header.classList.toggle('_active');
+            const text = btn.querySelector('span')
+            text.textContent = "Закрыть"
 
             if (btn.classList.contains('_active')) {
                 lockPadding();
             }
             else {
                 unLockPadding();
+                text.textContent = "Каталог"
             }
         })
     })
@@ -136,12 +139,16 @@ if (openCatalogBtns) {
         e.preventDefault();
         openServicesBtns.classList.toggle('_active');
         header.classList.toggle('_active');
+        const text = openServicesBtns.querySelector('.text');
+        console.log(text);
+        text.textContent = "Закрыть";
 
         if (openServicesBtns.classList.contains('_active')) {
             lockPadding();
         }
         else {
             unLockPadding();
+            text.textContent = "Услуги";
         }
     })
 }

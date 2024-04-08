@@ -10,6 +10,8 @@
     // .form__item
 
     &__item {
+        width: 100%;
+
         input,
         textarea {
             width: 100%;
@@ -47,10 +49,23 @@
         }
 
         textarea {
-            height: 150px;
+            height: 140px;
             @media (max-width: 1024px) {
                 height: 120px;
             }
+        }
+    }
+
+    // .form__item
+
+    &__row {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            gap: 15px;
+            flex-direction: column;
         }
     }
 

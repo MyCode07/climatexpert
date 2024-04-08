@@ -347,6 +347,15 @@
         }
     }
 
+    .form__item input,
+    .form__item textarea {
+        color: $blue;
+
+        &::placeholder {
+            color: $blue;
+        }
+    }
+
     ._btn {
         width: 100%;
 

@@ -17,6 +17,34 @@
         background-color: $blue;
     }
 
+    &._white {
+        background-color: $white;
+
+        .header__logo,
+        nav > ul > li {
+            border-color: $stroke;
+            color: $blue;
+
+            svg {
+                fill: currentColor;
+            }
+        }
+
+        nav > ul > li {
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: $blue;
+                    color: $white;
+                }
+            }
+
+            &._active {
+                background-color: $blue;
+                color: $white;
+            }
+        }
+    }
+
     // .header__container
 
     &__container {
@@ -58,8 +86,6 @@
             display: flex;
             align-items: center;
 
-          
-
             @media (max-width: 768px) {
                 width: 100%;
             }
@@ -88,6 +114,10 @@
                 cursor: pointer;
                 transition: all 0.3s ease 0s;
                 min-width: 61px;
+
+                ._close {
+                    display: none;
+                }
 
                 @media (min-width: 1025px) {
                     width: fit-content;
@@ -150,16 +180,6 @@
                 }
 
                 &.services-link {
-                    @media (any-hover: hover) {
-                        &:hover {
-                            & > button {
-                                svg {
-                                    transform: rotate(-180deg);
-                                }
-                            }
-                        }
-                    }
-
                     & > button {
                         svg {
                             transition: transform 0.3s ease 0s;
@@ -218,6 +238,16 @@
                         @media (max-width: 1440px) {
                             height: calc(100vh - 156px);
                         }
+                    }
+
+                    ._open {
+                        display: none;
+                    }
+
+                    ._close {
+                        display: block;
+                        stroke: currentColor;
+                        stroke-width: 2px;
                     }
 
                     &.services-link > button > svg {
@@ -413,7 +443,7 @@
 .dropdown-menu {
     position: absolute;
     z-index: 3;
-    top: 97px;
+    top: 96px;
     left: 0;
     width: 100vw;
     max-width: 1920px;
@@ -461,6 +491,14 @@
             border: 1px solid $stroke;
 
             transition: all 0.3s ease 0s;
+
+            @media (max-width: 1440px) {
+                padding: 25px;
+            }
+
+            @media (max-width: 1024px) {
+                padding: 15px;
+            }
 
             ._btn-arrow {
                 margin-left: auto;

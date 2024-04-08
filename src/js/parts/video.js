@@ -16,6 +16,7 @@ const videos = document.querySelectorAll('._video');
 
 export const playVideoAction = () => {
     if (!videos.length) return;
+
     videos.forEach(video => {
         observer.observe(video);
     })

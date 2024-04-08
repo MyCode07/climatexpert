@@ -6,16 +6,18 @@ import { replaceDomElements } from "./static/replace.js";
 // import { playVideoAction } from "./parts/video.js";
 // import { termsTabAction } from "./parts/term-tabs.js";
 import { stickyHeader } from "./parts/header.js";
+import { playVideoAction } from "./parts/video.js";
 
-// import "./parts/sliders.js";
+import "./parts/sliders.js";
 import "./parts/popup.js";
 import "./parts/menu.js";
 import "./parts/tabs.js";
+import "./parts/video.js";
 // import "./parts/services.js";
 // import "./parts/forms.js";
 // import "./parts/show-more.js";
 import "./static/ticker.js";
-// accorden();
+accorden();
 // playVideoAction();
 // animateStaggerAction();
 // animateAction();
@@ -27,7 +29,7 @@ runTicker();
 stickyHeader();
 
 maskInputs('+7 (999) 999-99-99', '[name="phone"]')
-
+playVideoAction();
 
 import { Fancybox } from "@fancyapps/ui";
 Fancybox.bind("[data-fancybox]", {

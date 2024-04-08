@@ -9,22 +9,17 @@ if (sliders.length) {
         let next = section.querySelector('.next')
         let pagination = section.querySelector('.pagination')
 
-        if (slider.closest('.services-v2')) {
+        if (slider.closest('.product-slider')) {
             new Swiper(slider, {
-                modules: [Pagination],
-                slidesPerView: 'auto',
+                modules: [Autoplay, Pagination],
+                slidesPerView: 1,
                 pagination: {
                     el: pagination,
                     clickable: true,
                 },
-                breakpoints: {
-                    300: {
-                        spaceBetween: 16,
-                    },
-                    601: {
-                        spaceBetween: 20,
-                    }
-                }
+                autoplay: {
+                    delay: 4000,
+                },
             })
         }
     })

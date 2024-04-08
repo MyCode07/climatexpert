@@ -1,4 +1,8 @@
 .accordion {
+    & > :not(:last-child) {
+        border-bottom: 1px solid $stroke;
+    }
+
     // .accordion__item
 
     &__item {
@@ -16,11 +20,20 @@
         // .accordion__item-title
 
         &-title {
+            padding: 20px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
             cursor: pointer;
+
+            color: $blue;
+            @include adaptive-value("font-size", 24, 16, 1);
+
+            font-weight: 500;
+            line-height: 1.1;
+            text-transform: uppercase;
+            color: $blue;
 
             @media (any-hover: hover) {
                 &:hover {
@@ -31,7 +44,9 @@
             }
 
             svg {
-                width: fit-content;
+                width: 20px;
+                height: 20px;
+                stroke: currentColor;
                 transition: all 0.3s ease 0s;
             }
         }
@@ -42,16 +57,20 @@
             display: grid;
             grid-template-rows: 0fr;
             transition: grid-template-rows 0.3s;
+            color: $blue;
 
             // .accordion__item-content-height
 
             &-height {
                 overflow: hidden;
 
-                div {
+                ol {
                     & > :not(:last-child) {
+                        border-bottom: 1px solid $stroke;
                     }
-                    p {
+
+                    li {
+                        padding: 20px 0;
                     }
                 }
             }
@@ -61,5 +80,10 @@
     // .accordion__open
 
     &__open {
+    }
+
+    ._btn {
+        width: 100%;
+        margin: 25px 0;
     }
 }

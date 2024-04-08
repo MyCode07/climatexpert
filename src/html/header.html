@@ -1,4 +1,4 @@
-<header class="header _fixed">
+<header class="header _fixed @@class">
     <div class="header__container">
         <div class="header__body">
             <a href="/" class="header__logo">
@@ -10,10 +10,14 @@
                 <ul>
                     <li class="pr-70 catalog dropdownspan" data-open-catalog>
                         <a href="">
-                            <svg width="20" height="20" viewBox="0 0 20 20">
+                            <svg class="_open" width="20" height="20" viewBox="0 0 20 20">
                                 <use xlink:href='img/svg/icons.svg#catalog' />
                             </svg>
-                            <span class="_open">Каталог</span>
+
+                            <svg class="_close" width="20" height="20" viewBox="0 0 20 20">
+                                <use xlink:href='img/svg/icons.svg#close' />
+                            </svg>
+                            <span class="">Каталог</span>
                         </a>
                     </li>
                     <li class="search">
@@ -43,8 +47,8 @@
                     <li class="pr-70">
                         <a href="">О нас</a>
                     </li>
-                    <li class="pr-70 services-link" >
-                        <a href="">Услуги</a>
+                    <li class="pr-70 services-link">
+                        <a href="" class="text">Услуги</a>
                         <button>
                             <svg width="9" height="8" viewBox="0 0 9 8">
                                 <use xlink:href='img/svg/icons.svg#link-arrow' />

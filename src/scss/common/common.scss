@@ -58,9 +58,9 @@ main {
 }
 
 h1 {
-    @include adaptive-value("font-size", 80, 30, 1);
+    @include adaptive-value("font-size", 80, 26, 1);
     font-family: Rubik;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 h2 {
@@ -78,9 +78,8 @@ h3 {
 }
 
 h4 {
-    @include adaptive-value("font-size", 24, 16, 1);
-    font-weight: 500;
-    text-transform: uppercase;
+    @include adaptive-value("font-size", 26, 16, 1);
+    text-transform: initial;
 }
 
 h5 {
@@ -100,6 +99,19 @@ p {
     }
 }
 
+.big-text {
+    display: block;
+    margin-bottom: 50px;
+    color: $blue;
+    @include adaptive-value("font-size", 70, 18, 1);
+    font-weight: 600;
+    line-height: 1;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 25px;
+    }
+}
+
 ._labels {
     display: flex;
     gap: 5px;
@@ -116,6 +128,7 @@ p {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex: 0 0 auto;
 
         @media (max-width: 768px) {
             width: 40px;
@@ -133,6 +146,33 @@ p {
     }
     .sale {
         background-color: $blue;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+            white-space: nowrap;
+            color: $blue;
+            @media (max-width: 600px) {
+                display: none;
+            }
+        }
+    }
+
+    .availability {
+        background-color: #bfffbf;
+
+        svg {
+            width: 17px;
+            height: 12px;
+            flex: 0 0 auto;
+            stroke: $blue;
+            fill: none;
+            stroke-width: 2px;
+        }
     }
 }
 
@@ -309,7 +349,7 @@ button {
                 color: $blue;
                 div {
                     border: 1px solid $blue;
-                    background-color: $background;
+                    background-color: $white;
                 }
             }
         }
@@ -388,6 +428,71 @@ button {
             width: 100%;
             height: 100%;
             border-radius: 0;
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+
+    span {
+        width: 6px;
+        height: 6px;
+        border-radius: 4px;
+        background-color: rgba($color: $blue, $alpha: 0.5);
+        transition: all 0.3s ease 0s;
+
+        &.swiper-pagination-bullet-active {
+            background-color: $blue;
+            width: 24px;
+        }
+    }
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    input {
+        display: none;
+
+        &:checked + .checkbox {
+            background-color: $blue;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    .checkbox {
+        width: 20px;
+        height: 20px;
+        border: 1px solid $stroke;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        &:after {
+            position: relative;
+            content: "";
+            background-image: url("@img/icons/check.svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2;
+            width: 12px;
+            height: 8px;
+            display: none;
         }
     }
 }
