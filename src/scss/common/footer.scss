@@ -1,5 +1,18 @@
 .footer {
     background-color: $blue;
+    position: relative;
+
+    &:after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        top: 0;
+
+        transform: translate(-50%, 0);
+        width: 100vw;
+        height: 1px;
+        background-color: rgba($color: $white, $alpha: 0.25);
+    }
 
     // .footer__container
 
@@ -330,4 +343,3 @@
         width: 100%;
     }
 }
-

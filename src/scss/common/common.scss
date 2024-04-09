@@ -373,6 +373,7 @@ button {
     &-blue {
         div {
             background-color: $blue;
+            border: 1px solid;
         }
         color: $white;
 
@@ -380,7 +381,7 @@ button {
             &:hover {
                 color: $blue;
                 div {
-                    border: 1px solid $blue;
+                    border-color: $blue;
                     background-color: $white;
                 }
             }
