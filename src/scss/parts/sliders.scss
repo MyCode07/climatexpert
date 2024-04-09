@@ -1,4 +1,6 @@
 .product-slider {
+    @include adaptive-value("margin-top", 50, 25, 1);
+
     .swiper {
         // .swiper-wrapper
 
@@ -37,11 +39,6 @@
             align-items: center;
             justify-content: space-between;
 
-            @media (max-width: 600px) {
-                justify-content: flex-start;
-                gap: 5px;
-            }
-
             .pagination {
                 @media (min-width: 601px) {
                     position: absolute;
@@ -52,7 +49,7 @@
                 }
 
                 @media (max-width: 600px) {
-                    margin-left: auto;
+                    display: none;
                 }
             }
         }

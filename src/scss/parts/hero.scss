@@ -105,26 +105,4 @@
     }
 }
 
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 5px;
 
-    li {
-        color: rgba($color: $blue, $alpha: 0.5);
-        font-size: 14px;
-
-        a {
-            transition: color 0.3s ease 0s;
-            color: rgba($color: $blue, $alpha: 0.5);
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                a {
-                    color: $blue;
-                }
-            }
-        }
-    }
-}
