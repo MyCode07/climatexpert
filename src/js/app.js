@@ -17,6 +17,7 @@ import "./parts/video.js";
 // import "./parts/forms.js";
 // import "./parts/show-more.js";
 import "./static/ticker.js";
+import "./parts/filters.js";
 accorden();
 // playVideoAction();
 // animateStaggerAction();
@@ -34,3 +35,11 @@ playVideoAction();
 import { Fancybox } from "@fancyapps/ui";
 Fancybox.bind("[data-fancybox]", {
 });
+
+
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
+    if (targetEl.classList.contains('pages-close')) {
+        document.querySelector('.pages').classList.toggle('_hide');
+    }
+})

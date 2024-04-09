@@ -1,0 +1,304 @@
+@@include('./html/head.html', {
+"title":"",
+})
+
+@@include('./html/header.html', {
+"class":"_white",
+})
+
+<main>
+
+    <section class="section pages-hero">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="">
+                                <span>Главная</span>
+                            </a>
+                        </li>
+                        <li>-</li>
+                        <li>
+                            <a href="">
+                                <span>каталог</span>
+                            </a>
+                        </li>
+                        <li>-</li>
+                        <li>
+                            <a href="">
+                                <span>Настенные Сплит-системы</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <h1>Настенные Сплит-системы</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="filters-area">
+        <div class="_container">
+            <div class="grid">
+                <div class="filter-fast filter-brand">
+                    <div class="select-input">
+                        <label data-id="1">БРЕНД</label>
+                        <svg width="8" height="6" viewBox="0 0 8 6">
+                            <use xlink:href='img/svg/icons.svg#link-arrow' />
+                        </svg>
+                        <div class="select">
+                            <div class="select-body">
+                                <span data-id="0" data-disabled>Регион</span>
+                                <span data-id="1">Москва</span>
+                                <span data-id="2">Белгородская область</span>
+                                <span data-id="3">Брянская область</span>
+                                <span data-id="4">Владимирская область</span>
+                                <span data-id="5">Вологодская область</span>
+                                <span data-id="6">Ивановская область</span>
+                                <span data-id="7">Калужская область</span>
+                                <span data-id="8">Костромская область</span>
+                                <span data-id="9">Краснодарский край</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-fast filter-price">
+                    <div class="select-input">
+                        <label data-id="1">Цена</label>
+                        <svg width="8" height="6" viewBox="0 0 8 6">
+                            <use xlink:href='img/svg/icons.svg#link-arrow' />
+                        </svg>
+                        <div class="select">
+                            <div class="select-body">
+                                <span data-id="0" data-disabled>Регион</span>
+                                <span data-id="1">Москва</span>
+                                <span data-id="2">Белгородская область</span>
+                                <span data-id="3">Брянская область</span>
+                                <span data-id="4">Владимирская область</span>
+                                <span data-id="5">Вологодская область</span>
+                                <span data-id="6">Ивановская область</span>
+                                <span data-id="7">Калужская область</span>
+                                <span data-id="8">Костромская область</span>
+                                <span data-id="9">Краснодарский край</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="filters-area__filter">
+                    <img src="img/icons/open-filters.svg" alt="">
+                </button>
+                <div class="filter-fast filter-sort">
+                    <div class="select-input">
+                        <label data-id="1">По умолчанию</label>
+                        <svg width="8" height="6" viewBox="0 0 8 6">
+                            <use xlink:href='img/svg/icons.svg#link-arrow' />
+                        </svg>
+                        <div class="select">
+                            <div class="select-body">
+                                <span data-id="0" data-disabled>Регион</span>
+                                <span data-id="1">Москва</span>
+                                <span data-id="2">Белгородская область</span>
+                                <span data-id="3">Брянская область</span>
+                                <span data-id="4">Владимирская область</span>
+                                <span data-id="5">Вологодская область</span>
+                                <span data-id="6">Ивановская область</span>
+                                <span data-id="7">Калужская область</span>
+                                <span data-id="8">Костромская область</span>
+                                <span data-id="9">Краснодарский край</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter">
+        <div class="_container">
+            <div class="filter-top">
+                <h2>Фильтр</h2>
+                <button data-close-filter>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <use xlink:href='img/svg/icons.svg#close' />
+                    </svg>
+                </button>
+            </div>
+            <div class="grid">
+                <div class="filter-item">
+                    <h3>Площадь, м2</h3>
+                    <div class="filter-item__grid">
+                        <label for="до 21 (2,2 кВт)">
+                            <input type="checkbox" id="до 21 (2,2 кВт)" name="square" hidden>
+                            <span>до 21 (2,2 кВт)</span>
+                        </label>
+                        <label for="до 27 (2,8 кВт)">
+                            <input type="checkbox" id="до 27 (2,8 кВт)" name="square" hidden>
+                            <span>до 27 (2,8 кВт)</span>
+                        </label>
+                        <label for="до 36 (3,6 кВт)">
+                            <input type="checkbox" id="до 36 (3,6 кВт)" name="square" hidden>
+                            <span>до 36 (3,6 кВт)</span>
+                        </label>
+                        <label for="до 52 (5,4 кВт)">
+                            <input type="checkbox" id="до 52 (5,4 кВт)" name="square" hidden>
+                            <span>до 52 (5,4 кВт)</span>
+                        </label>
+                        <label for="до 70 (7,2 кВт)">
+                            <input type="checkbox" id="до 70 (7,2 кВт)" name="square" hidden>
+                            <span>до 70 (7,2 кВт)</span>
+                        </label>
+                        <label for="до 90 (9,4 кВт)">
+                            <input type="checkbox" id="до 90 (9,4 кВт)" name="square" hidden>
+                            <span>до 90 (9,4 кВт)</span>
+                        </label>
+                        <label for="до 105 (10,6 кВт)">
+                            <input type="checkbox" id="до 105 (10,6 кВт)" name="square" hidden>
+                            <span>до 105 (10,6 кВт)</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <h3>Бренд</h3>
+                    <div class="filter-item__grid">
+                        <label for="ZANUSSI">
+                            <input type="checkbox" id="ZANUSSI" name="square" hidden>
+                            <span>ZANUSSI</span>
+                        </label>
+                        <label for="BALLU">
+                            <input type="checkbox" id="BALLU" name="square" hidden>
+                            <span>BALLU</span>
+                        </label>
+                        <label for="ECOCLIMA">
+                            <input type="checkbox" id="ECOCLIMA" name="square" hidden>
+                            <span>ECOCLIMA</span>
+                        </label>
+                        <label for="GREE">
+                            <input type="checkbox" id="GREE" name="square" hidden>
+                            <span>GREE</span>
+                        </label>
+                        <label for="ENERGOLUX">
+                            <input type="checkbox" id="ENERGOLUX" name="square" hidden>
+                            <span>ENERGOLUX</span>
+                        </label>
+                        <label for="FUNAI">
+                            <input type="checkbox" id="FUNAI" name="square" hidden>
+                            <span>FUNAI</span>
+                        </label>
+                        <label for="HITACHI">
+                            <input type="checkbox" id="HITACHI" name="square" hidden>
+                            <span>HITACHI</span>
+                        </label>
+                        <label for="LG">
+                            <input type="checkbox" id="LG" name="square" hidden>
+                            <span>LG</span>
+                        </label>
+                        <label for="TOSHIBA">
+                            <input type="checkbox" id="TOSHIBA" name="square" hidden>
+                            <span>TOSHIBA</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <h3>Компрессор</h3>
+                    <div class="filter-item__grid">
+                        <label for="Инверторный">
+                            <input type="checkbox" id="Инверторный" name="square" hidden>
+                            <span>Инверторный</span>
+                        </label>
+                        <label for="Обычный">
+                            <input type="checkbox" id="Обычный" name="square" hidden>
+                            <span>Обычный</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <h3>Управление Wi-Fi</h3>
+                    <div class="filter-item__grid">
+                        <label for="Нет">
+                            <input type="checkbox" id="Нет" name="square" hidden>
+                            <span>Нет</span>
+                        </label>
+                        <label for="Wi-Fi опционально">
+                            <input type="checkbox" id="Wi-Fi опционально" name="square" hidden>
+                            <span>Wi-Fi опционально</span>
+                        </label>
+                        <label for=" Wi-Fi встроенный">
+                            <input type="checkbox" id=" Wi-Fi встроенный" name="square" hidden>
+                            <span>Wi-Fi встроенный</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <h3>Цвет</h3>
+                    <div class="filter-item__grid">
+                        <label for="Белый">
+                            <input type="checkbox" id="Белый" name="square" hidden>
+                            <span>Белый</span>
+                        </label>
+                        <label for="Золотой">
+                            <input type="checkbox" id="Золотой" name="square" hidden>
+                            <span>Золотой</span>
+                        </label>
+                        <label for="Серый">
+                            <input type="checkbox" id="Серый" name="square" hidden>
+                            <span>Серый</span>
+                        </label>
+                        <label for="Красный">
+                            <input type="checkbox" id="Красный" name="square" hidden>
+                            <span>Красный</span>
+                        </label>
+                        <label for="Черный">
+                            <input type="checkbox" id="Черный" name="square" hidden>
+                            <span>Черный</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="filter-item">
+                    <h3>Цена</h3>
+                    <div class="filter-price">
+                        <div class="filter-price__item">
+                            <span>от</span>
+                            <input type="text" class="price-input" id="price-from" name="price-from" value="20.000">
+                        </div>
+                        <div class="filter-price__item">
+                            <span>до</span>
+                            <input type="text" class="price-input" id="price-to" name="price-to" value="100.000">
+                        </div>
+                    </div>
+                    <div class="filter-item__grid">
+                        <label for="20000-39999">
+                            <input type="checkbox" id="Белый" name="price" hidden>
+                            <span>20.000-39.999</span>
+                        </label>
+                        <label for="40000-69999">
+                            <input type="checkbox" id="40000-69999" name="price" hidden>
+                            <span>40000-69.999</span>
+                        </label>
+                        <label for="70000-99999">
+                            <input type="checkbox" id="70000-99999" name="square" hidden>
+                            <span>70.000-99.999</span>
+                        </label>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="filter-actions">
+                <button class="_btn _btn-blue">
+                    <div>применить</div>
+                </button>
+                <button class="_btn _btn-border _btn-border-stroke">
+                    <div>сбросить</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    @@include('html/products.html')
+
+
+
+
+</main>
+@@include('./html/footer.html')
+@@include('./html/scripts.html')
