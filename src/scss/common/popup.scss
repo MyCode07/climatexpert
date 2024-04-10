@@ -17,23 +17,22 @@
         pointer-events: all;
         opacity: 1;
 
+        .form__flex-left,
+        .form__flex-right {
+            transform: translateX(0);
+        }
+
         @media (min-width: 769px) {
-            &:before,
-            &:after {
-                transform: translate3d(0, 0, 0);
-            }
+            // &:before,
+            // &:after {
+            //     transform: translate3d(0, 0, 0);
+            // }
 
             .form {
                 opacity: 1;
             }
         }
-
-        @media (max-width: 768px) {
-            .form__flex-left,
-            .form__flex-right {
-                transform: translate3d(0, 0, 0);
-            }
-        }
+ 
     }
 
     @media (min-width: 769px) {
@@ -131,12 +130,11 @@
     }
 
     .form {
-        background-color: $white;
         height: 100%;
 
         @media (min-width: 769px) {
             opacity: 0;
-            transition: opacity 0.3s ease-in-out 0.5s;
+            transition: opacity 0.3s ease-in-out 0s;
         }
 
         @media (max-width: 768px) {
@@ -162,6 +160,10 @@
                 flex-direction: column;
                 justify-content: space-between;
                 overflow-y: auto;
+                background-color: $white;
+                transform: translateX(-150%);
+
+                transition: transform 0.3s ease 0s;
 
                 @media (max-width: 1440px) {
                     padding: 25px;
@@ -183,6 +185,8 @@
             &-right {
                 height: 100%;
                 width: 50%;
+                transform: translateX(150%);
+                transition: transform 0.3s ease 0s;
 
                 img {
                     width: 100%;

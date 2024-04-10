@@ -13,6 +13,7 @@ import "./parts/popup.js";
 import "./parts/menu.js";
 import "./parts/tabs.js";
 import "./parts/video.js";
+import "./parts/service-image-hover.js";
 // import "./parts/services.js";
 // import "./parts/forms.js";
 // import "./parts/show-more.js";

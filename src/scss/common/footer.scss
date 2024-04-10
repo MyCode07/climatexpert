@@ -32,6 +32,7 @@
         height: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        color: $white;
 
         @media (max-width: 1024px) {
             display: block;
@@ -176,6 +177,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         position: relative;
+        color: $white;
 
         @media (max-width: 1024px) {
             display: flex;

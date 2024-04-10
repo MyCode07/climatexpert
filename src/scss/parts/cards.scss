@@ -234,7 +234,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @include adaptive-value("height", 600, 275, 1);
+    // @include adaptive-value("height", 600, 275, 1);
+    height: auto;
 
     // gap: 50px;
 
@@ -273,23 +274,19 @@
     &__top {
         display: flex;
         justify-content: space-between;
+        gap: 15px;
 
-        @media (max-width: 425px) {
+        @media (max-width: 600px) {
             flex-direction: column;
-            gap: 15px;
         }
 
         div {
             display: flex;
             flex-direction: column;
 
-            @media (max-width: 425px) {
-                flex-direction: row;
-            }
-
             h3,
             span {
-                @include adaptive-value("font-size", 22, 16, 1);
+                @include adaptive-value("font-size", 22, 14, 1);
                 font-weight: 500;
                 line-height: 1;
                 text-transform: uppercase;
@@ -304,19 +301,31 @@
                 white-space: nowrap;
             }
         }
+
+        ._labels {
+            @media (max-width: 768px) {
+                flex-direction: row;
+            }
+        }
     }
 
     // .product-card__name
+
     &__name {
         gap: 25px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 
     // .product-card__image
 
     &__image {
         width: 100%;
-        height: 100%;
         position: relative;
+        @include adaptive-value("height", 370, 150, 1);
 
         img,
         picture {
@@ -347,13 +356,20 @@
                 gap: 5px;
             }
 
+            @media (max-width: 600px) {
+                span {
+                    font-size: 10px;
+                    font-weight: 500;
+                }
+            }
+
             svg,
             img {
                 fill: $blue;
                 height: 20px;
 
                 @media (max-width: 768px) {
-                    height: 16px;
+                    height: 12px;
                 }
             }
         }
@@ -361,55 +377,58 @@
 }
 
 .advantage-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    gap: 50px;
-
-    padding: 25px;
-    border: 1px solid $stroke;
-    border-radius: 6px;
-
-    @media (max-width: 1440px) {
-        gap: 25px;
-    }
-
-    @media (max-width: 600px) {
-        padding: 15px;
-        min-width: 290px;
+    @media (min-width: 769px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     * {
-        color: $blue;
+        color: $white;
     }
 
-    div {
+    h4 {
+        text-transform: uppercase;
+        font-weight: 400;
+        @include adaptive-value("font-size", 30, 16, 1);
+    }
+
+    // .advantage-card__content
+
+    &__content {
         display: flex;
         flex-direction: column;
 
+        padding-top: 25px;
+        border-top: 4px solid $stroke;
         gap: 50px;
 
-        @media (max-width: 1440px) {
+        @media (max-width: 1024px) {
             gap: 25px;
+            padding-top: 15px;
+            border-top: 2px solid $stroke;
         }
 
-        @media (max-width: 768px) {
-            flex-direction: column-reverse;
-            align-items: flex-start;
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            @media (max-width: 768px) {
+                gap: 15px;
+            }
         }
     }
 
     img,
     svg {
-        height: 100px;
-
+        height: 70px;
+        width: fit-content;
         @media (max-width: 1440px) {
-            height: 80px;
+            height: 50px;
         }
 
         @media (max-width: 768px) {
-            height: 60px;
+            height: 50px;
         }
     }
 }
@@ -417,7 +436,6 @@
 .offer-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     position: relative;
     gap: 100px;
@@ -431,23 +449,17 @@
     &__content {
         display: flex;
         flex-direction: column;
-        align-items: center;
         position: relative;
         z-index: 2;
-        gap: 50px;
-
-        @media (max-width: 1024px) {
-            gap: 25px;
-        }
+        gap: 25px;
 
         h6 {
             width: 100%;
-            text-align: center;
 
-            @include adaptive-value("font-size", 50, 20, 1);
-            font-weight: 500;
+            @include adaptive-value("font-size", 60, 20, 1);
+            font-weight: 400;
             line-height: 1.1;
-            text-transform: uppercase;
+            text-transform: initial;
 
             @media (min-width: 1025px) {
                 max-width: 75%;
@@ -457,7 +469,7 @@
         p {
             max-width: 40%;
             width: 100%;
-            text-align: center;
+            @include adaptive-value("font-size", 18, 14, 1);
 
             @media (max-width: 768px) {
                 max-width: 75%;
@@ -469,16 +481,22 @@
         }
     }
 
-    form {
-        width: 100%;
-
-        .form__row {
-        }
-    }
-
     ._btn {
         width: 100%;
         margin-top: 30px;
+
+        div {
+            backdrop-filter: blur(2.5px);
+            border-color: rgba($color: $white, $alpha: 0.25);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                div {
+                    border-color: $white;
+                }
+            }
+        }
     }
 }
 
@@ -629,58 +647,69 @@
 .flex-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    border-radius: 12px;
-    border: 1px solid $stroke;
     padding: 50px;
-    gap: 150px;
-    color: $blue;
-
-    transition: all 0.3s ease 0s;
-
-    @media (any-hover: hover) {
-        &:hover {
-            background-color: $blue;
-            color: $white;
-
-            ._btn {
-                div {
-                    background-color: $white;
-                    color: $blue;
-                }
-            }
-        }
-    }
+    transition: background-color 0.3s ease 0s;
+    height: 80vh;
 
     @media (max-width: 1440px) {
-        padding: 25px;
-        gap: 100px;
-    }
-
-    @media (max-width: 1024px) {
-        gap: 50px;
-        border-radius: 6px;
+        padding: 25px 15px;
     }
 
     @media (max-width: 768px) {
-        padding: 15px;
+        align-items: flex-start;
+        gap: 25px;
+        height: fit-content;
     }
 
-    @media (max-width: 600px) {
-        max-width: 100%;
-    }
-
-    span {
+    label {
         @include adaptive-value("font-size", 60, 20, 1);
         line-height: 1;
         font-weight: 700;
         text-transform: uppercase;
     }
 
-    div {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
+    // .flex-card__content
+
+    &__content {
+        width: 100%;
+
+        @media (max-width: 1440px) {
+            align-items: center;
+        }
+
+        p {
+            max-width: 75%;
+            width: 100%;
+            margin-bottom: 25px;
+
+            @media (max-width: 425px) {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    ._btn {
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $blue;
+
+            label {
+                mix-blend-mode: difference;
+            }
+
+            p,
+            label {
+                color: $white;
+            }
+        }
     }
 }
 
@@ -837,7 +866,7 @@
     &__article {
         font-size: 14px;
 
-        @media (max-width: 425px) {
+        @media (max-width: 600px) {
             font-size: 12px;
         }
     }
