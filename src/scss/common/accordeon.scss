@@ -20,20 +20,12 @@
         // .accordion__item-title
 
         &-title {
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             width: 100%;
             cursor: pointer;
-
-            color: $blue;
-            @include adaptive-value("font-size", 24, 16, 1);
-
-            font-weight: 500;
-            line-height: 1.1;
-            text-transform: uppercase;
-            color: $blue;
+            
+            * {
+                pointer-events: none;
+            }
 
             @media (any-hover: hover) {
                 &:hover {
