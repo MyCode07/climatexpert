@@ -370,28 +370,31 @@
                             причину и предоставим вам
                             ориентировочную стоимость ремонта с учетом всех деталей.</p>
                     </div>
-                    <form class="form" action="" method="post" role="form">
-                        <div class="form__row">
-                            <div class="form__item" data-required="">
-                                <input type="text" name="NAME" placeholder="Имя *">
+                    <div class="form form-white">
+
+                        <form action="">
+                            <div class="form__row">
+                                <div class="form__item" data-required>
+                                    <input type="text" name="name" placeholder="Имя *">
+                                </div>
+                                <div class="form__item" data-required>
+                                    <input type="text" name="phone" class="_mask-phone" placeholder="Телефон *">
+                                </div>
                             </div>
-                            <div class="form__item" data-required="">
-                                <input type="text" name="PHONE" class="_mask-phone" placeholder="Телефон *"
-                                    inputmode="text">
+                            <div class="form__item" data-required>
+                                <input type="text" name="model" placeholder="Модель кондиционера">
                             </div>
-                        </div>
-                        <div class="form__item" data-required="">
-                            <input type="text" name="model" placeholder="Модель кондиционера" inputmode="text">
-                        </div>
-                        <div class="form__item" data-required="">
-                            <textarea name="MESSAGE" placeholder="Сообщение *"></textarea>
-                        </div>
-                        <div class="form__bottom">
-                            <button class="_btn _btn-border">
-                                <div>Отправить</div>
-                            </button>
-                        </div>
-                    </form>
+                            <div class="form__item" data-required>
+                                <textarea name="MESSAGE" placeholder="Сообщение *"></textarea>
+                            </div>
+
+                            <div class="form__bottom">
+                                <button class="_btn _btn-border">
+                                    <div>Отправить</div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -458,15 +461,14 @@
                     </div>
                     <form class="form" action="" method="post" role="form">
                         <div class="form__row">
-                            <div class="form__item" data-required="">
+                            <div class="form__item" data-required>
                                 <input type="text" name="NAME" placeholder="Имя *">
                             </div>
-                            <div class="form__item" data-required="">
-                                <input type="text" name="PHONE" class="_mask-phone" placeholder="Телефон *"
-                                    inputmode="text">
+                            <div class="form__item" data-required>
+                                <input type="text" name="PHONE" class="_mask-phone" placeholder="Телефон *">
                             </div>
                         </div>
-                        <div class="form__item" data-required="">
+                        <div class="form__item" data-required>
                             <textarea name="MESSAGE" placeholder="Сообщение *"></textarea>
                         </div>
                         <div class="form__bottom">

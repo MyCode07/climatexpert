@@ -8,154 +8,134 @@
 
 <main>
 
-    <section class="section pages-hero basket-hero">
+    <section class="section pages-hero hero-mb-0">
         <div class="section__container _container">
             <div class="section__body">
-                <div class="breadcrumbs">
-                    <ul class="breadcrumb">
-                        <li>
-                            <a href="https://stynergy.test-yeremyan.site/">
-                                <span>Главная</span>
-                            </a>
-                        </li>
-                        <li>-</li>
-                        <li>
-                            <a href="https://stynergy.test-yeremyan.site/">
-                                <span>Каталог</span>
-                            </a>
-                        </li>
-                        <li>-</li>
-                        <li>
-                            <a href="https://stynergy.test-yeremyan.site/">
-                                <span>Кондиционеры</span>
-                            </a>
-                        </li>
-                        <li>-</li>
-                        <li>
-                            <a href="https://stynergy.test-yeremyan.site/">
-                                <span>Настенные сплит-системы</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="https://stynergy.test-yeremyan.site/">
+                            <span>Главная</span>
+                        </a>
+                    </li>
+                    <li>-</li>
+                    <li>
+                        <a href="https://stynergy.test-yeremyan.site/">
+                            <span>Корзина</span>
+                        </a>
+                    </li>
+                </ul>
                 <h1>Корзина</h1>
-                <p>В КОРЗИНЕ <span>6</span>ТОВАРА</p>
+                <p>В коризне <span data-cart-count>6</span> товаров</p>
             </div>
         </div>
     </section>
 
-    <section class="section basket">
+    <section class="section cart">
         <div class="section__container _container">
             <div class="section__body">
-                <div class="basket__products">
-                    <div class="basket-card" data-replace-width="992">
-                        <div class="basket-card__left">
-                            <a href="" class="basket-card__img">
-                                <img src="img/2.png" alt="">
-                            </a>
-                            <div class="basket-card__info">
-                                <button type="button" class="basket-card__delete"><span>Удалить</span></button>
-                                <a href="" data-replace-old-position="afterend">НАСТЕННЫЕ СПЛИТ-СИСТЕМЫ</a>
-                                <div class="services-box" data-replace-element>
+                <div class="cart-table">
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <div class="cart-item__body">
+                                <a href="" class="cart-item__img">
+                                    <img src="img/2.png" alt="">
+                                </a>
+                                <div class="cart-item__title">
+                                    <a href="">Настенные сплит-системы</a>
+                                    <button class="cart-item__delete">Удалить</button>
+                                </div>
+                                <div class="cart-item__price">
+                                    <div class="amount">
+                                        <span>20 000 ₽</span>
+                                    </div>
+                                    <div class="quantity">
+                                        <button class="minus">
+                                            <svg viewBox="0 0 15 1">
+                                                <line y1="0.5" x2="15" y2="0.5"></line>
+                                            </svg>
+                                        </button>
+                                        <input type="number" value="1" min="1" max="100" step="1">
+                                        <button class="plus">
+                                            <svg viewBox="0 0 15 15">
+                                                <path d="M0 7.5H15M7.5 0L7.5 15"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="services-box">
                                     <label for="kabel" class="checkbox-label">
                                         <input id="kabel" name="service" type="checkbox"
                                             value="Премиум кабель-канал (до 1 м.)">
                                         <span class="checkbox"></span>
-                                        <p class="value">Премиум кабель-канал (до 1 м.)</p>
-                                        <span>4 000 руб.</span>
+                                        <p class="value">Премиум кабель-канал (до 1 м.) <span>4 000 руб.</span></p>
                                     </label>
                                     <label for="zashita" class="checkbox-label">
                                         <input id="zashita" name="service" type="checkbox" value="Защитный козырек">
                                         <span class="checkbox"></span>
-                                        <p class="value">Защитный козырек</p>
-                                        <span>4 000 руб.</span>
+                                        <p class="value">Защитный козырек <span>4 000 руб.</span></p>
                                     </label>
                                 </div>
-                                <span class="basket-card__article">Артикул: <label>107271</label></span>
+                                <span class="cart-item__total"><span>40 000</span> ₽</span>
                             </div>
-                        </div>
-                        <div class="basket-card__right" data-replace-new-position="beforebegin"
-                            data-replace-width="992">
-                            <div class="basket-card__amount" data-replace-old-position="afterend">
-                                <span class="basket-card__price" data-replace-element>20 000 ₽</span>
-                                <div class="basket-card__controls" data-replace-new-position="afterend">
-                                    <button class="basket-card__minus input-amount__button">
-                                        <svg viewBox="0 0 15 1" xmlns="http://www.w3.org/2000/svg">
-                                            <line y1="0.5" x2="15" y2="0.5"></line>
-                                        </svg>
-                                    </button>
-                                    <input class="basket-card__input" type="text">
-                                    <button class="basket-card__plus input-amount__button">
-                                        <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 7.5H15M7.5 0L7.5 15"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <span class="basket-card__cost">40 000 ₽</span>
-                            </div>
-                            <button type="button" class="basket-card__delete"><span>Удалить</span></button>
                         </div>
                     </div>
-                    <div class="basket-card" data-replace-width="992">
-                        <div class="basket-card__left">
-                            <a href="" class="basket-card__img">
-                                <img src="img/2.png" alt="">
-                            </a>
-                            <div class="basket-card__info">
-                                <button type="button" class="basket-card__delete"><span>Удалить</span></button>
-                                <a href="" data-replace-old-position="afterend">НАСТЕННЫЕ СПЛИТ-СИСТЕМЫ</a>
-                                <div class="services-box" data-replace-element>
-                                    <label for="kabel" class="checkbox-label">
-                                        <input id="kabel" name="service" type="checkbox"
-                                            value="Премиум кабель-канал (до 1 м.)">
-                                        <span class="checkbox"></span>
-                                        <p class="value">Премиум кабель-канал (до 1 м.)</p>
-                                        <span>4 000 руб.</span>
-                                    </label>
-                                    <label for="zashita" class="checkbox-label">
-                                        <input id="zashita" name="service" type="checkbox" value="Защитный козырек">
-                                        <span class="checkbox"></span>
-                                        <p class="value">Защитный козырек</p>
-                                        <span>4 000 руб.</span>
-                                    </label>
-                                </div>
-                                <span class="basket-card__article">Артикул: <label>107271</label></span>
+
+                    <div class="cart-order">
+                        <h3>Ваш заказ</h3>
+                        <ol>
+                            <li>
+                                <svg width="25" height="25" viewBox="0 0 25 25">
+                                    <use xlink:href='img/svg/icons.svg#ok' />
+                                </svg>
+                                <span>Бесплатная доставка</span>
+                            </li>
+                            <li>
+                                <svg width="25" height="25" viewBox="0 0 25 25">
+                                    <use xlink:href='img/svg/icons.svg#ok' />
+                                </svg>
+                                <span>Бесплатная доставка</span>
+                            </li>
+                            <li>
+                                <svg width="25" height="25" viewBox="0 0 25 25">
+                                    <use xlink:href='img/svg/icons.svg#ok' />
+                                </svg>
+                                <span>Бесплатная доставка</span>
+                            </li>
+                        </ol>
+                        <div class="cart-order__total">
+                            <p>Итого</p>
+                            <span><label>131990</label><i> ₽</i></span>
+                        </div>
+                        <div class="cart-order__bottom">
+                            <div class="form form-blue">
+                                <form action="">
+                                    <div class="form__row">
+                                        <div class="form__item" data-required>
+                                            <input type="text" name="name" placeholder="Имя *">
+                                        </div>
+                                        <div class="form__item" data-required>
+                                            <input type="text" name="phone" class="_mask-phone" placeholder="Телефон *">
+                                        </div>
+                                    </div>
+                                    <div class="form__item" data-required>
+                                        <input type="text" name="address" placeholder="Адрес доставки *">
+                                    </div>
+                                    <div class="form__item">
+                                        <textarea name="msg" placeholder="Премечание"></textarea>
+                                    </div>
+                                    <div class="form__button">
+                                        <button class="_btn _btn-blue">
+                                            <div>Оформить заказ</div>
+                                        </button>
+                                        <span>Нажимая на кнопку Оформить заказ я даю согласие на обработку <a
+                                                href="">персональных
+                                                данных</a> и
+                                            <a href="">политикa конфиденциальности.</a>
+                                        </span>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="basket-card__right" data-replace-new-position="beforebegin"
-                            data-replace-width="992">
-                            <div class="basket-card__amount" data-replace-old-position="afterend">
-                                <span class="basket-card__price" data-replace-element>20 000 ₽</span>
-                                <div class="basket-card__controls" data-replace-new-position="afterend">
-                                    <button class="basket-card__minus input-amount__button">
-                                        <svg viewBox="0 0 15 1" xmlns="http://www.w3.org/2000/svg">
-                                            <line y1="0.5" x2="15" y2="0.5"></line>
-                                        </svg>
-                                    </button>
-                                    <input class="basket-card__input" type="text">
-                                    <button class="basket-card__plus input-amount__button">
-                                        <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 7.5H15M7.5 0L7.5 15"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <span class="basket-card__cost">40 000 ₽</span>
-                            </div>
-                            <button type="button" class="basket-card__delete"><span>Удалить</span></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="placing-order">
-                    <div class="placing-order__top">
-                        <p>Итого</p>
-                        <span><label>131990</label><i> ₽</i></span>
-                    </div>
-                    <div class="placing-order__bottom">
-                        <button class="_btn _btn-blue">
-                            <div>ПЕРЕЙТИ К ОФОРМЛЕНИЮ</div>
-                        </button>
-                        <p>Продолжая, высогласны с <a href=""> условиями продажи</a>
-                        </p>
                     </div>
                 </div>
             </div>

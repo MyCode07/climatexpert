@@ -118,37 +118,30 @@ if (openCatalogBtns.length) {
             catalogMenu.classList.toggle('_open');
             btn.classList.toggle('_active');
             header.classList.toggle('_active');
-            const text = btn.querySelector('span')
-            text.textContent = "Закрыть"
 
             if (btn.classList.contains('_active')) {
                 lockPadding();
             }
             else {
                 unLockPadding();
-                text.textContent = "Каталог"
             }
         })
     })
 }
 
 
-const openServicesBtns = document.querySelector('.services-link');
+const openServicesBtn = document.querySelector('.services-link');
 if (openCatalogBtns) {
-    openServicesBtns.addEventListener('click', (e) => {
+    openServicesBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        openServicesBtns.classList.toggle('_active');
+        openServicesBtn.classList.toggle('_active');
         header.classList.toggle('_active');
-        const text = openServicesBtns.querySelector('.text');
-        console.log(text);
-        text.textContent = "Закрыть";
 
-        if (openServicesBtns.classList.contains('_active')) {
+        if (openServicesBtn.classList.contains('_active')) {
             lockPadding();
         }
         else {
             unLockPadding();
-            text.textContent = "Услуги";
         }
     })
 }
@@ -156,8 +149,8 @@ if (openCatalogBtns) {
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
-    if ((!targetEl.classList.contains('services-link') && !targetEl.closest('.services-link') && !targetEl.closest('[data-open-catalog]'))) {
-        openServicesBtns.classList.remove('_active');
+    if ((!targetEl.classList.contains('services-link') && !targetEl.closest('.services-link') && !targetEl.closest('[data-open-catalog]')) && openServicesBtn.classList.contains('_active')) {
+        openServicesBtn.classList.remove('_active');
         header.classList.remove('_active');
         unLockPadding();
     }

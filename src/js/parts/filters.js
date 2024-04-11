@@ -1,5 +1,7 @@
 import { lockPadding, unLockPadding } from '../utils/lockPadding.js';
 
+const filter = document.querySelector('.filter');
+
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
@@ -27,40 +29,14 @@ document.addEventListener('click', function (e) {
         document.querySelector('.select-input._active').classList.remove('_active')
     }
 
+
     if (targetEl.hasAttribute('data-open-filter')) {
-        document.querySelector('.catalog-filters__wrapper').classList.toggle('_open');
-    }
-
-    if (targetEl.classList.contains('catalog-filters__wrapper')) {
-        document.querySelector('.catalog-filters__wrapper').classList.remove('_open');
-    }
-})
-
-const filterOpenBtn = document.querySelector('.filters-area__filter');
-const filterCloseBtn = document.querySelector('[data-close-filter]');
-const filter = document.querySelector('.filter');
-
-if (filterOpenBtn) {
-    
-    filterOpenBtn.addEventListener('click', () => {
-        console.log(filter);
         filter.classList.add('_open')
-
-
-        if (filter.classList.contains('_open')) {
-            lockPadding();
-            document.body.classList.add('_noscroll');
-
-        }
-        else {
-            unLockPadding();
-            document.body.classList.remove('_noscroll');
-        }
-    })
-
-    filterCloseBtn.addEventListener('click', () => {
+        lockPadding();
+    }
+    
+    if (targetEl.hasAttribute('data-close-filter')) {
         filter.classList.remove('_open')
         unLockPadding();
-        document.body.classList.remove('_noscroll');
-    })
-}
+    }
+})
