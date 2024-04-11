@@ -78,9 +78,9 @@
         }
     }
 
-    // .form__button
+    // .form__bottom
 
-    &__button {
+    &__bottom {
         display: flex;
         gap: 15px;
         margin-top: 50px;
@@ -128,6 +128,10 @@
                     }
                 }
             }
+        }
+
+        .form__bottom span {
+            color: $white;
         }
     }
 }
