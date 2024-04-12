@@ -1,6 +1,7 @@
 .accordion {
     & > :not(:last-child) {
         border-bottom: 1px solid $stroke;
+        margin-bottom: 25px;
     }
 
     // .accordion__item

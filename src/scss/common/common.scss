@@ -295,11 +295,6 @@ button {
         height: 60px;
     }
 
-    @media (max-width: 768px) {
-        border-radius: 2px;
-        height: 60px;
-    }
-
     div {
         border-radius: 4px;
         display: flex;
@@ -314,8 +309,7 @@ button {
         height: 100%;
         white-space: nowrap;
 
-        @media (max-width: 768px) {
-            border-radius: 2px;
+        @media (max-width: 1024px) {
             padding: 0 30px;
         }
 
@@ -429,61 +423,65 @@ button {
             }
         }
     }
-}
 
-._btn-arrow {
-    width: 70px;
-    height: 70px;
-    flex: 0 0 auto;
+    // ._btn-arrow
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid $stroke;
-    border-radius: 4px;
-    transition: all 0.3s ease 0s;
-
-    background-color: $white;
-
-    @media (max-width: 1024px) {
-        width: 60px;
-        height: 60px;
-    }
-
-    svg {
-        fill: $blue;
-        width: 16px;
+    &-arrow {
+        width: 70px;
+        height: 70px;
         flex: 0 0 auto;
-    }
-}
 
-._btn-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $stroke;
+        border-radius: 4px;
+        transition: all 0.3s ease 0s;
 
-    background-color: $blue;
+        background-color: $white;
 
-    color: $white;
-    text-align: center;
-    text-transform: uppercase;
+        @media (max-width: 1024px) {
+            width: 60px;
+            height: 60px;
+        }
 
-    width: 200px;
-    height: 200px;
-
-    transition: all 0.3s ease 0s;
-
-    @media (max-width: 1440px) {
-        width: 150px;
-        height: 150px;
+        svg {
+            fill: $blue;
+            width: 16px;
+            flex: 0 0 auto;
+        }
     }
 
-    @media (any-hover: hover) {
-        &:hover {
-            width: 100%;
-            height: 100%;
-            border-radius: 0;
+    // ._btn-circle
+    
+    &-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        background-color: $blue;
+
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+
+        width: 200px;
+        height: 200px;
+
+        transition: all 0.3s ease 0s;
+
+        @media (max-width: 1440px) {
+            width: 150px;
+            height: 150px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
         }
     }
 }

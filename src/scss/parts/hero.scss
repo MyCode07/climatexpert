@@ -94,7 +94,6 @@
         font-family: AA_Duke;
         @include adaptive-value("font-size", 250, 50, 1);
         line-height: 0.9;
-        text-transform: uppercase;
         color: $blue;
     }
 
@@ -104,6 +103,39 @@
         font-weight: 400;
         line-height: 1.2;
         color: $blue;
+    }
+
+    ol {
+        display: flex;
+        gap: 10px;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 100%;
+
+            border: 1px solid $stroke;
+            @include adaptive-value("font-size", 20, 12, 1);
+            padding: 0.5em 1.2em;
+
+            border-radius: 4px;
+
+            transition: all 0.3s ease 0s;
+
+            svg {
+                width: 0.8em;
+                fill: currentColor;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: $blue;
+                    color: $white;
+                }
+            }
+        }
     }
 }
 

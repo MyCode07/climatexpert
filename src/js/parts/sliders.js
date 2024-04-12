@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { FreeMode, Navigation, Pagination, Thumbs, Autoplay } from 'swiper/modules';
+import {Pagination, Autoplay } from 'swiper/modules';
 
 const sliders = document.querySelectorAll('.swiper');
 if (sliders.length) {
@@ -19,6 +19,18 @@ if (sliders.length) {
                 },
                 autoplay: {
                     delay: 4000,
+                },
+            })
+        }
+
+        if (slider.closest('.page-about')) {
+            new Swiper(slider, {
+                modules: [Pagination],
+                slidesPerView: 1,
+                spaceBetween: 10,
+                pagination: {
+                    el: pagination,
+                    clickable: true,
                 },
             })
         }
