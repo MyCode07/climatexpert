@@ -30,6 +30,17 @@
         </div>
     </section>
 
+    <div class="go-to-order">
+        <div class="_container">
+            <div class="cart-order__total">
+                <h3>Итого</h3>
+                <span><label>131 990</label><i> ₽</i></span>
+            </div>
+            <button class="_btn _btn-blue">
+                <div>Оформить заказ</div>
+            </button>
+        </div>
+    </div>
     <section class="section cart">
         <div class="section__container _container">
             <div class="section__body">
@@ -37,12 +48,26 @@
                     <div class="cart-items">
                         <div class="cart-item">
                             <div class="cart-item__body">
-                                <a href="" class="cart-item__img">
-                                    <img src="img/2.png" alt="">
-                                </a>
-                                <div class="cart-item__title">
-                                    <a href="">Настенные сплит-системы</a>
+                                <div class="cart-item__left">
+                                    <a href="" class="cart-item__img">
+                                        <img src="img/2.png" alt="">
+                                    </a>
+                                    <a class="cart-item__title" href="">Настенные сплит-системы</a>
                                     <button class="cart-item__delete">Удалить</button>
+                                    <div class="services-box">
+                                        <label for="kabel" class="checkbox-label">
+                                            <input id="kabel" name="service" type="checkbox"
+                                                value="Премиум кабель-канал (до 1 м.)">
+                                            <span class="checkbox"></span>
+                                            <p class="value">Премиум кабель-канал (до 1 м.) <span>4 000 руб.</span>
+                                            </p>
+                                        </label>
+                                        <label for="zashita" class="checkbox-label">
+                                            <input id="zashita" name="service" type="checkbox" value="Защитный козырек">
+                                            <span class="checkbox"></span>
+                                            <p class="value">Защитный козырек <span>4 000 руб.</span></p>
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="cart-item__price">
                                     <div class="amount">
@@ -61,50 +86,16 @@
                                             </svg>
                                         </button>
                                     </div>
+                                    <span class="cart-item__total"><span>40 000</span> ₽</span>
                                 </div>
-                                <div class="services-box">
-                                    <label for="kabel" class="checkbox-label">
-                                        <input id="kabel" name="service" type="checkbox"
-                                            value="Премиум кабель-канал (до 1 м.)">
-                                        <span class="checkbox"></span>
-                                        <p class="value">Премиум кабель-канал (до 1 м.) <span>4 000 руб.</span></p>
-                                    </label>
-                                    <label for="zashita" class="checkbox-label">
-                                        <input id="zashita" name="service" type="checkbox" value="Защитный козырек">
-                                        <span class="checkbox"></span>
-                                        <p class="value">Защитный козырек <span>4 000 руб.</span></p>
-                                    </label>
-                                </div>
-                                <span class="cart-item__total"><span>40 000</span> ₽</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="cart-order">
-                        <h3>Ваш заказ</h3>
-                        <ol>
-                            <li>
-                                <svg width="25" height="25" viewBox="0 0 25 25">
-                                    <use xlink:href='img/svg/icons.svg#ok' />
-                                </svg>
-                                <span>Бесплатная доставка</span>
-                            </li>
-                            <li>
-                                <svg width="25" height="25" viewBox="0 0 25 25">
-                                    <use xlink:href='img/svg/icons.svg#ok' />
-                                </svg>
-                                <span>Бесплатная доставка</span>
-                            </li>
-                            <li>
-                                <svg width="25" height="25" viewBox="0 0 25 25">
-                                    <use xlink:href='img/svg/icons.svg#ok' />
-                                </svg>
-                                <span>Бесплатная доставка</span>
-                            </li>
-                        </ol>
                         <div class="cart-order__total">
-                            <p>Итого</p>
-                            <span><label>131990</label><i> ₽</i></span>
+                            <h3>Итого</h3>
+                            <span><label>131 990</label><i> ₽</i></span>
                         </div>
                         <div class="cart-order__bottom">
                             <div class="form form-blue">
@@ -123,7 +114,7 @@
                                     <div class="form__item">
                                         <textarea name="msg" placeholder="Премечание"></textarea>
                                     </div>
-                                    <div class="form__button">
+                                    <div class="form__bottom">
                                         <button class="_btn _btn-blue">
                                             <div>Оформить заказ</div>
                                         </button>

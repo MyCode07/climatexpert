@@ -1,15 +1,11 @@
 .form {
     & > :not(:last-child) {
-        margin-bottom: 20px;
-
-        @media (max-width: 768px) {
-            margin-bottom: 15px;
-        }
+        margin-bottom: 15px;
     }
 
     form {
         & > :not(:last-child) {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
     }
 
@@ -19,7 +15,7 @@
         input,
         textarea {
             width: 100%;
-            padding: 25px;
+            padding: 15px;
             display: flex;
             align-items: center;
             border-radius: 4px;
@@ -29,10 +25,6 @@
 
             &::placeholder {
                 color: inherit;
-            }
-
-            @media (max-width: 1024px) {
-                padding: 15px;
             }
 
             @media (any-hover: hover) {
@@ -64,7 +56,7 @@
 
     &__row {
         display: flex;
-        gap: 20px;
+        gap: 15px;
 
         .form__item {
             @media (min-width: 769px) {
@@ -72,8 +64,7 @@
             }
         }
 
-        @media (max-width: 768px) {
-            gap: 15px;
+        @media (max-width: 1024px) {
             flex-direction: column;
         }
     }
@@ -83,7 +74,6 @@
     &__bottom {
         display: flex;
         gap: 15px;
-        margin-top: 50px;
 
         @media (max-width: 1024px) {
             flex-direction: column;
