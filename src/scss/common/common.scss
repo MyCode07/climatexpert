@@ -453,7 +453,7 @@ button {
     }
 
     // ._btn-circle
-    
+
     &-circle {
         display: flex;
         align-items: center;
@@ -637,4 +637,8 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+[data-open-catalog] * {
+    pointer-events: none;
 }

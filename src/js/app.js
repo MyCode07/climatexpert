@@ -11,7 +11,7 @@ import "./parts/menu.js";
 import "./parts/tabs.js";
 import "./parts/service-image-hover.js";
 import "./parts/filters.js";
-3
+
 accorden();
 replaceDomElements();
 runTicker();

@@ -26,6 +26,10 @@
                 fill: currentColor;
             }
         }
+
+        .header__burger span {
+            background-color: $blue;
+        }
     }
 
     &._sticky {

@@ -1,4 +1,5 @@
 import { gsap } from 'gsap'
+import { isMobile } from '../utils/isMobile.js'
 
 const categoriesWrapper = document.querySelector('.about-services .section__bottom')
 
@@ -32,35 +33,41 @@ if (categoriesWrapper) {
 }
 
 
-const links = document.querySelectorAll('.category ul li a');
+const categorySections = document.querySelectorAll('.category .category-item');
 let locked = false;
 
-if (links.length && window.innerWidth > 1024) {
+if (categorySections.length && !isMobile.any()) {
+    categorySections.forEach(cat => {
+        const links = cat.querySelectorAll('ul a');
+        const scroll = cat.querySelector('.category-item__image-scroll');
 
-    links.forEach((link, i) => {
+        if (links.length) {
 
-        link.addEventListener('mouseenter', (e) => {
-            locked = true
-            const height = e.target.closest('.category-item').querySelector('.category-item__image ._default').getBoundingClientRect().height;
-            const scroll = e.target.closest('.category-item').querySelector('.category-item__image div a');
-            gsap.to(scroll, {
-                y: (i + 1) * -height,
-                duration: 0.7,
-            })
-        })
+            links.forEach((link, i) => {
 
-        link.addEventListener('mouseleave', (e) => {
-            locked = false
-            const scroll = e.target.closest('.category-item').querySelector('.category-item__image div a');
+                link.addEventListener('mouseenter', (e) => {
+                    locked = true
+                    const height = e.target.closest('.category-item').querySelector('.category-item__image ._default').getBoundingClientRect().height;
 
-            setTimeout(() => {
-                if (locked == false) {
                     gsap.to(scroll, {
-                        y: 0,
-                        duration: 1,
+                        y: (i + 1) * -height,
+                        duration: 0.7,
                     })
-                }
-            }, 16);
-        })
-    })
+                })
+
+                link.addEventListener('mouseleave', (e) => {
+                    locked = false
+
+                    setTimeout(() => {
+                        if (locked == false) {
+                            gsap.to(scroll, {
+                                y: 0,
+                                duration: 1,
+                            })
+                        }
+                    }, 16);
+                })
+            })
+        }
+    });
 }
