@@ -33,7 +33,7 @@ if (categoriesWrapper) {
 
 
 const scroll = document.querySelectorAll('.category-item__image div a');
-const links = document.querySelectorAll('.category-item ul li a');
+const links = document.querySelectorAll('.category ul li a');
 const defultImg = document.querySelector('.category-item__image ._default');
 let locked = false;
 
