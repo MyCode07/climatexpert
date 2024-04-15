@@ -349,7 +349,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 10px;
+    gap: 25px;
     margin-top: 25px;
 
     &::-webkit-scrollbar {
@@ -390,9 +390,10 @@
 
     &__count {
         color: $blue;
-        font-weight: 600;
         line-height: 1;
-        @include adaptive-value("font-size", 70, 26, 1);
+        font-family: AA_Duke;
+        line-height: 0.8;
+        @include adaptive-value("font-size", 120, 60, 1);
     }
 
     button {

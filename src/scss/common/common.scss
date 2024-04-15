@@ -289,7 +289,7 @@ button {
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
 
-    @include adaptive-value("font-size", 16, 13, 1);
+    @include adaptive-value("font-size", 16, 12, 1);
 
     @media (max-width: 1024px) {
         height: 60px;
