@@ -32,25 +32,26 @@ if (categoriesWrapper) {
 }
 
 
-const scroll = document.querySelectorAll('.category-item__image div a');
 const links = document.querySelectorAll('.category ul li a');
-const defultImg = document.querySelector('.category-item__image ._default');
 let locked = false;
 
 if (links.length && window.innerWidth > 1024) {
-    const height = defultImg.getBoundingClientRect().height;
 
     links.forEach((link, i) => {
-        link.addEventListener('mouseenter', () => {
+
+        link.addEventListener('mouseenter', (e) => {
             locked = true
+            const height = e.target.closest('.category-item').querySelector('.category-item__image ._default').getBoundingClientRect().height;
+            const scroll = e.target.closest('.category-item').querySelector('.category-item__image div a');
             gsap.to(scroll, {
                 y: (i + 1) * -height,
                 duration: 0.7,
             })
         })
 
-        link.addEventListener('mouseleave', () => {
+        link.addEventListener('mouseleave', (e) => {
             locked = false
+            const scroll = e.target.closest('.category-item').querySelector('.category-item__image div a');
 
             setTimeout(() => {
                 if (locked == false) {
