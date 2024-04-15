@@ -73,6 +73,10 @@
 }
 
 .pages-hero {
+    @media (max-width: 768px) {
+        margin-bottom: 0 !important;
+    }
+
     .section__body {
         padding-bottom: 50px;
         position: relative;
@@ -92,9 +96,10 @@
 
     h1 {
         font-family: AA_Duke;
-        @include adaptive-value("font-size", 250, 50, 1);
+        @include adaptive-value("font-size", 220, 50, 1);
         line-height: 0.9;
         color: $blue;
+        text-transform: uppercase;
     }
 
     p {
@@ -109,6 +114,17 @@
         display: flex;
         gap: 10px;
 
+        @media (max-width: 425px) {
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        li {
+            @media (max-width: 425px) {
+                flex: 1 1 auto;
+            }
+        }
+
         a {
             display: flex;
             align-items: center;
@@ -117,7 +133,7 @@
             min-height: 100%;
 
             border: 1px solid $stroke;
-            @include adaptive-value("font-size", 20, 12, 1);
+            @include adaptive-value("font-size", 16, 14, 1);
             padding: 0.5em 1.2em;
 
             border-radius: 4px;
@@ -127,6 +143,7 @@
             svg {
                 width: 0.8em;
                 fill: currentColor;
+                flex: 0 0 auto;
             }
 
             @media (any-hover: hover) {

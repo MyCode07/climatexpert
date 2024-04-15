@@ -595,24 +595,23 @@
     // .page-about__top
 
     &__top {
-        margin-bottom: 50px;
+        margin-bottom: 100px;
 
         @media (max-width: 600px) {
-            margin-bottom: 25px;
+            margin-bottom: 50px;
         }
 
         h2 {
             font-weight: 500;
             @include adaptive-value("font-size", 40, 20, 1);
-            max-width: 900px;
+            max-width: 800px;
             margin-bottom: 100px;
-
             @include adaptive-value("margin-bottom", 100, 30, 1);
         }
 
         ol {
             & > :not(:last-child) {
-                border-bottom: 0;
+                margin-bottom: 15px;
             }
 
             li {
@@ -683,7 +682,6 @@
                     @include adaptive-value("font-size", 16, 12, 1);
                     line-height: 1;
                     letter-spacing: 0.15em;
-                    font-style: italic;
                     width: 50%;
 
                     margin-top: 0.2em;
@@ -766,6 +764,10 @@
 
             border-radius: 12px;
             overflow: hidden;
+
+            @media (max-width: 768px) {
+                border-radius: 6px;
+            }
         }
 
         img,
@@ -796,15 +798,11 @@
         min-height: 100%;
 
         @media (min-width: 1025px) {
-            padding-top: 150px;
+            @include adaptive-value("padding-top", 150, 0, 1);
         }
 
         @media (max-width: 600px) {
             gap: 15px;
-        }
-
-        &:has(.warranty) {
-            padding-top: 0;
         }
 
         ._btn {
@@ -812,6 +810,12 @@
 
             @media (max-width: 600px) {
                 margin-top: 10px;
+            }
+        }
+
+        p {
+            @media (min-width: 768px) {
+                max-width: 65%;
             }
         }
     }
@@ -876,6 +880,10 @@
                     font-style: normal;
                 }
             }
+        }
+
+        p {
+            max-width: 100%;
         }
     }
 }
@@ -1133,6 +1141,7 @@
 
         @media (max-width: 1024px) {
             grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
         }
 
         & > div {
@@ -1144,7 +1153,7 @@
             flex-direction: column;
             justify-content: space-between;
             gap: 50px;
-            min-height: 200px;
+            min-height: 150px;
 
             @media (max-width: 600px) {
                 padding: 15px;
@@ -2117,8 +2126,8 @@
 
             p,
             span {
-                @include adaptive-value("font-size", 24, 18, 1);
-                font-weight: 500;
+                @include adaptive-value("font-size", 28, 18, 1);
+                font-weight: 600;
                 line-height: 1;
                 text-transform: uppercase;
 
@@ -2145,8 +2154,8 @@
                 gap: 10px;
 
                 svg {
-                    width: 25px;
-                    height: 25px;
+                    width: 20px;
+                    height: 20px;
                     fill: currentColor;
                 }
             }
@@ -2155,11 +2164,7 @@
         // .cart-order__bottom
 
         &__bottom {
-            margin-top: 50px;
-
-            @media (max-width: 1440px) {
-                margin-top: 25px;
-            }
+            margin-top: 25px;
 
             p,
             a {
@@ -2177,6 +2182,14 @@
 
             ._btn {
                 width: 100%;
+            }
+
+            .form__button {
+                span {
+                    display: block;
+                    font-size: 12px;
+                    margin-top: 15px;
+                }
             }
         }
     }
