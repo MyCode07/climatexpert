@@ -7,12 +7,6 @@
     transition: background-color 0.3s ease 0s;
     color: $white;
 
-    @media (any-hover: hover) {
-        &:hover {
-            background-color: $blue;
-        }
-    }
-
     &._active,
     &._sticky {
         background-color: $white;
@@ -37,36 +31,22 @@
     }
 
     &._active {
+        background-color: $blue;
+        color: $white;
+
+        .header__burger span {
+            background-color: $white;
+        }
+
         &._sticky {
             box-shadow: unset;
         }
     }
 
-    &._white {
-        background-color: $white;
-
-        .header__logo,
-        nav > ul > li {
-            border-color: $stroke;
-            color: $blue;
-
-            svg {
-                fill: currentColor;
-            }
-        }
-
-        nav > ul > li {
-            @media (any-hover: hover) {
-                &:hover {
-                    background-color: $blue;
-                    color: $white;
-                }
-            }
-
-            &._active {
-                background-color: $blue;
-                color: $white;
-            }
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $blue;
+            color: $white;
         }
     }
 
@@ -258,11 +238,7 @@
                     border-bottom-color: transparent;
 
                     .dropdown-menu {
-                        height: calc(100vh - 192px);
-
-                        @media (max-width: 1440px) {
-                            height: calc(100vh - 156px);
-                        }
+                        transform: translate(0, 0);
                     }
 
                     ._open {
@@ -466,31 +442,30 @@
 }
 
 .dropdown-menu {
+    background-color: $white;
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     top: 96px;
     left: 0;
     width: 100vw;
-    max-width: 1920px;
     overflow: auto;
     color: $blue;
-    height: 0;
-    transition: height 0.5s ease 0s;
 
-    &._open {
-        height: calc(100vh - 192px);
+    padding: 50px;
+    height: calc(100vh - 96px);
+    transform: translate(0, -150%);
 
-        @media (max-width: 1440px) {
-            height: calc(100vh - 156px);
-        }
-    }
+    transition: transform 0.5s ease 0s;
 
     @media (max-width: 1440px) {
         top: 78px;
+        height: calc(100vh - 78px);
+        padding: 50px 25px;
     }
 
     @media (max-width: 1024px) {
         display: none;
+        padding: 25px 15px;
     }
 
     // .dropdown-menu__grid
@@ -501,9 +476,8 @@
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 10px;
-        height: 100%;
         background-color: $white;
-        padding: 50px;
+        height: 100%;
 
         a {
             display: flex;

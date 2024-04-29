@@ -77,11 +77,11 @@
             padding: 50px 0px 50px 50px;
 
             @media (max-width: 1440px) {
-                padding: 30px 0 30px 0;
+                padding: 30px 0 30px 30px;
             }
 
             @media (max-width: 1024px) {
-                padding: 50px 0 50px 0;
+                padding: 50px 0;
             }
 
             nav {
@@ -270,7 +270,14 @@
     border: 1px solid rgba(255, 255, 255, 0.25);
 
     @media (min-width: 1025px) {
+        flex: 0 0 auto;
+        height: 230px;
         width: 230px;
+
+        @media (max-width: 1440px) {
+            width: 210px;
+            height: 210px;
+        }
     }
 
     @media (max-width: 1024px) {
