@@ -280,15 +280,28 @@
             justify-content: center;
 
             @media (max-width: 1440px) {
-                padding: 25px;
+                padding: 20;
+            }
+
+            @media (max-width: 1024px) {
+                margin-top: 15px;
+                grid-column: span 3;
+            }
+
+            a {
+                @media (max-width: 1024px) {
+                    border-radius: 4px;
+                    width: 100%;
+                    height: 70px;
+                }
+
+                @media (max-width: 768px) {
+                    height: 60px;
+                }
             }
 
             @media (max-width: 1024px) {
                 grid-column: span 2;
-            }
-
-            @media (max-width: 768px) {
-                padding: 15px;
             }
         }
     }
@@ -568,7 +581,7 @@
         }
 
         @media (max-width: 768px) {
-            padding: 50px 0 15px 0;
+            padding: 50px 15px 30px 15px;
         }
 
         // .map__content-top
@@ -631,6 +644,10 @@
                     gap: 25px;
                 }
 
+                @media (max-width: 1024px) {
+                    border-radius: 2px;
+                }
+
                 span,
                 label {
                     color: $blue;
@@ -660,7 +677,7 @@
         }
 
         @media (max-width: 1024px) {
-            height: 600px;
+            height: 500px;
         }
 
         @media (max-width: 768px) {
@@ -790,6 +807,14 @@
 
                 transition: all 0.3s ease 0s;
 
+                @media (max-width: 1024px) {
+                    border-radius: 6px;
+                }
+
+                @media (max-width: 768px) {
+                    border-radius: 4px;
+                }
+
                 @media (any-hover: hover) {
                     &:hover {
                         background-color: $blue;
@@ -806,18 +831,26 @@
                     padding: 25px 15px;
 
                     & > :not(:last-child) {
-                        margin-bottom: 25px;
+                        margin-bottom: 50px;
                     }
                 }
 
-                @media (max-width: 600px) {
+                @media (max-width: 768px) {
+                    & > :not(:last-child) {
+                        margin-bottom: 25px;
+                    }
                 }
 
                 & > div {
                     width: calc(50% - 12.5px);
                     display: flex;
+                    justify-content: space-between;
                     flex: 0 0 auto;
                     gap: 25px;
+
+                    @media (min-width: 601px) {
+                        align-items: center;
+                    }
 
                     &:first-child {
                         @media (max-width: 1200px) {
@@ -846,7 +879,7 @@
                 }
 
                 label {
-                    @include adaptive-value("font-size", 16, 12, 1);
+                    @include adaptive-value("font-size", 14, 12, 1);
                     line-height: 1;
                     letter-spacing: 0.15em;
                     width: 50%;
@@ -855,17 +888,29 @@
 
                     @media (max-width: 1200px) {
                         width: 2.5em;
+                        margin-top: 0;
+                    }
+
+                    @media (max-width: 600px) {
+                        margin-top: 0.4em;
                     }
                 }
 
                 h3 {
                     font-weight: 400;
-                    @include adaptive-value("font-size", 24, 18, 1);
+                    @include adaptive-value("font-size", 24, 20, 1);
                     width: 50%;
 
                     @media (max-width: 1200px) {
                         width: auto;
                         flex: 1 1 auto;
+                    }
+
+                    @media (max-width: 1024px) and (min-width: 601px) {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
                     }
 
                     a {
@@ -879,6 +924,11 @@
                 p {
                     @include adaptive-value("font-size", 16, 14, 1);
                     padding-right: 20px;
+
+                    @media (max-width: 1024px) and (min-width: 600px) {
+                        max-width: 60%;
+                        width: 100%;
+                    }
 
                     @media (max-width: 600px) {
                         padding-right: 0;
@@ -932,8 +982,12 @@
             border-radius: 12px;
             overflow: hidden;
 
-            @media (max-width: 768px) {
+            @media (max-width: 1024px) {
                 border-radius: 6px;
+            }
+
+            @media (max-width: 600px) {
+                border-radius: 4px;
             }
         }
 
@@ -1014,7 +1068,6 @@
 
             @media (max-width: 1024px) {
                 padding: 15px;
-                gap: 15px;
             }
 
             span {
@@ -1101,38 +1154,6 @@
 
         @media (max-width: 1024px) {
             display: block;
-        }
-    }
-
-    .accordion__item-title {
-        padding: 20px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        cursor: pointer;
-
-        color: $blue;
-        @include adaptive-value("font-size", 24, 16, 1);
-
-        font-weight: 500;
-        line-height: 1.1;
-        text-transform: uppercase;
-        color: $blue;
-
-        @media (any-hover: hover) {
-            &:hover {
-                svg {
-                    transform: rotate(45deg);
-                }
-            }
-        }
-
-        svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            transition: all 0.3s ease 0s;
         }
     }
 }
@@ -1265,17 +1286,19 @@
             color: $blue;
 
             padding: 25px;
-            border-radius: 4px;
+            border-radius: 12px;
             border: 1px solid $stroke;
 
             transition: all 0.3s ease 0s;
 
             @media (max-width: 1024px) {
                 padding: 15px;
+                border-radius: 6px;
             }
 
             @media (max-width: 600px) {
                 width: 270px;
+                border-radius: 4px;
             }
 
             ._btn-arrow {
@@ -1320,11 +1343,16 @@
             flex-direction: column;
             justify-content: space-between;
             gap: 50px;
-            min-height: 150px;
+            min-height: 163px;
+
+            @media (max-width: 1024px) {
+                border-radius: 6px;
+            }
 
             @media (max-width: 600px) {
                 padding: 15px;
                 border-radius: 4px;
+                gap: 30px;
             }
 
             &:empty {
@@ -1367,6 +1395,16 @@
 }
 
 .single-product {
+    background-color: $white;
+    color: $blue;
+
+    .breadcrumb li {
+        color: rgba($color: $blue, $alpha: 0.5);
+    }
+    .breadcrumb li a {
+        color: rgba($color: $blue, $alpha: 0.5);
+    }
+
     .section__body {
         gap: 0;
     }
@@ -1487,6 +1525,7 @@
                 padding: 25px 0;
                 position: relative;
                 border-right: 0;
+                align-items: center;
 
                 &:after {
                     position: absolute;
@@ -1503,6 +1542,7 @@
 
             @media (max-width: 600px) {
                 flex-direction: column-reverse;
+                align-items: flex-start;
             }
 
             label {
@@ -1942,7 +1982,7 @@
         }
 
         @media (max-width: 1024px) {
-            padding: 25px 0;
+            padding: 0 0 25px 0;
             position: relative;
             border-right: 0;
 
@@ -1985,6 +2025,11 @@
             gap: 15px;
             margin-top: 50px;
 
+            @media (max-width: 1024px) {
+                width: 100%;
+                margin-top: 0;
+            }
+
             @media (max-width: 768px) {
                 flex-direction: column;
                 margin-bottom: 50px;
@@ -2002,6 +2047,10 @@
                 background: rgba($color: #bfd5ff, $alpha: 0.15);
                 border: 1px solid rgba($color: $white, $alpha: 0.25);
                 transition: border-color 0.3s ease 0s;
+
+                @media (max-width: 1024px) {
+                    width: 100%;
+                }
 
                 @media (any-hover: hover) {
                     &:hover {
@@ -2024,6 +2073,7 @@
                     font-weight: 500;
                     text-transform: uppercase;
                 }
+
                 span {
                     opacity: 0.5;
                 }
@@ -2055,7 +2105,7 @@
         ._text-box {
             p {
                 @media (min-width: 768px) {
-                    max-width: 75%;
+                    max-width: 55%;
                 }
             }
             & > :not(:last-child) {
@@ -2069,7 +2119,7 @@
             margin-bottom: 50px;
 
             @media (max-width: 1440px) {
-                margin-bottom: 25px;
+                margin-bottom: 50px;
             }
         }
     }
@@ -2102,6 +2152,10 @@
             padding: 25px 0;
             position: relative;
 
+            @media (max-width: 1024px) {
+                align-items: center;
+            }
+
             @media (max-width: 768px) {
                 padding: 15px 0;
                 gap: 25px;
@@ -2122,7 +2176,7 @@
 
             span {
                 font-family: AA_Duke;
-                @include adaptive-value("font-size", 200, 100, 1);
+                @include adaptive-value("font-size", 200, 80, 1);
                 font-weight: 100;
                 line-height: 0.8;
                 text-transform: uppercase;

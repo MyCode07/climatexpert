@@ -311,7 +311,6 @@
     }
 }
 
-
 .catalog-menu {
     position: fixed;
     z-index: 5;
@@ -589,6 +588,14 @@
                         li {
                             a {
                             }
+                        }
+                    }
+                }
+
+                &[data-open="open"] {
+                    button {
+                        svg {
+                            transform: rotate(45deg);
                         }
                     }
                 }

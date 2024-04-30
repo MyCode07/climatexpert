@@ -16,6 +16,10 @@
                     transform: rotate(-45deg);
                 }
             }
+
+            ._btn {
+                margin: 25px 0;
+            }
         }
 
         // .accordion__item-title
@@ -23,7 +27,36 @@
         &-title {
             width: 100%;
             cursor: pointer;
-            
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            cursor: pointer;
+
+            color: $blue;
+            @include adaptive-value("font-size", 24, 16, 1);
+
+            font-weight: 500;
+            line-height: 1.1;
+            text-transform: uppercase;
+            color: $blue;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    svg {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                stroke: currentColor;
+                transition: all 0.3s ease 0s;
+            }
+
             * {
                 pointer-events: none;
             }
@@ -77,6 +110,5 @@
 
     ._btn {
         width: 100%;
-        margin: 25px 0;
     }
 }

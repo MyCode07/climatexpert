@@ -39,6 +39,11 @@
             align-items: center;
             justify-content: space-between;
 
+            @media (max-width: 600px) {
+                flex-wrap: wrap-reverse;
+                gap: 15px;
+            }
+
             .pagination {
                 @media (min-width: 601px) {
                     position: absolute;
@@ -49,7 +54,14 @@
                 }
 
                 @media (max-width: 600px) {
-                    display: none;
+                    margin-inline: auto;
+                }
+            }
+
+            & > :first-child {
+                @media (max-width: 600px) {
+                    max-width: 70%;
+                    width: 100%;
                 }
             }
         }
