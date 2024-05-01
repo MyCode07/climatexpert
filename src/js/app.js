@@ -11,6 +11,7 @@ import "./parts/menu.js";
 import "./parts/tabs.js";
 import "./parts/service-image-hover.js";
 import "./parts/filters.js";
+import "./parts/cart.js";
 
 accorden();
 replaceDomElements();

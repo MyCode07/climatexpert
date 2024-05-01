@@ -4,7 +4,7 @@ export const stickyHeader = () => {
 
     if (!header) return
 
-    const headerheigth = header.getBoundingClientRect().height;
+    const headerheigth = header.getBoundingClientRect().height / 3;
 
 
     const sticky = () => {

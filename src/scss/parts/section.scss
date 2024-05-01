@@ -156,6 +156,10 @@
                 margin-bottom: 25px;
             }
 
+            @media (max-width: 600px) {
+                height: 290px;
+            }
+
             @media (max-width: 425px) {
                 margin-bottom: 15px;
             }
@@ -2330,7 +2334,7 @@
         background-color: $white;
 
         @media (max-width: 1024px) {
-            padding: 15px;
+            padding: 25px 15px 50px 15px;
             width: 100%;
 
             position: fixed;
@@ -2342,10 +2346,53 @@
             border: 0;
             border-radius: 0;
 
-            display: none;
+            overflow-y: auto;
+
+            transform: translate(0, 50px);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease 0s;
+
+            &._open {
+                display: block;
+                transform: translate(0, 0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .form__bottom {
+                margin-top: 35px;
+            }
         }
 
-        @media (max-width: 768px) {
+        // .cart-order__close
+
+        &__close {
+            display: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            border: 1px solid $stroke;
+            transition: border-color 0.3s ease 0s;
+
+            margin-left: auto;
+
+            img,
+            svg {
+                flex: 0 0 auto;
+                width: 25px;
+                stroke-width: 1.5px;
+                stroke: $blue;
+                pointer-events: none;
+            }
+
+            @media (max-width: 1024px) {
+                display: block;
+            }
         }
 
         // .cart-order__total
@@ -2355,6 +2402,14 @@
             align-items: center;
             justify-content: space-between;
             color: $blue;
+
+            @media (max-width: 1024px) {
+                justify-content: flex-start;
+                gap: 10px;
+            }
+
+            h3 {
+            }
 
             p,
             span {

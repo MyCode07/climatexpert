@@ -17,10 +17,11 @@
 
     @media (max-width: 1024px) {
         display: block;
+        padding-top: 100px;
     }
 
     @media (max-width: 600px) {
-        padding-top: 127px;
+        padding-top: 150px;
     }
 
     * {
@@ -30,12 +31,6 @@
     &._open {
         transform: translate(0, 0);
         pointer-events: all;
-    }
-
-    // .menu__container
-
-    &__container {
-        height: 100%;
     }
 
     // .menu__body
@@ -234,6 +229,11 @@
                 @media (max-width: 1024px) {
                     flex-wrap: wrap;
 
+                    &:not(:last-child) {
+                        padding-bottom: 25px;
+                        border-bottom: 1px solid $stroke;
+                    }
+
                     & > a {
                         max-width: calc(100% - 60px);
                         font-size: 20px;
@@ -287,7 +287,7 @@
 
         span {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 7px;
             font-size: 14px;
             line-height: 1.2;
             opacity: 0.5;
@@ -295,9 +295,7 @@
 
         a {
             font-size: 18px;
-            font-weight: 500;
             line-height: 1.1;
-            text-transform: uppercase;
         }
     }
 
@@ -336,11 +334,11 @@
 
     @media (max-width: 1024px) {
         overflow-y: auto;
-        padding-top: 75px;
+        padding-top: 100px;
     }
 
     @media (max-width: 600px) {
-        padding-top: 127px;
+        padding-top: 150px;
     }
 
     // .catalog-menu__container
@@ -467,6 +465,7 @@
 
                         & > button svg {
                             stroke: $white;
+                            transform: rotate(45deg);
                         }
 
                         ul {
@@ -550,6 +549,11 @@
                 @media (max-width: 1024px) {
                     flex-wrap: wrap;
 
+                    &:not(:last-child) {
+                        padding-bottom: 25px;
+                        border-bottom: 1px solid $stroke;
+                    }
+
                     & > a {
                         max-width: calc(100% - 60px);
                         font-size: 20px;
@@ -588,14 +592,6 @@
                         li {
                             a {
                             }
-                        }
-                    }
-                }
-
-                &[data-open="open"] {
-                    button {
-                        svg {
-                            transform: rotate(45deg);
                         }
                     }
                 }
