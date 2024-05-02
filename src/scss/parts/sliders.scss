@@ -60,8 +60,11 @@
 
             & > :first-child {
                 @media (max-width: 600px) {
-                    max-width: 70%;
-                    width: 100%;
+                    width: 67%;
+                }
+
+                @media (max-width: 425px) {
+                    width: 50%;
                 }
             }
         }

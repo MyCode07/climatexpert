@@ -25,6 +25,9 @@
 // load footer
 @import "common/footer";
 
+// load form
+@import "common/form";
+
 // load side popup
 @import "common/popup";
 
@@ -34,17 +37,8 @@
 // load accordeon
 @import "common/accordeon";
 
-// load error 404
-@import "common/404";
-
-// load to top
-@import "common/to-top";
-
 // load ticker
 @import "common/ticker";
-
-// load animations
-@import "common/animations";
 
 // load grid
 @import "parts/grid";
@@ -60,9 +54,6 @@
 
 // load sliders
 @import "parts/sliders";
-
-// load form
-@import "common/form";
 
 // load catalog
 @import "parts/catalog";

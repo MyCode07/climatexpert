@@ -117,14 +117,20 @@ p {
     }
 }
 
-.breadcrumb {
+.breadcrumbs {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+
     gap: 5px;
 
     li {
-        color: rgba($color: $blue, $alpha: 0.5);
+        color: $blue;
         font-size: 14px;
+
+        display: flex;
+        align-items: center;
+        gap: 5px;
 
         a {
             transition: color 0.3s ease 0s;
@@ -132,10 +138,34 @@ p {
             @include adaptive-value("font-size", 16, 12, 1);
         }
 
+        div {
+            opacity: 0.5;
+        }
+
         @media (any-hover: hover) {
             &:hover {
                 a {
                     color: $blue;
+                }
+            }
+        }
+    }
+
+    // .breadcrumbs-white
+
+    &-white {
+        li {
+            color: $white;
+
+            a {
+                color: rgba($color: $white, $alpha: 0.5);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    a {
+                        color: $white;
+                    }
                 }
             }
         }
@@ -645,4 +675,10 @@ input[type="number"] {
 
 [data-open-catalog] * {
     pointer-events: none;
+}
+
+._more {
+    * {
+        pointer-events: none;
+    }
 }

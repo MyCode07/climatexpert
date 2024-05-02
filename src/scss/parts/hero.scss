@@ -73,23 +73,6 @@
 }
 
 .pages-hero {
-    background-color: $blue;
-    color: $white;
-
-    .breadcrumb li a {
-        color: rgba($color: $white, $alpha: 0.5);
-
-        @media (any-hover: hover) {
-            &:hover {
-                color: $blue;
-            }
-        }
-    }
-
-    .breadcrumb li {
-        color: rgba($color: $white, $alpha: 0.5);
-    }
-
     .section__body {
         padding-bottom: 50px;
         position: relative;

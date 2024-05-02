@@ -2,15 +2,9 @@
     background-color: $white;
     color: $blue;
 
-    .breadcrumb li {
-        color: rgba($color: $blue, $alpha: 0.5);
-    }
-    .breadcrumb li a {
-        color: rgba($color: $blue, $alpha: 0.5);
-    }
-
     .section__body {
         gap: 0;
+        padding-bottom: 0;
     }
 
     .product-slider {
@@ -186,6 +180,18 @@
 
             @media (max-width: 600px) {
                 display: block;
+
+                & > :first-child {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 10px;
+
+                    & > :first-child {
+                        margin-bottom: 0;
+                    }
+                }
+
                 & > :not(:last-child) {
                     margin-bottom: 25px;
                 }
@@ -426,6 +432,8 @@
 }
 
 .product {
+    // .product-tabs
+
     &-tabs {
         .tab-content {
             display: none;
@@ -457,14 +465,6 @@
                 @media (min-width: 6001px) {
                     border-right: 1px solid $stroke;
                 }
-
-                @media (max-width: 600px) {
-                    border-bottom: 1px solid $stroke;
-                }
-            }
-
-            @media (max-width: 600px) {
-                flex-direction: column;
             }
 
             button {

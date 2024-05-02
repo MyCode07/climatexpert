@@ -1,6 +1,5 @@
 @@include('./html/head.html', {
 "title":"Ошибка 404",
-"description": "Страница не найдена.",
 })
 
 @@include('./html/header.html', {
@@ -8,15 +7,18 @@
 })
 
 <main>
-    <section class="hero hero-pages mb-0">
+    <section class="hero hero-mb-0 error-404">
+        <div class="bg-img">
+            <img src="img/hero-video.png" alt="">
+        </div>
         <div class="hero__container _container">
             <div class="hero__body grid grid-4">
                 <div class="hero__content">
-                    <h1 data-animate data-animate-bottom>404 ничего не найдено</h1>
+                    <h1>404 ничего не найдено</h1>
                     <p></p>
-                    <a href="/" class="_btn _btn-dark _btn-black" data-animate-stagger
-                        data-animate-bottom><label>Вернутся на главную</label>
-                        <span></span></a>
+                    <a href="/" class="_btn _btn-white">
+                        <div>На главную</div>
+                    </a>
                 </div>
             </div>
         </div>
