@@ -1,20 +1,17 @@
 export const stickyHeader = () => {
     const header = document.querySelector('header');
-    // const offer = document.querySelector('.offer');
-
     if (!header) return
 
     const headerheigth = header.getBoundingClientRect().height / 3;
 
-
     const sticky = () => {
         if (window.scrollY > headerheigth) {
             header.classList.add('_sticky')
-            // offer.classList.add('_close');
         }
         else {
-            header.classList.remove('_sticky')
-            // offer.classList.remove('_close');
+            if (!header.classList.contains('_sticky-static')) {
+                header.classList.remove('_sticky')
+            }
         }
     }
 

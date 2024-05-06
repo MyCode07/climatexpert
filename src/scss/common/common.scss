@@ -118,11 +118,13 @@ p {
 }
 
 .breadcrumbs {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
 
-    gap: 5px;
+        gap: 5px;
+    }
 
     li {
         color: $blue;
@@ -680,5 +682,11 @@ input[type="number"] {
 ._more {
     * {
         pointer-events: none;
+    }
+}
+
+.quantity {
+    span {
+        cursor: pointer;
     }
 }

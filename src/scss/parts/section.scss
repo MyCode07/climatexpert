@@ -1804,6 +1804,10 @@
                 margin-bottom: 80px;
             }
         }
+
+        & > .woocommerce {
+            flex: 1 1 auto;
+        }
     }
 
     // .cart-items
