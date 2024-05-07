@@ -70,32 +70,64 @@
                             <label>Артикул: <span>107271</span></label>
                         </div>
                         <div class="product-content__right">
-                            <div>
-                                <p>88 770 ₽</p>
+                            <div class="product-content__right-info">
+                                <p class="product-price">
+                                    <del>
+                                        <span class="woocommerce-Price-amount amount">
+                                            <bdi>20 000 <span class="woocommerce-Price-currencySymbol">₽</span></bdi>
+                                        </span>
+                                    </del>
+                                    <ins>
+                                        <span class="woocommerce-Price-amount amount">
+                                            <bdi>18
+                                                900 <span class="woocommerce-Price-currencySymbol">₽</span>
+                                            </bdi>
+                                        </span>
+                                    </ins>
+                                </p>
                                 <label for="installation" class="checkbox-label">
                                     <input id="installation" name="service" type="checkbox"
-                                        value="Установка + 9990 руб.">
+                                        value="Установка + 9990 руб.">
                                     <span class="checkbox"></span>
-                                    <span class="value">Установка + 9990 руб.</span>
+                                    <span class="value">Установка + 9990 руб.</span>
                                 </label>
-                            </div>
-                            <div>
-                                <a href="" class="_btn _btn-blue">
+                                <button data-open-popup="" data-id="main" class="_btn _btn-blue">
                                     <div>купить сейчас</div>
                                     <div class="arrow">
                                         <svg width="18" height="15" viewBox="0 0 18 15">
                                             <use xlink:href="img/svg/icons.svg#arrow-right"></use>
                                         </svg>
                                     </div>
-                                </a>
-                                <a href="" class="_btn _btn-border">
-                                    <div>Добавить в корзину</div>
-                                    <div class="arrow">
-                                        <svg width="18" height="15" viewBox="0 0 18 15">
-                                            <use xlink:href="img/svg/icons.svg#arrow-right"></use>
-                                        </svg>
+                                </button>
+                            </div>
+                            <div class="product-content__right-actions">
+                                <form>
+                                    <div class="quantity pro-qty">
+                                        <span class="inc qty-btn minus">
+                                            <svg viewBox="0 0 15 1">
+                                                <line y1="0.5" x2="15" y2="0.5"></line>
+                                            </svg>
+                                        </span>
+                                        <input type="text" id="quantity_6638f3138a149" class="input-text qty text"
+                                            data-step="1" data-min="1" data-max="" name="quantity" value="1" title="Qty"
+                                            size="4" placeholder="" inputmode="numeric">
+                                        <span class="inc qty-btn plus">
+                                            <svg viewBox="0 0 15 15">
+                                                <path d="M0 7.5H15M7.5 0L7.5 15"></path>
+                                            </svg>
+                                        </span>
                                     </div>
-                                </a>
+                                    <button type="submit" name="add-to-cart" class="_btn _btn-border">
+                                        <div>Добавить в корзину</div>
+                                        <div class="arrow">
+                                            <svg width="18" height="15" viewBox="0 0 18 15">
+                                                <use xlink:href="img/svg/icons.svg#arrow-right">
+                                                </use>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </form>
+
                             </div>
                         </div>
                     </div>

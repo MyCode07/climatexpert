@@ -130,7 +130,7 @@ if (openCatalogBtns.length) {
 }
 
 
-const openServicesBtn = document.querySelector('.services-link');
+const openServicesBtn = document.querySelector('.header__services');
 if (openCatalogBtns) {
     openServicesBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -151,7 +151,7 @@ if (openCatalogBtns) {
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
-    if ((!targetEl.classList.contains('services-link') && !targetEl.closest('.services-link')) && openServicesBtn.classList.contains('_active')) {
+    if ((!targetEl.classList.contains('header__services') && !targetEl.closest('.header__services')) && openServicesBtn.classList.contains('_active')) {
         openServicesBtn.classList.remove('_active');
         header.classList.remove('_active');
         unLockPadding();
