@@ -112,7 +112,7 @@
             .product-card__image {
                 img,
                 picture {
-                    transform: translate(-50%, -50%) scale(1.2);
+                    transform: scale(1.1);
                 }
             }
         }
@@ -154,7 +154,6 @@
 
                 @media (min-width: 1201px) {
                     max-width: 90%;
-                    width: 100%;
                 }
             }
 
@@ -188,16 +187,17 @@
         position: relative;
         @include adaptive-value("height", 370, 150, 1);
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
         img,
         picture {
             transition: transform 0.7s ease 0s;
             pointer-events: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
             width: 100%;
-            height: 65%;
+            height: 50%;
             object-fit: contain;
             object-position: center center;
 
