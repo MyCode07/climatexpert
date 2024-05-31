@@ -86,11 +86,6 @@ if (submenuList.length) {
             }
         }
     }
-
-    const catalogMenuFirstItem = document.querySelectorAll('.catalog-menu a');
-    if (catalogMenuFirstItem && isMobile.any()) {
-        toggleMenu(catalogMenuFirstItem[0])
-    }
 }
 
 
@@ -133,7 +128,6 @@ if (openCatalogBtns.length) {
 const openServicesBtn = document.querySelector('.header__services');
 if (openCatalogBtns) {
     openServicesBtn.addEventListener('click', (e) => {
-        e.preventDefault();
         openServicesBtn.classList.toggle('_active');
         header.classList.toggle('_active');
 
@@ -143,8 +137,6 @@ if (openCatalogBtns) {
         else {
             unLockPadding();
         }
-
-
     })
 }
 

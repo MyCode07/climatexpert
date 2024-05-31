@@ -216,7 +216,7 @@
                     }
                 }
 
-                ._btn{
+                ._btn {
                     margin-top: 50px;
                 }
             }
@@ -243,6 +243,49 @@
                     margin-bottom: 20px;
                 }
             }
+
+            & > :first-child {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: auto;
+            }
+
+            div p {
+                font-weight: 600;
+                @include adaptive-value("font-size", 36, 30, 1);
+                @include adaptive-value("margin-bottom", 50, 25, 1);
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .quantity {
+                margin: 15px 0;
+                width: 100%;
+                border-radius: 4px;
+                overflow: hidden;
+                height: 70px;
+
+                @media (max-width: 425px) {
+                    height: 60px;
+                }
+
+                svg {
+                    stroke-width: 1.5px;
+                }
+
+                span,
+                input {
+                    width: 100%;
+                    flex: 1 1 auto;
+
+                    @media (max-width: 425px) {
+                        height: 60px;
+                    }
+                }
+            }
         }
 
         // .product-content__guarante
@@ -261,6 +304,8 @@
             }
 
             @media (max-width: 768px) {
+                font-weight: 500;
+                gap: 10px;
                 padding-right: 0px;
                 justify-content: center;
             }
@@ -370,6 +415,10 @@
                     label {
                         padding: 20px 0;
 
+                        @media (max-width: 768px) {
+                            padding: 15px 0px;
+                        }
+
                         p {
                             flex: 1 1 100%;
                             @include adaptive-value("font-size", 16, 14, 1);
@@ -396,10 +445,9 @@
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        font-weight: 500;
+                        gap: 20px;
 
                         & > :first-child {
-                            font-weight: 500;
                         }
 
                         & > :last-child {
@@ -430,8 +478,8 @@
                 }
 
                 @media (max-width: 768px) {
-                    padding: 10px;
-                    margin-top: 15px;
+                    padding: 5px 10px;
+                    margin-top: 25px;
                 }
 
                 svg,
@@ -513,6 +561,8 @@
         // .product__info-tabs
 
         &-tabs {
+            border-radius: 4px;
+            overflow: hidden;
         }
     }
 }
@@ -587,7 +637,7 @@
 del span {
     font-size: 20px;
     font-weight: 400;
-    @include adaptive-value("font-size", 20, 14, 1);
+    @include adaptive-value("font-size", 18, 14, 1);
 }
 
 del,
@@ -598,6 +648,6 @@ bdi {
 }
 
 del {
-    opacity: 0.75;
+    opacity: 0.5;
     text-decoration: line-through;
 }
