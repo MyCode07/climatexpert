@@ -38,7 +38,7 @@ let locked = false;
 
 if (categorySections.length && !isMobile.any()) {
     categorySections.forEach(cat => {
-        const links = cat.querySelectorAll('ul a');
+        const links = cat.querySelectorAll('ul li');
         const scroll = cat.querySelector('.category-item__image-scroll');
 
         if (links.length) {

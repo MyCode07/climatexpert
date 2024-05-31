@@ -50,7 +50,7 @@
         height: 100%;
         object-fit: cover;
         opacity: 0;
-        transition: all 0.3s ease 0s;
+        transition: all 0.8s ease 0s;
 
         @media (max-width: 768px) {
             opacity: 1;
@@ -100,12 +100,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // @include adaptive-value("height", 600, 275, 1);
     height: auto;
-
-    // gap: 50px;
-
-    padding: 50px;
+    padding: 35px;
     border: 1px solid $stroke;
     transition: border-color 0.3s ease 0s;
 
@@ -116,14 +112,14 @@
             .product-card__image {
                 img,
                 picture {
-                    transform: scale(1.2);
+                    transform: translate(-50%, -50%) scale(1.2);
                 }
             }
         }
     }
 
     @media (max-width: 1440px) {
-        padding: 25px;
+        padding: 20px;
     }
 
     @media (max-width: 768px) {
@@ -152,13 +148,12 @@
 
             h3,
             span {
-                @include adaptive-value("font-size", 22, 14, 1);
+                @include adaptive-value("font-size", 18, 14, 1);
                 font-weight: 500;
                 line-height: 1;
-                text-transform: uppercase;
 
                 @media (min-width: 1201px) {
-                    max-width: 200px;
+                    max-width: 90%;
                     width: 100%;
                 }
             }
@@ -198,11 +193,17 @@
             transition: transform 0.7s ease 0s;
             pointer-events: none;
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             width: 100%;
-            height: 100%;
+            height: 65%;
             object-fit: contain;
+            object-position: center center;
+
+            @media (max-width: 1024px) {
+                height: 80%;
+            }
         }
     }
 
@@ -215,16 +216,13 @@
 
         div {
             display: flex;
-            gap: 10px;
+            gap: 5px;
             align-items: center;
 
-            @media (max-width: 768px) {
-                gap: 5px;
-            }
+            span {
+                @include adaptive-value("font-size", 16, 12, 1);
 
-            @media (max-width: 600px) {
-                span {
-                    font-size: 10px;
+                @media (max-width: 600px) {
                     font-weight: 500;
                 }
             }
@@ -232,7 +230,7 @@
             svg,
             img {
                 fill: $blue;
-                height: 20px;
+                height: 17px;
 
                 @media (max-width: 768px) {
                     height: 12px;
@@ -677,8 +675,6 @@
         font-weight: 500;
         white-space: nowrap;
     }
-
-   
 
     // .cart-item__total
 

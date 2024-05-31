@@ -95,7 +95,7 @@
 
     h1 {
         font-family: AA_Duke;
-        @include adaptive-value("font-size", 220, 50, 1);
+        @include adaptive-value("font-size", 160, 35, 1);
         line-height: 0.9;
         text-transform: uppercase;
     }

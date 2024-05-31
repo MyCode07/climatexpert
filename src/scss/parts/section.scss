@@ -267,6 +267,7 @@
 
         @media (max-width: 768px) {
             display: block;
+
             & > :not(:last-child) {
                 margin-bottom: 5px;
             }
@@ -275,6 +276,10 @@
         & > :first-child {
             @media (min-width: 1201px) {
                 grid-column: span 2;
+
+                .product-card__image img {
+                    height: 80%;
+                }
             }
         }
 
@@ -319,6 +324,10 @@
             @media (min-width: 1201px) {
                 & > :nth-child(10n) {
                     grid-column: span 2;
+
+                    .product-card__image img {
+                        height: 80%;
+                    }
                 }
             }
         }
@@ -414,7 +423,7 @@
             }
 
             @media (max-width: 1024px) {
-                background-color: rgba($color: $blue, $alpha: 0.8);
+                background-color: rgba($color: $blue, $alpha: 0.9);
             }
         }
 
@@ -468,6 +477,10 @@
 
     .form__item {
         width: 100% !important;
+    }
+
+    .form__bottom {
+        @include adaptive-value("margin-top", 50, 25, 1);
     }
 }
 

@@ -182,7 +182,7 @@ p {
     label {
         border-radius: 50%;
         color: $white;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 1;
         text-transform: uppercase;
         width: 50px;
@@ -195,7 +195,6 @@ p {
         @media (max-width: 768px) {
             width: 40px;
             height: 40px;
-            font-size: 12px;
         }
 
         @media (max-width: 425px) {
