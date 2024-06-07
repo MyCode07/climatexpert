@@ -39,23 +39,26 @@
         <div class="_container">
             <div class="grid">
                 <div class="filter-fast filter-brand">
-                    <div class="select-input">
-                        <label data-id="1">БРЕНД</label>
+                    <div class="select-input _multiple">
+                        <span data-id="1">БРЕНД</span>
                         <svg width="8" height="6" viewBox="0 0 8 6">
                             <use xlink:href='img/svg/icons.svg#link-arrow' />
                         </svg>
                         <div class="select">
                             <div class="select-body">
-                                <span data-id="0" data-disabled>Регион</span>
-                                <span data-id="1">Москва</span>
-                                <span data-id="2">Белгородская область</span>
-                                <span data-id="3">Брянская область</span>
-                                <span data-id="4">Владимирская область</span>
-                                <span data-id="5">Вологодская область</span>
-                                <span data-id="6">Ивановская область</span>
-                                <span data-id="7">Калужская область</span>
-                                <span data-id="8">Костромская область</span>
-                                <span data-id="9">Краснодарский край</span>
+                                <label data-id="0" data-disabled>Регион</label>
+                                <label data-id="vestel" for="razmer-vestel">
+                                    Vestel
+                                    <input type="checkbox" name="razmer[]" id="razmer-vestel" value="vestel">
+                                </label>
+                                <label data-id="asdasd" for="razmer-asdasd">
+                                    asdasd
+                                    <input type="checkbox" name="razmer[]" id="razmer-asdasd" value="asdasd">
+                                </label>
+                                <label data-id="ssssss" for="razmer-ssssss">
+                                    ssssss
+                                    <input type="checkbox" name="razmer[]" id="razmer-ssssss" value="ssssss">
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -112,7 +115,7 @@
                     <button class="active-filters__item" data-custom-field="color">Коричневый </button>
                     <button class="active-filters__item" data-custom-field="color">Зеленый</button>
                     <button class="active-filters__item" data-custom-field="color">Красный</button>
-                    <button class="reset-filters">Сбросить фильтры</button>
+                    <button class="reset-filters" data-reset-filters>Сбросить фильтры</button>
                 </div>
             </div>
         </div>
@@ -466,6 +469,17 @@
                             </div>
                         </a>
                     </div>
+                    <nav class="woocommerce-pagination">
+                        <ul class="page-numbers">
+                            <li><span aria-current="page" class="page-numbers current">1</span></li>
+                            <li><a class="page-numbers"
+                                    href="https://climat.test-yeremyan.site/product-category/kondiczionery/napolno-potolochnye-kondiczionery/page/2/?orderby=price-desc">2</a>
+                            </li>
+                            <li><a class="next page-numbers"
+                                    href="https://climat.test-yeremyan.site/product-category/kondiczionery/napolno-potolochnye-kondiczionery/page/2/?orderby=price-desc">→</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

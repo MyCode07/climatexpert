@@ -493,14 +493,14 @@
             }
         }
 
-        label,
+        span,
         svg {
             pointer-events: none;
             fill: currentColor;
             text-transform: uppercase;
         }
 
-        label {
+        span {
             white-space: nowrap;
             max-width: calc(100% - 20px);
             overflow: hidden;
@@ -544,11 +544,12 @@
             }
         }
 
-        span {
+        label {
             display: block;
             line-height: 1.5;
             padding: 20px;
             transition: background-color 0.3s ease 0s;
+            cursor: pointer;
 
             &[data-disabled] {
                 opacity: 0.5;
@@ -563,6 +564,125 @@
                     background-color: rgba($color: $blue, $alpha: 0.2);
                 }
             }
+
+            &:has(input:checked) {
+                background-color: $blue;
+                color: $white;
+            }
+
+            position: relative;
+
+            input {
+                position: absolute;
+                opacity: 0;
+            }
         }
+
+        .range {
+            padding: 20px;
+
+            @media (max-width: 768px) {
+                padding: 15px;
+            }
+        }
+    }
+}
+
+.range {
+    // .range-slider
+
+    &-slider {
+    }
+
+    // .range-output
+
+    &-output {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    del,
+    ins,
+    bdi {
+        display: inline-block;
+    }
+
+    // .range-min
+
+    &-min {
+    }
+
+    // .range-max
+
+    &-max {
+    }
+}
+
+._hide {
+    display: none !important;
+}
+
+.woocommerce {
+    // .woocommerce-pagination
+
+    &-pagination {
+    }
+}
+ul.page-numbers {
+    @include adaptive-value("margin-top", 50, 25, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+    font-weight: 400;
+
+    @media (max-width: 1024px) {
+        gap: 3px;
+    }
+
+    a,
+    span {
+        display: block;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid $stroke;
+        transition: all 0.3s ease 0s;
+
+        @media (max-width: 1024px) {
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+        }
+    }
+
+    span {
+        border-color: $blue;
+        color: $white;
+        background-color: $blue;
+    }
+
+    a {
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: $blue;
+                color: $white;
+                background-color: $blue;
+            }
+        }
+    }
+
+    span {
+    }
+
+    .current {
+    }
+    .next {
     }
 }
