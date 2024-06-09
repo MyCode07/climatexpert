@@ -8,136 +8,71 @@
                 </svg>
             </button>
         </div>
-        <div class="grid">
-            <div class="filter-item">
-                <h3>Площадь, м2</h3>
-                <div class="filter-item__grid">
-                    <label for="до 21 (2,2 кВт)">
-                        <input type="checkbox" id="до 21 (2,2 кВт)" name="square" hidden>
-                        <span>до 21 (2,2 кВт)</span>
-                    </label>
-                    <label for="до 27 (2,8 кВт)">
-                        <input type="checkbox" id="до 27 (2,8 кВт)" name="square" hidden>
-                        <span>до 27 (2,8 кВт)</span>
-                    </label>
-                    <label for="до 36 (3,6 кВт)">
-                        <input type="checkbox" id="до 36 (3,6 кВт)" name="square" hidden>
-                        <span>до 36 (3,6 кВт)</span>
-                    </label>
-                    <label for="до 52 (5,4 кВт)">
-                        <input type="checkbox" id="до 52 (5,4 кВт)" name="square" hidden>
-                        <span>до 52 (5,4 кВт)</span>
-                    </label>
-                    <label for="до 70 (7,2 кВт)">
-                        <input type="checkbox" id="до 70 (7,2 кВт)" name="square" hidden>
-                        <span>до 70 (7,2 кВт)</span>
-                    </label>
-                    <label for="до 90 (9,4 кВт)">
-                        <input type="checkbox" id="до 90 (9,4 кВт)" name="square" hidden>
-                        <span>до 90 (9,4 кВт)</span>
-                    </label>
-                    <label for="до 105 (10,6 кВт)">
-                        <input type="checkbox" id="до 105 (10,6 кВт)" name="square" hidden>
-                        <span>до 105 (10,6 кВт)</span>
-                    </label>
-                </div>
-            </div>
+        <form method="GET" id="product-fitler-form" action="#" class="grid">
+
             <div class="filter-item">
                 <h3>Бренд</h3>
                 <div class="filter-item__grid">
-                    <label for="ZANUSSI">
-                        <input type="checkbox" id="ZANUSSI" name="square" hidden>
-                        <span>ZANUSSI</span>
-                    </label>
-                    <label for="BALLU">
-                        <input type="checkbox" id="BALLU" name="square" hidden>
-                        <span>BALLU</span>
-                    </label>
-                    <label for="ECOCLIMA">
-                        <input type="checkbox" id="ECOCLIMA" name="square" hidden>
-                        <span>ECOCLIMA</span>
-                    </label>
-                    <label for="GREE">
-                        <input type="checkbox" id="GREE" name="square" hidden>
-                        <span>GREE</span>
-                    </label>
-                    <label for="ENERGOLUX">
-                        <input type="checkbox" id="ENERGOLUX" name="square" hidden>
-                        <span>ENERGOLUX</span>
-                    </label>
-                    <label for="FUNAI">
-                        <input type="checkbox" id="FUNAI" name="square" hidden>
-                        <span>FUNAI</span>
-                    </label>
-                    <label for="HITACHI">
-                        <input type="checkbox" id="HITACHI" name="square" hidden>
-                        <span>HITACHI</span>
-                    </label>
-                    <label for="LG">
-                        <input type="checkbox" id="LG" name="square" hidden>
-                        <span>LG</span>
-                    </label>
-                    <label for="TOSHIBA">
-                        <input type="checkbox" id="TOSHIBA" name="square" hidden>
-                        <span>TOSHIBA</span>
-                    </label>
-                </div>
-            </div>
-            <div class="filter-item">
-                <h3>Компрессор</h3>
-                <div class="filter-item__grid">
-                    <label for="Инверторный">
-                        <input type="checkbox" id="Инверторный" name="square" hidden>
-                        <span>Инверторный</span>
-                    </label>
-                    <label for="Обычный">
-                        <input type="checkbox" id="Обычный" name="square" hidden>
-                        <span>Обычный</span>
-                    </label>
-                </div>
-            </div>
-            <div class="filter-item">
-                <h3>Управление Wi-Fi</h3>
-                <div class="filter-item__grid">
-                    <label for="Wi-Fi опционально">
-                        <input type="checkbox" id="Wi-Fi опционально" name="square" hidden>
-                        <span>Wi-Fi опционально</span>
-                    </label>
-                    <label for=" Wi-Fi встроенный">
-                        <input type="checkbox" id=" Wi-Fi встроенный" name="square" hidden>
-                        <span>Wi-Fi встроенный</span>
-                    </label>
-                    <label for="Нет">
-                        <input type="checkbox" id="Нет" name="square" hidden>
-                        <span>Нет</span>
+                    <label for="brend-Vestel">
+                        <input type="checkbox" id="brend-Vestel" name="brend[]" value="Vestel" hidden="">
+                        <span>Vestel</span>
                     </label>
                 </div>
             </div>
             <div class="filter-item">
                 <h3>Цвет</h3>
                 <div class="filter-item__grid">
-                    <label for="Белый">
-                        <input type="checkbox" id="Белый" name="square" hidden>
+                    <label for="czvet-Белый">
+                        <input type="checkbox" id="czvet-Белый" name="czvet[]" value="Белый" hidden="">
                         <span>Белый</span>
-                    </label>
-                    <label for="Золотой">
-                        <input type="checkbox" id="Золотой" name="square" hidden>
-                        <span>Золотой</span>
-                    </label>
-                    <label for="Серый">
-                        <input type="checkbox" id="Серый" name="square" hidden>
-                        <span>Серый</span>
-                    </label>
-                    <label for="Красный">
-                        <input type="checkbox" id="Красный" name="square" hidden>
-                        <span>Красный</span>
-                    </label>
-                    <label for="Черный">
-                        <input type="checkbox" id="Черный" name="square" hidden>
-                        <span>Черный</span>
                     </label>
                 </div>
             </div>
+            <div class="filter-item">
+                <h3>Компрессор</h3>
+                <div class="filter-item__grid">
+                    <label for="kompressor-Инверторный">
+                        <input type="checkbox" id="kompressor-Инверторный" name="kompressor[]" value="Инверторный"
+                            hidden="">
+                        <span>Инверторный</span>
+                    </label>
+                    <label for="kompressor-Обычный">
+                        <input type="checkbox" id="kompressor-Обычный" name="kompressor[]" value="Обычный" hidden="">
+                        <span>Обычный</span>
+                    </label>
+                </div>
+            </div>
+            <div class="filter-item">
+                <h3>Площадь, м2</h3>
+                <div class="filter-item__grid">
+                    <label for="ploshhad-до 21 (2,2 кВт)">
+                        <input type="checkbox" id="ploshhad-до 21 (2,2 кВт)" name="ploshhad[]" value="до 21 (2,2 кВт)"
+                            hidden="">
+                        <span>до 21 (2,2 кВт)</span>
+                    </label>
+                </div>
+            </div>
+            <div class="filter-item">
+                <h3>Управление Wi-Fi</h3>
+                <div class="filter-item__grid">
+                    <label for="upravlenie-wi-fi-Wi-Fi встроенный">
+                        <input type="checkbox" id="upravlenie-wi-fi-Wi-Fi встроенный" name="upravlenie-wi-fi[]"
+                            value="Wi-Fi встроенный" hidden="">
+                        <span>Wi-Fi встроенный</span>
+                    </label>
+                    <label for="upravlenie-wi-fi-Wi-Fi опционально">
+                        <input type="checkbox" id="upravlenie-wi-fi-Wi-Fi опционально" name="upravlenie-wi-fi[]"
+                            value="Wi-Fi опционально" hidden="">
+                        <span>Wi-Fi опционально</span>
+                    </label>
+                    <label for="upravlenie-wi-fi-Нет">
+                        <input type="checkbox" id="upravlenie-wi-fi-Нет" name="upravlenie-wi-fi[]" value="Нет"
+                            hidden="">
+                        <span>Нет</span>
+                    </label>
+                </div>
+            </div>
+
             <div class="filter-item">
                 <h3>Цена</h3>
                 <div class="range" data-min="500000" data-max="50000000" data-step="100000">
@@ -148,7 +83,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <input type="hidden" id="min_price" name="min_price" value="18900" data-value="18900">
+            <input type="hidden" id="max_price" name="max_price" value="181900" data-value="181900">
+            <input type="hidden" id="orderby" name="orderby" value="">
+        </form>
         <div class="filter-actions">
             <button class="_btn _btn-blue" data-close-filter>
                 <div>применить</div>

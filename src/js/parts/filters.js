@@ -1,8 +1,9 @@
 import { lockPadding, unLockPadding } from '../utils/lockPadding.js';
+import { productFilter, removeSearchParam, resetFilters } from './products-filter.js';
 
 const filter = document.querySelector('.filter');
 const activeFilters = document.querySelector('.active-filters__body');
-const resetFilters = document.querySelector('.active-filters .reset-filters')
+const resetFiltersBtn = document.querySelector('.active-filters .reset-filters')
 
 
 document.addEventListener('click', function (e) {
@@ -27,7 +28,8 @@ document.addEventListener('click', function (e) {
         const input = targetEl.querySelector('input')
 
         select.classList.remove('_active')
-        resetFilters.classList.remove('_hide')
+        resetFiltersBtn.classList.remove('_hide')
+        productFilter();
 
         if (input) {
             const item = `<button class="active-filters__item" data-custom-field="${input.id}">${targetEl.textContent}</button>`
@@ -40,10 +42,14 @@ document.addEventListener('click', function (e) {
 
     // remove active filters
     if (targetEl.classList.contains('active-filters__item')) {
+        const name = targetEl.dataset.customField;
+        removeSearchParam(name)
+
         targetEl.remove()
+        productFilter();
 
         if (!document.querySelector('.active-filters__item')) {
-            resetFilters.classList.add('_hide')
+            resetFiltersBtn.classList.add('_hide')
         }
     }
 
@@ -72,7 +78,9 @@ document.addEventListener('click', function (e) {
             })
         }
 
-        resetFilters.classList.add('_hide')
+        resetFiltersBtn.classList.add('_hide')
+        resetFilters();
+        productFilter();
     }
 
     // select actions

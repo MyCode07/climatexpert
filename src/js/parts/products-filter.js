@@ -9,34 +9,76 @@ const body = document.body;
 const url = adminajaxurl.ajaxurl;
 
 export async function productFilter() {
-    const formdata = new FormData(productFitlerForm);
+    let formdata = new FormData(productFitlerForm);
+
+    const queryString = new URLSearchParams(formdata).toString()
     formdata.append('action', 'ajaxfilter')
 
-    body.classList.add('_loading')
-    let response = await fetch(url, {
-        method: 'POST',
-        body: formdata
-    });
+    let newUrl = `${window.location.pathname}?${queryString}${window.location.hash}`;
+    if (newUrl[newUrl.length - 1] == '?') {
+        newUrl = newUrl.replace('?', '')
+    }
 
-    let result = await response.json();
-    if (response.ok) {
-        window.history.pushState(null, null, productSection.dataset.pagenumlink);
+    window.history.replaceState({}, '', newUrl)
 
-        const title = document.querySelector('title')
-        const pageTitle = document.querySelector('input#page-title');
+    formdata = Object.fromEntries(formdata)
+    console.log(formdata);
 
-        title.textContent = pageTitle.value
-        productGrid.innerHTML = result.products;
-        productCount.innerHTML = result.count;
+    $.ajax({
+        url: url,
+        cache: false,
+        timeout: 300000,
+        type: 'GET',
+        data: formdata,
+        beforeSend: function () {
+            body.classList.add('_loading')
+        },
+        success: function (result) {
+            console.log(result);
 
-        if (productsPagination && result.pagination) {
-            productsPagination.innerHTML = result.pagination;
+            const title = document.querySelector('title')
+            const pageTitle = document.querySelector('input#page-title');
+
+            title.textContent = pageTitle.value
+            productGrid.innerHTML = result.products;
+            productCount.innerHTML = result.count;
+
+            if (productsPagination) {
+                if (result.pagination) {
+                    productsPagination.innerHTML = result.pagination;
+                }
+                else {
+                    productsPagination.innerHTML = '';
+                }
+            }
+        },
+        error: function (error) {
+            console.log(error);
+        },
+        complete: function () {
+            body.classList.remove('_loading')
         }
-        body.classList.remove('_loading')
+    })
+}
+
+export function removeSearchParam(name) {
+    const url = new URL(window.location.href)
+    const params = new URLSearchParams(url.search.slice(1))
+    params.delete(name);
+
+    let newUrl = `${window.location.pathname}?${params}${window.location.hash}`;
+    if (newUrl[newUrl.length - 1] == '?') {
+        newUrl = newUrl.replace('?', '')
     }
-    else {
-        body.classList.remove('_loading')
-    }
+
+    window.history.replaceState({}, '', newUrl)
+    console.log(newUrl);
+}
+
+
+// reset filters
+export function resetFilters() {
+    window.history.pushState(null, null, productSection.dataset.pagenumlink);
 }
 
 document.addEventListener('click', function (e) {
