@@ -140,34 +140,14 @@
             </div>
             <div class="filter-item">
                 <h3>Цена</h3>
-                <div class="filter-item__price">
-                    <div >
-                        <span>от</span>
-                        <input type="text" class="price-input" id="price-from" name="price-from" value="20.000">
+                <div class="range" data-min="500000" data-max="50000000" data-step="100000">
+                    <div class="range-slider"></div>
+                    <div class="range-output">
+                        <div class="range-min"><ins>500 000</ins> ₽</div>
+                        <div class="range-max"><ins>500 000 000</ins> ₽</div>
                     </div>
-                    <span>—</span>
-                    <div >
-                        <span>до</span>
-                        <input type="text" class="price-input" id="price-to" name="price-to" value="100.000">
-                    </div>
-                </div>
-                <div class="filter-item__grid">
-                    <label for="20000-39999">
-                        <input type="checkbox" id="Белый" name="price" hidden>
-                        <span>20.000-39.999</span>
-                    </label>
-                    <label for="40000-69999">
-                        <input type="checkbox" id="40000-69999" name="price" hidden>
-                        <span>40000-69.999</span>
-                    </label>
-                    <label for="70000-99999">
-                        <input type="checkbox" id="70000-99999" name="square" hidden>
-                        <span>70.000-99.999</span>
-                    </label>
                 </div>
             </div>
-
-
         </div>
         <div class="filter-actions">
             <button class="_btn _btn-blue" data-close-filter>

@@ -300,6 +300,11 @@
             width: 100%;
         }
         min-width: 215px;
+
+        [disable] {
+            background-color: $blue;
+            color: $white;
+        }
     }
 
     // .filter-actions

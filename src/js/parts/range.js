@@ -1,4 +1,5 @@
 import dhx from 'dhx-suite'
+import { productFilter } from './products-filter.js';
 
 const formatter = new Intl.NumberFormat("ru");
 const activeFilters = document.querySelector('.active-filters__body');
@@ -10,6 +11,8 @@ export function range() {
 
     if (!ranges) return;
 
+
+    let sliders = []
     ranges.forEach(range => {
 
         const minOutElem = range.querySelector('.range-min');
@@ -25,6 +28,8 @@ export function range() {
             range: true,
             value: [min, max]
         });
+
+        sliders.push(sliderRange)
 
 
         sliderRange.events.on('change', () => {
@@ -48,10 +53,28 @@ export function range() {
                 removeFitlerItem('price_max')
             }
 
+
         });
+
+
+        // ajax product func here
+        sliderRange.events.on("mouseUp", function (e) {
+            if (!range.closest('#product-fitler-form')) {
+                // productFilter();
+            }
+        });
+
+
 
         document.addEventListener('click', function (e) {
             let targetEl = e.target;
+
+            // ajax product func here
+            if (targetEl.classList.contains('dhx_slider__track') && !targetEl.closest('#product-fitler-form')) {
+                // productFilter();
+            }
+
+
 
             if (targetEl.dataset.customField == 'price_min') {
                 sliderRange.setValue([min, sliderRange.getValue()[1]])
@@ -60,12 +83,27 @@ export function range() {
                 sliderRange.setValue([sliderRange.getValue()[0], max])
             }
 
-            if (targetEl.classList.contains('reset-filters') && sliderRange) {
+            if (targetEl.hasAttribute('data-reset-filters') && sliderRange) {
                 sliderRange.setValue([min, max])
             }
         })
 
     });
+
+
+    document.addEventListener('click', function (e) {
+        let targetEl = e.target;
+
+        if (targetEl.hasAttribute('data-open-filter')) {
+            sliders[0].setValue(sliders[1].getValue())
+        }
+
+        if (targetEl.hasAttribute('data-close-filter')) {
+            sliders[1].setValue(sliders[0].getValue())
+        }
+    })
+
+
 }
 
 

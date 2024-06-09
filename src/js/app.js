@@ -14,6 +14,7 @@ import "./parts/service-image-hover.js";
 import "./parts/filters.js";
 import "./parts/cart.js";
 import "./parts/single-product.js";
+import "./parts/products-filter.js";
 
 range();
 accorden();
