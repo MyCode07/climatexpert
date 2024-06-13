@@ -374,24 +374,13 @@
 }
 
 .offer {
-    background-color: $blue;
     position: relative;
 
     .grid {
         @media (min-width: 1025px) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    ._container {
-        @media (min-width: 1025px) {
-            max-width: none;
-            padding-left: 0;
-        }
-
-        @media (min-width: 1921px) {
-            padding-right: 50px;
+            gap: 25px;
         }
     }
 
@@ -402,37 +391,15 @@
         height: 100%;
         position: relative;
         pointer-events: none;
-
-        @media (max-width: 1024px) {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        &:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            top: 0;
-            width: 120%;
-            height: 100%;
-            z-index: 1;
-
-            @media (min-width: 1025px) {
-                background: linear-gradient(90deg, rgba($color: $blue, $alpha: 0.15) 0%, $blue 100%);
-            }
-
-            @media (max-width: 1024px) {
-                background-color: rgba($color: $blue, $alpha: 0.9);
-            }
-        }
+        border-radius: 12px;
+        overflow: hidden;
 
         img,
         picture {
             position: absolute;
             left: 0;
             top: 0;
-            width: 120%;
+            width: 100%;
             height: 100%;
             object-fit: cover;
 
@@ -440,15 +407,41 @@
                 object-position: bottom center;
             }
         }
+
+        &:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%);
+        }
     }
 
     // .offer-content
 
     &-content {
+        border-radius: 12px;
+        background-color: $blue;
         position: relative;
         z-index: 1;
-        @include adaptive-value("padding-top", 100, 50, 1);
-        @include adaptive-value("padding-bottom", 100, 50, 1);
+        @include adaptive-value("padding-top", 50, 30, 1);
+        @include adaptive-value("padding-bottom", 50, 30, 1);
+        @include adaptive-value("padding-left", 50, 15, 1);
+        @include adaptive-value("padding-right", 50, 15, 1);
+
+        @media (max-width: 1024px) {
+            border-radius: 6px;
+        }
+
+        @media (max-width: 425px) {
+            border-radius: 4px;
+            width: 100vw;
+            padding-left: 15px;
+            margin-left: -15px;
+            border-radius: 0;
+        }
 
         // .offer-content__top
 
@@ -458,12 +451,26 @@
             max-width: 700px;
 
             h6 {
-                @include adaptive-value("font-size", 40, 20, 1);
+                @include adaptive-value("font-size", 30, 16, 1);
                 @include adaptive-value("margin-bottom", 50, 25, 1);
+                font-weight: 400;
+                text-transform: uppercase;
+                line-height: 1.2;
+
+                @media (min-width: 426px) {
+                    br {
+                        display: none;
+                    }
+                }
+
+                span {
+                    font-style: italic;
+                }
             }
 
             p {
-                @include adaptive-value("font-size", 20, 14, 1);
+                @include adaptive-value("font-size", 18, 14, 1);
+                opacity: 0.7;
             }
         }
     }
@@ -739,6 +746,19 @@
         // .gallery__tabs-content
 
         &-content {
+            ._video {
+                width: 100%;
+                height: 100%;
+            }
+
+            picture,
+            video,
+            iframe,
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
         }
     }
 
@@ -1492,8 +1512,13 @@
 .about-hero {
     h1 {
         font-family: AA_Duke;
-        @include adaptive-value("font-size", 400, 65, 1);
+        @include adaptive-value("font-size", 350, 65, 1);
         font-weight: 100;
+        letter-spacing: -2px;
+        
+        @media (max-width: 425px) {
+            letter-spacing: 0;
+        }
     }
 
     .breadcrumbs {

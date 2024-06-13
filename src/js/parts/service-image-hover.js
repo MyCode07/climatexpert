@@ -50,8 +50,8 @@ if (categorySections.length && !isMobile.any()) {
                     const height = e.target.closest('.category-item').querySelector('.category-item__image ._default').getBoundingClientRect().height;
 
                     gsap.to(scroll, {
-                        y: (i + 1) * -height,
-                        duration: 0.7,
+                        y: (i + 1) * -height - 20,
+                        duration: 0.7, 
                     })
                 })
 

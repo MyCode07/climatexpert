@@ -29,6 +29,10 @@
         @media (max-width: 768px) {
             padding-bottom: 25px;
         }
+
+        .swiper-slide{
+            height: auto;
+        }
     }
 
     p {
@@ -512,6 +516,8 @@
             &._active {
                 display: block;
             }
+            
+         
 
             // .tab-content__downloadfile
 

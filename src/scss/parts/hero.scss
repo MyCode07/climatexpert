@@ -53,6 +53,17 @@
         }
     }
 }
+.hero-home {
+    ._btn {
+        @media (any-hover: hover) {
+            &:hover {
+                div {
+                    border-color: $white;
+                }
+            }
+        }
+    }
+}
 
 .bg-img {
     position: absolute;
@@ -155,4 +166,39 @@
 
 .hero-mb-0 {
     margin: 0 !important;
+}
+
+.gallery-page {
+    .gallery__tabs {
+        width: 100%;
+        button {
+            width: 100%;
+        }
+    }
+}
+
+.error-main {
+    background-color: $black;
+}
+
+.error-hero {
+    @include adaptive-value("margin-bottom", 100, 0, 1);
+
+    background-color: $black;
+    h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    ._btn {
+        width: 100%;
+
+        @media (any-hover: hover) {
+            &:hover {
+                div {
+                    color: $black;
+                }
+            }
+        }
+    }
 }

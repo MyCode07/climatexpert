@@ -2,6 +2,58 @@
     background-color: $blue;
     position: relative;
 
+    &.error-footer {
+        background-color: $black;
+
+        .socialmedia {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+
+            div {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    div {
+                        background-color: $white;
+                    }
+                    .socialmedia-icon {
+                        fill: $black;
+                    }
+
+                    span {
+                        color: $black;
+                    }
+                }
+            }
+
+            .socialmedia-arrow {
+                svg {
+                    fill: $black;
+                }
+            }
+
+            // .socialmedia-icon
+
+            &-icon {
+                fill: $white;
+            }
+        }
+
+        ._btn {
+            color: $black;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    div {
+                        background-color: unset;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
     &:after {
         position: absolute;
         content: "";
@@ -328,10 +380,21 @@
     // .socialmedia-arrow
 
     &-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 3px;
+        background-color: $white;
+        border-radius: 3px;
         margin-left: auto;
         width: 16px;
         height: 16px;
-        fill: $white;
+        flex: 0 0 auto;
+
+        svg {
+            fill: $blue;
+        }
 
         @media (max-width: 768px) {
             width: 12px;
@@ -356,6 +419,5 @@
     span {
         transition: color 0.3s ease 0s;
         width: 100%;
-
     }
 }

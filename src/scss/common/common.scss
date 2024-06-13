@@ -69,7 +69,7 @@ main {
 }
 
 h1 {
-    @include adaptive-value("font-size", 80, 26, 1);
+    @include adaptive-value("font-size", 70, 26, 1);
     font-family: Rubik;
     line-height: 1.1;
 }
@@ -411,9 +411,6 @@ button {
                     color: $blue;
                     background-color: $white;
 
-                    svg {
-                        transform: scale(1.2);
-                    }
                 }
             }
         }
@@ -442,7 +439,7 @@ button {
     &-blue {
         div {
             background-color: $blue;
-            border: 1px solid;
+            border: 1px solid transparent;
         }
         color: $white;
 
