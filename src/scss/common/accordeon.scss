@@ -90,19 +90,19 @@
             &-height {
                 overflow: hidden;
 
-                ol {
-                    & > :not(:last-child) {
-                        border-bottom: 1px solid $stroke;
-                    }
+                // ol {
+                //     & > :not(:last-child) {
+                //         border-bottom: 1px solid $stroke;
+                //     }
 
-                    li {
-                        padding: 20px 0;
+                //     li {
+                //         padding: 20px 0;
 
-                        @media (max-width: 768px) {
-                            padding: 15px 0;
-                        }
-                    }
-                }
+                //         @media (max-width: 768px) {
+                //             padding: 15px 0;
+                //         }
+                //     }
+                // }
             }
         }
     }

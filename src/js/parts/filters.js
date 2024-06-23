@@ -2,8 +2,9 @@ import { lockPadding, unLockPadding } from '../utils/lockPadding.js';
 import { productFilter, removeSearchParam, resetFilters } from './products-filter.js';
 
 const filter = document.querySelector('.filter');
-const activeFilters = document.querySelector('.active-filters__body');
 const resetFiltersBtn = document.querySelector('.active-filters .reset-filters')
+
+const filterCheckboxes = document.querySelectorAll('.filter input[type="checkbox"]')
 
 
 document.addEventListener('click', function (e) {
@@ -23,26 +24,47 @@ document.addEventListener('click', function (e) {
 
 
     // select items actions
-    if ((targetEl.closest('.select-body') || targetEl.closest('.select-input')) && targetEl.hasAttribute('data-id')) {
+    if (targetEl.closest('.select-body') && targetEl.hasAttribute('data-id')) {
         const select = targetEl.closest('.select-input');
         const input = targetEl.querySelector('input')
 
         select.classList.remove('_active')
-        resetFiltersBtn.classList.remove('_hide')
-        productFilter();
 
         if (input) {
-            const item = `<button class="active-filters__item" data-custom-field="${input.id}">${targetEl.textContent}</button>`
-            if (!activeFilters.querySelector(`[data-custom-field="${input.id}"]`)) {
-                activeFilters.insertAdjacentHTML('afterbegin', item)
+            const filterElem = filter.querySelector(`input[id="${input.id.replace('select-', '')}"]`);
+            if (filterElem) {
+                if (input.checked) {
+                    filterElem.checked = false;
+                }
+                else {
+                    filterElem.checked = true;
+                }
             }
         }
 
+        if (targetEl.closest('.filter-sort')) {
+            const sort = targetEl.querySelector('a').dataset.sort
+            console.log(sort);
+            document.querySelector('.filter input[name="orderby"]').value = sort;
+        }
+
+        productFilter();
     }
 
     // remove active filters
     if (targetEl.classList.contains('active-filters__item')) {
         const name = targetEl.dataset.customField;
+
+
+        const filterElem = filter.querySelector(`input[id="${name}"]`);
+        const filterElemInSelect = document.querySelector(`.filters-area input[id="select-${name}"]`);
+        if (filterElem) {
+            filterElem.checked = false
+        }
+        if (filterElemInSelect) {
+            filterElemInSelect.checked = false
+        }
+
         removeSearchParam(name)
 
         targetEl.remove()
@@ -50,6 +72,7 @@ document.addEventListener('click', function (e) {
 
         if (!document.querySelector('.active-filters__item')) {
             resetFiltersBtn.classList.add('_hide')
+            document.querySelector('.filter input[name="orderby"]').value = '';
         }
     }
 
@@ -77,6 +100,7 @@ document.addEventListener('click', function (e) {
                 }
             })
         }
+        document.querySelector('.filter input[name="orderby"]').value = '';
 
         resetFiltersBtn.classList.add('_hide')
         resetFilters();
@@ -102,4 +126,19 @@ document.addEventListener('click', function (e) {
     }
 })
 
+if (filterCheckboxes.length) {
+    filterCheckboxes.forEach(input => {
+        const filterElem = document.querySelector(`.filter-fast input[id="select-${input.id}"]`);
 
+        input.addEventListener('change', () => {
+            if (filterElem) {
+                if (input.checked) {
+                    filterElem.checked = true;
+                }
+                else {
+                    filterElem.checked = false;
+                }
+            }
+        })
+    })
+}

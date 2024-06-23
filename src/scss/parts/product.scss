@@ -40,8 +40,15 @@
         max-width: none;
     }
 
-    h1 {
+    // .single-product__brend
+
+    &__brend {
         text-align: center;
+
+        font-family: AA_Duke;
+        @include adaptive-value("font-size", 160, 35, 1);
+        line-height: 0.9;
+        text-transform: uppercase;
 
         @media (min-width: 600px) {
             position: absolute;
@@ -50,6 +57,15 @@
             transform: translate(-50%, 0);
             width: 100%;
         }
+    }
+
+    h1 {
+        color: $blue;
+        font-weight: 600;
+        line-height: 1;
+        font-family: inherit;
+        @include adaptive-value("font-size", 70, 26, 1);
+        text-transform: unset;
     }
 
     .pagination {
@@ -388,25 +404,6 @@
 
         &__characteristics {
             .accordion__item-content-height {
-                ol {
-                    & > :last-child {
-                        border-bottom: 1px solid $stroke;
-                    }
-
-                    li {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        gap: 20px;
-
-                        & > :first-child {
-                        }
-
-                        & > :last-child {
-                            text-align: right;
-                        }
-                    }
-                }
             }
 
             ._more {
@@ -450,6 +447,63 @@
                 }
             }
         }
+
+        .added_to_cart {
+            margin-top: 1.25em;
+            padding: 1em;
+            background-color: $blue;
+            color: $white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+
+            border: 1px solid $blue;
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: $white;
+                    color: $blue;
+
+                    &:after {
+                        background-image: url("@img/icons/link-arrow.svg");
+                    }
+                }
+            }
+
+            &:after {
+                content: "";
+                margin-left: auto;
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-image: url("@img/icons/link-arrow-white.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+}
+
+._chars {
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        padding: 20px 0;
+        border-bottom: 1px solid $stroke;
+
+        & > :last-child {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            padding: 15px 0;
+        }
     }
 }
 
@@ -469,6 +523,11 @@
 
             &__downloadfile {
             }
+        }
+
+        ._chars {
+            max-width: 900px;
+            margin-inline: auto;
         }
     }
 

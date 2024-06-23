@@ -46,18 +46,11 @@
                         </svg>
                         <div class="select">
                             <div class="select-body">
-                                <label data-id="0" data-disabled>Регион</label>
-                                <label data-id="vestel" for="razmer-vestel">
-                                    Vestel
-                                    <input type="checkbox" name="razmer[]" id="razmer-vestel" value="vestel">
-                                </label>
-                                <label data-id="asdasd" for="razmer-asdasd">
-                                    asdasd
-                                    <input type="checkbox" name="razmer[]" id="razmer-asdasd" value="asdasd">
-                                </label>
-                                <label data-id="ssssss" for="razmer-ssssss">
-                                    ssssss
-                                    <input type="checkbox" name="razmer[]" id="razmer-ssssss" value="ssssss">
+                                <!-- <label data-id="0" for="select-brend">
+                                    Все <input type="checkbox" id="select-brend" value="">
+                                </label> -->
+                                <label data-id="vestel" for="select-brend-vestel">
+                                    Vestel <input type="checkbox" id="select-brend-vestel" value="vestel">
                                 </label>
                             </div>
                         </div>
@@ -71,11 +64,11 @@
                         </svg>
                         <div class="select">
                             <div class="select-body">
-                                <div class="range" data-min="500000" data-max="50000000" data-step="100000">
+                                <div class="range" data-min="18900" data-max="181900" data-step="100">
                                     <div class="range-slider"></div>
                                     <div class="range-output">
-                                        <div class="range-min"><ins>500 000</ins> ₽</div>
-                                        <div class="range-max"><ins>500 000 000</ins> ₽</div>
+                                        <div class="range-min"><ins>18 900</ins> ₽</div>
+                                        <div class="range-max"><ins>181 900</ins> ₽</div>
                                     </div>
                                 </div>
                             </div>
@@ -86,23 +79,24 @@
                     <img src="img/icons/open-filters.svg" alt="">
                 </button>
                 <div class="filter-fast filter-sort">
-                    <div class="select-input">
-                        <label data-id="1">По умолчанию</label>
+                    <div class="select-input ">
+                        <span data-id="0">
+                            Сначала новые </span>
                         <svg width="8" height="6" viewBox="0 0 8 6">
-                            <use xlink:href='img/svg/icons.svg#link-arrow' />
+                            <use xlink:href="img/svg/icons.svg#link-arrow">
+                            </use>
                         </svg>
                         <div class="select">
                             <div class="select-body">
-                                <span data-id="0" data-disabled>Регион</span>
-                                <span data-id="1">Москва</span>
-                                <span data-id="2">Белгородская область</span>
-                                <span data-id="3">Брянская область</span>
-                                <span data-id="4">Владимирская область</span>
-                                <span data-id="5">Вологодская область</span>
-                                <span data-id="6">Ивановская область</span>
-                                <span data-id="7">Калужская область</span>
-                                <span data-id="8">Костромская область</span>
-                                <span data-id="9">Краснодарский край</span>
+                                <label data-id="0">
+                                    <a href="?orderby=date" data-sort="date">Сначала новые</a>
+                                </label>
+                                <label data-id="1">
+                                    <a href="?orderby=price" data-sort="price">По цене ↑</a>
+                                </label>
+                                <label data-id="2">
+                                    <a href="?orderby=price-desc" data-sort="price-desc">По цене ↓</a>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -470,7 +464,8 @@
                                     href="https://climat.test-yeremyan.site/product-category/kondiczionery/napolno-potolochnye-kondiczionery/page/2/?orderby=price-desc">2</a>
                             </li>
                             <li><a class="next page-numbers"
-                                    href="https://climat.test-yeremyan.site/product-category/kondiczionery/napolno-potolochnye-kondiczionery/page/2/?orderby=price-desc"><svg width="18" height="15" viewBox="0 0 18 15">
+                                    href="https://climat.test-yeremyan.site/product-category/kondiczionery/napolno-potolochnye-kondiczionery/page/2/?orderby=price-desc"><svg
+                                        width="18" height="15" viewBox="0 0 18 15">
                                         <use xlink:href="img/svg/icons.svg#arrow-right"></use>
                                     </svg></a>
                             </li>

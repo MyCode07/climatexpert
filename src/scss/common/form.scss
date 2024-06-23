@@ -54,6 +54,16 @@
                 height: 100px;
             }
         }
+
+        &._error input,
+        &._error textarea {
+            color: red;
+            box-shadow: 0 0 1px 1px red;
+        }
+
+        &._error span {
+            color: red !important;
+        }
     }
 
     // .form__item
@@ -76,6 +86,7 @@
     // .form__bottom
 
     &__bottom {
+        position: relative;
         display: flex;
         gap: 15px;
 
@@ -83,6 +94,7 @@
             flex-direction: column;
         }
 
+        & > div,
         button {
             width: 100%;
         }
@@ -135,4 +147,57 @@
             }
         }
     }
+}
+
+.wpcf7-response-output {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+}
+
+form.submitting {
+    pointer-events: none;
+    position: relative;
+
+    &:before {
+        display: block;
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: $blue, $alpha: 0.5);
+        border-radius: 8px;
+    }
+}
+
+.wpcf7-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+}
+
+pre {
+    max-width: 900px;
+    overflow: hidden;
+}
+
+.qty-btn * {
+    pointer-events: none;
+}
+
+.wpcf7-form ._btn div {
+    position: relative;
+}
+
+.wpcf7-form ._btn div input {
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+    pointer-events: all;
 }

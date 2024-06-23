@@ -305,6 +305,10 @@
             background-color: $blue;
             color: $white;
         }
+
+        a {
+            pointer-events: none;
+        }
     }
 
     // .filter-actions
@@ -498,8 +502,8 @@
             }
         }
 
-        span,
-        svg {
+        & > label,
+        & > svg {
             pointer-events: none;
             fill: currentColor;
             text-transform: uppercase;
@@ -515,6 +519,7 @@
         svg {
             width: 10px;
             transition: transform 0.3s ease 0s;
+            pointer-events: none;
         }
 
         &._active {
