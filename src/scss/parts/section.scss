@@ -60,6 +60,18 @@
     // .category-item
 
     &-item {
+        // .cart-item__links
+
+        &__links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            @media (max-width: 1024px) {
+                gap: 5px;
+            }
+        }
+
         .grid {
             @media (min-width: 769px) {
                 display: grid;
@@ -173,15 +185,22 @@
             &-scroll {
                 width: 100%;
                 height: 100%;
+                position: relative;
             }
 
             .img {
+                position: absolute;
+                inset: 0;
                 width: 100%;
                 height: 100%;
                 flex: 1 1 auto;
                 display: block;
                 border-radius: 2px;
                 overflow: hidden;
+
+                &:not(._default) {
+                    opacity: 0;
+                }
 
                 img,
                 picture {
@@ -1515,7 +1534,7 @@
         @include adaptive-value("font-size", 350, 65, 1);
         font-weight: 100;
         letter-spacing: -2px;
-        
+
         @media (max-width: 425px) {
             letter-spacing: 0;
         }

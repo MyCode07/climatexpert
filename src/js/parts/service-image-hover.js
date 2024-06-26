@@ -34,38 +34,58 @@ if (categoriesWrapper) {
 
 
 const categorySections = document.querySelectorAll('.category .category-item');
-let locked = false;
+const duration = 0.5
 
 if (categorySections.length && !isMobile.any()) {
     categorySections.forEach(cat => {
         const links = cat.querySelectorAll('ul li');
-        const scroll = cat.querySelector('.category-item__image-scroll');
+        const images = cat.querySelectorAll('.category-item__image-scroll .img');
+        const wrapper = cat.querySelector('.category-item__links');
 
         if (links.length) {
-
             links.forEach((link, i) => {
+                link.addEventListener('mouseenter', () => {
+                    const activeLink = cat.querySelector('._enter');
 
-                link.addEventListener('mouseenter', (e) => {
-                    locked = true
-                    const height = e.target.closest('.category-item').querySelector('.category-item__image ._default').getBoundingClientRect().height;
+                    if (activeLink) {
+                        activeLink.classList.remove('_enter')
+                    }
 
-                    gsap.to(scroll, {
-                        y: (i + 1) * -height - 20,
-                        duration: 0.7, 
-                    })
-                })
+                    link.classList.add('_enter')
 
-                link.addEventListener('mouseleave', (e) => {
-                    locked = false
-
-                    setTimeout(() => {
-                        if (locked == false) {
-                            gsap.to(scroll, {
-                                y: 0,
-                                duration: 1,
+                    images.forEach((img, index) => {
+                        if (index == i + 1) {
+                            gsap.to(img, {
+                                opacity: 1,
+                                duration: duration,
                             })
                         }
-                    }, 16);
+                        else {
+                            gsap.to(img, {
+                                opacity: 0,
+                                duration: duration,
+                            })
+                        }
+                    })
+
+                })
+
+            })
+
+            wrapper.addEventListener('mouseleave', (e) => {
+                images.forEach((img, index) => {
+                    if (index == 0) {
+                        gsap.to(img, {
+                            opacity: 1,
+                            duration: duration,
+                        })
+                    }
+                    else {
+                        gsap.to(img, {
+                            opacity: 0,
+                            duration: duration,
+                        })
+                    }
                 })
             })
         }
