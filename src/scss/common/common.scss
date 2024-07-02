@@ -68,6 +68,14 @@ main {
     }
 }
 
+img,
+svg,
+picture,
+figure {
+    max-width: 100%;
+    height: auto;
+}
+
 h1 {
     @include adaptive-value("font-size", 70, 26, 1);
     font-family: Rubik;
@@ -410,7 +418,6 @@ button {
                 div {
                     color: $blue;
                     background-color: $white;
-
                 }
             }
         }

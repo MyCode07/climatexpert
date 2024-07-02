@@ -1939,13 +1939,24 @@
         & > .woocommerce {
             flex: 1 1 auto;
         }
+
+        // .cart-table__left
+
+        &__left {
+            flex: 1 1 auto;
+        }
+
+        // .cart-table__right
+
+        &__right {
+            flex: 0 0 auto;
+            width: 33%;
+        }
     }
 
     // .cart-items
 
     &-items {
-        flex: 1 1 auto;
-
         & > :not(:last-child) {
             margin-bottom: 25px;
 
@@ -1958,11 +1969,12 @@
     // .cart-order
 
     &-order {
-        flex: 0 0 auto;
-        width: 33%;
         padding: 25px;
         border: 1px solid $stroke;
         background-color: $white;
+
+        position: sticky;
+        top: 120px;
 
         @media (max-width: 1024px) {
             padding: 25px 15px 50px 15px;
