@@ -5,7 +5,9 @@ const filter = document.querySelector('.filter');
 const resetFiltersBtn = document.querySelector('.active-filters .reset-filters')
 
 const filterCheckboxes = document.querySelectorAll('.filter input[type="checkbox"]')
-
+const minPriceInput = document.querySelector('.filter input[name="min_price"]');
+const maxPriceInput = document.querySelector('.filter input[name="max_price"]');
+const orderbyInput = document.querySelector('.filter input[name="orderby"]');
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
@@ -44,8 +46,7 @@ document.addEventListener('click', function (e) {
 
         if (targetEl.closest('.filter-sort')) {
             const sort = targetEl.querySelector('a').dataset.sort
-            console.log(sort);
-            document.querySelector('.filter input[name="orderby"]').value = sort;
+            orderbyInput.value = sort;
         }
 
         productFilter();
@@ -65,6 +66,14 @@ document.addEventListener('click', function (e) {
             filterElemInSelect.checked = false
         }
 
+        if (name == 'max_price') {
+            maxPriceInput.value = maxPriceInput.dataset.value
+        }
+
+        if (name == 'min_price') {
+            minPriceInput.value = minPriceInput.dataset.value
+        }
+
         removeSearchParam(name)
 
         targetEl.remove()
@@ -72,8 +81,12 @@ document.addEventListener('click', function (e) {
 
         if (!document.querySelector('.active-filters__item')) {
             resetFiltersBtn.classList.add('_hide')
-            document.querySelector('.filter input[name="orderby"]').value = '';
+            orderbyInput.value = '';
         }
+    }
+
+    if (targetEl.hasAttribute('apply-filters')) {
+        productFilter();
     }
 
 
@@ -100,7 +113,7 @@ document.addEventListener('click', function (e) {
                 }
             })
         }
-        document.querySelector('.filter input[name="orderby"]').value = '';
+        orderbyInput.value = '';
 
         resetFiltersBtn.classList.add('_hide')
         resetFilters();

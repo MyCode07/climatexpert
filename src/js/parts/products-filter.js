@@ -26,6 +26,10 @@ export async function productFilter() {
         formdata.delete('max_price')
     }
 
+    if (orderbyInput.value == '') {
+        formdata.delete('orderby')
+    }
+
     const queryString = new URLSearchParams(formdata).toString()
     formdata.append('action', 'ajaxfilter')
 
@@ -39,10 +43,6 @@ export async function productFilter() {
 
     formdata = Object.fromEntries(formdata)
     console.log(formdata);
-
-    if (minPriceInput.value == minPriceInput.dataset.value && maxPriceInput.value == maxPriceInput.dataset.value && orderbyInput.value == '') {
-        resetFilters()
-    }
 
     $.ajax({
         url: url,
@@ -149,13 +149,8 @@ export function removeSearchParam(name) {
 
 // reset filters
 export function resetFilters() {
+    minPriceInput.value = minPriceInput.dataset.value
+    maxPriceInput.value = maxPriceInput.dataset.value
+    orderbyInput.value = ''
     window.history.pushState(null, null, productSection.dataset.pagenumlink);
 }
-
-document.addEventListener('click', function (e) {
-    let targetEl = e.target;
-
-    if (targetEl.hasAttribute('data-close-filter') && targetEl.closest('.filter-actions')) {
-        productFilter();
-    }
-})

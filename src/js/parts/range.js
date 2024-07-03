@@ -15,6 +15,8 @@ export function range() {
 
 
     let sliders = []
+    let mins = []
+    let maxs = []
     ranges.forEach(range => {
 
         const minOutElem = range.querySelector('.range-min');
@@ -32,7 +34,8 @@ export function range() {
         });
 
         sliders.push(sliderRange)
-
+        mins.push(min)
+        maxs.push(max)
 
         sliderRange.events.on('change', () => {
             minOutElem.dataset.value = sliderRange.getValue()[0]
@@ -58,47 +61,50 @@ export function range() {
             maxPriceInput.value = sliderRange.getValue()[1];
         });
 
-
         // ajax product func here
         sliderRange.events.on("mouseUp", function (e) {
             if (!range.closest('#product-fitler-form')) {
                 productFilter();
             }
         });
-
-
-
-        document.addEventListener('click', function (e) {
-            let targetEl = e.target;
-
-            // ajax product func here
-            if (targetEl.classList.contains('dhx_slider__track') && !targetEl.closest('#product-fitler-form')) {
-                productFilter();
-            }
-
-            // reset min price
-            if (targetEl.dataset.customField == 'min_price') {
-                sliderRange.setValue([min, sliderRange.getValue()[1]])
-
-                minPriceInput.value = min;
-            }
-
-            // reset max price
-            if (targetEl.dataset.customField == 'max_price') {
-                sliderRange.setValue([sliderRange.getValue()[0], max])
-
-                maxPriceInput.value = max
-            }
-
-            // reset all filters
-            if (targetEl.hasAttribute('data-reset-filters') && sliderRange) {
-                sliderRange.setValue([min, max])
-                minPriceInput.value = min;
-                maxPriceInput.value = max
-            }
-        })
-
     });
+
+    document.addEventListener('click', function (e) {
+        let targetEl = e.target;
+
+        // ajax product func here
+        if (targetEl.classList.contains('dhx_slider__track') && !targetEl.closest('#product-fitler-form')) {
+            productFilter();
+        }
+
+        // reset min price
+        if (targetEl.dataset.customField == 'min_price') {
+
+            sliders.forEach((slide, i) => {
+                slide.setValue([mins[i], slide.getValue()[1]])
+                minPriceInput.value = mins[i];
+            })
+        }
+
+        // reset max price
+        if (targetEl.dataset.customField == 'max_price') {
+            sliders.forEach((slide, i) => {
+                slide.setValue([slide.getValue()[0], maxs[i]])
+                maxPriceInput.value = maxs[i]
+            })
+
+        }
+
+        // reset all filters
+        if (targetEl.hasAttribute('data-reset-filters') && sliders) {
+            sliders.forEach((slide, i) => {
+                slide.setValue([mins[i], maxs[i]])
+
+                minPriceInput.value = mins[i];
+                maxPriceInput.value = maxs[i]
+            })
+        }
+    })
 
 
     document.addEventListener('click', function (e) {

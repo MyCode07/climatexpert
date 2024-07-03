@@ -191,6 +191,7 @@
             color: $blue;
 
             .product-price {
+                font-weight: 600;
                 @include adaptive-value("font-size", 60, 26, 1);
 
                 @media (max-width: 600px) {
@@ -221,10 +222,6 @@
                 height: auto;
             }
 
-            div p {
-                font-weight: 600;
-            }
-
             button {
                 width: 100%;
             }
@@ -252,6 +249,16 @@
                     @media (max-width: 425px) {
                         height: 60px;
                     }
+                }
+            }
+
+            .checkbox-label {
+                border-bottom: 1px solid $stroke;
+
+                padding: 20px 0;
+
+                @media (max-width: 768px) {
+                    padding: 15px 0px;
                 }
             }
         }
@@ -385,15 +392,6 @@
 
                         @media (max-width: 768px) {
                             padding: 15px 0px;
-                        }
-
-                        p {
-                            flex: 1 1 100%;
-                            @include adaptive-value("font-size", 16, 14, 1);
-                        }
-
-                        span {
-                            white-space: nowrap;
                         }
                     }
                 }
@@ -661,4 +659,65 @@ bdi {
 del {
     opacity: 0.5;
     text-decoration: line-through;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+
+    p {
+        margin-right: 15px;
+        @include adaptive-value("font-size", 16, 14, 1);
+        flex: 1 1 100%;
+    }
+
+    span {
+        @include adaptive-value("font-size", 16, 14, 1);
+        white-space: nowrap;
+    }
+
+    input {
+        display: none;
+
+        &:checked + .checkbox {
+            background-color: $blue;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    .checkbox {
+        flex: 0 0 auto;
+        width: 20px;
+        height: 20px;
+        border: 1px solid rgba($color: $blue, $alpha: 0.5);
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        @media (max-width: 768px) {
+            width: 15px;
+            height: 15px;
+        }
+
+        &:after {
+            position: relative;
+            content: "";
+            background-image: url("@img/icons/check.svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 2;
+            width: 12px;
+            height: 8px;
+            display: none;
+        }
+    }
 }

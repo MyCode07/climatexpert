@@ -41,13 +41,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow-y: auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
 
         .popup-body {
-            padding: 40px;
             background-color: $white;
             text-align: center;
             position: relative;
+            max-width: 600px;
+            margin-inline: auto;
+
+            @include adaptive-value("padding", 40, 15, 1);
+            @include adaptive-value("padding-top", 40, 25, 1);
 
             @include adaptive-value("border-radius", 12, 6, 1);
 
@@ -71,6 +78,33 @@
 
         &#error {
             color: red;
+        }
+
+        &#buy ._container {
+            display: block;
+        }
+
+        form {
+            @include adaptive-value("margin-top", 30, 15, 1);
+
+            textarea {
+                height: 100px;
+
+                @media (max-width: 1024px) {
+                    height: 80px;
+                }
+            }
+
+            .form__bottom span {
+                @media (min-width: 1025px) {
+                    text-align: left;
+                }
+
+                @media (max-width: 1024px) {
+                    width: 100%;
+                    max-width: none;
+                }
+            }
         }
     }
 
