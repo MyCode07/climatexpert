@@ -14,7 +14,7 @@
                 <h3>Бренд</h3>
                 <div class="filter-item__grid">
                     <label for="brend-vestel">
-                        <input type="checkbox" id="brend-vestel" name="brend[]" value="Vestel" hidden="">
+                        <input type="checkbox" id="brend-vestel" name="brend" value="Vestel" hidden="">
                         <span>Vestel</span>
                     </label>
                 </div>
@@ -23,7 +23,7 @@
                 <h3>Цвет</h3>
                 <div class="filter-item__grid">
                     <label for="czvet-belyj">
-                        <input type="checkbox" id="czvet-belyj" name="czvet[]" value="Белый" hidden="">
+                        <input type="checkbox" id="czvet-belyj" name="czvet" value="Белый" hidden="">
                         <span>Белый</span>
                     </label>
                 </div>
@@ -32,12 +32,12 @@
                 <h3>Компрессор</h3>
                 <div class="filter-item__grid">
                     <label for="kompressor-invertornyj">
-                        <input type="checkbox" id="kompressor-invertornyj" name="kompressor[]" value="Инверторный"
+                        <input type="checkbox" id="kompressor-invertornyj" name="kompressor" value="Инверторный"
                             hidden="">
                         <span>Инверторный</span>
                     </label>
                     <label for="kompressor-obychnyj">
-                        <input type="checkbox" id="kompressor-obychnyj" name="kompressor[]" value="Обычный" hidden="">
+                        <input type="checkbox" id="kompressor-obychnyj" name="kompressor" value="Обычный" hidden="">
                         <span>Обычный</span>
                     </label>
                 </div>
@@ -45,10 +45,25 @@
             <div class="filter-item">
                 <h3>Площадь, м2</h3>
                 <div class="filter-item__grid">
-                    <label for="ploshhad-do-21-22-kvt">
-                        <input type="checkbox" id="ploshhad-do-21-22-kvt" name="ploshhad[]" value="до 21 (2,2 кВт)"
-                            hidden="">
-                        <span>до 21 (2,2 кВт)</span>
+                    <label for="ploshad-1218-m2">
+                        <input type="checkbox" id="ploshad-1218-m2" name="ploshad" value="12-18 м2" hidden="">
+                        <span>12~18 м2</span>
+                    </label>
+                    <label for="ploshad-1623-m2">
+                        <input type="checkbox" id="ploshad-1623-m2" name="ploshad" value="16-23 м2" hidden="">
+                        <span>16~23 м2</span>
+                    </label>
+                    <label for="ploshad-2435-m2">
+                        <input type="checkbox" id="ploshad-2435-m2" name="ploshad" value="24-35 м2" hidden="">
+                        <span>24~35 м2</span>
+                    </label>
+                    <label for="ploshad-3247">
+                        <input type="checkbox" id="ploshad-3247" name="ploshad" value="32-47" hidden="">
+                        <span>32~47</span>
+                    </label>
+                    <label for="ploshad-916-m2">
+                        <input type="checkbox" id="ploshad-916-m2" name="ploshad" value="9-16 м2" hidden="">
+                        <span>9~16 м2</span>
                     </label>
                 </div>
             </div>
@@ -56,17 +71,17 @@
                 <h3>Управление Wi-Fi</h3>
                 <div class="filter-item__grid">
                     <label for="upravlenie-wi-fi-wi-fi-vstroennyj">
-                        <input type="checkbox" id="upravlenie-wi-fi-wi-fi-vstroennyj" name="upravlenie-wi-fi[]"
+                        <input type="checkbox" id="upravlenie-wi-fi-wi-fi-vstroennyj" name="upravlenie-wi-fi"
                             value="Wi-Fi встроенный" hidden="">
                         <span>Wi-Fi встроенный</span>
                     </label>
                     <label for="upravlenie-wi-fi-wi-fi-opczionalno">
-                        <input type="checkbox" id="upravlenie-wi-fi-wi-fi-opczionalno" name="upravlenie-wi-fi[]"
+                        <input type="checkbox" id="upravlenie-wi-fi-wi-fi-opczionalno" name="upravlenie-wi-fi"
                             value="Wi-Fi опционально" hidden="">
                         <span>Wi-Fi опционально</span>
                     </label>
                     <label for="upravlenie-wi-fi-net">
-                        <input type="checkbox" id="upravlenie-wi-fi-net" name="upravlenie-wi-fi[]" value="Нет"
+                        <input type="checkbox" id="upravlenie-wi-fi-net" name="upravlenie-wi-fi" value="Нет"
                             hidden="">
                         <span>Нет</span>
                     </label>
@@ -89,10 +104,10 @@
             <input type="hidden" id="orderby" name="orderby" value="date">
         </form>
         <div class="filter-actions">
-            <button class="_btn _btn-blue" data-close-filter>
+            <button class="_btn _btn-blue" data-close-filter apply-filters>
                 <div>применить</div>
             </button>
-            <button class="_btn _btn-border _btn-border-stroke" data-close-filter data-reset-filters>
+            <button class="_btn _btn-border _btn-border-stroke" data-close-filter data-reset-filters apply-filters>
                 <div>сбросить</div>
             </button>
         </div>

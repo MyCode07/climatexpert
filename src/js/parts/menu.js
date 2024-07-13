@@ -6,6 +6,7 @@ import { gsap } from 'gsap'
 const burger = document.querySelector('.header__burger');
 const header = document.querySelector('.header');
 const menu = document.querySelector('.menu');
+const searchBtn = document.querySelector('.header__search');
 
 if (burger) {
     burger.addEventListener('click', (e) => {
@@ -158,5 +159,32 @@ document.addEventListener('click', function (e) {
         openCatalogBtns.forEach(btn => {
             btn.classList.remove('_active');
         })
+    }
+
+    if (targetEl.classList.contains('header__search') && window.innerWidth <= 768) {
+        document.querySelector('.header__search').classList.toggle('_active');
+
+        if (menu.classList.contains('_open')) {
+            menu.classList.remove('_open');
+            burger.classList.remove('_active');
+            unLockPadding();
+        }
+
+        if (!document.querySelector('.header__search._active')) {
+            header.classList.remove('_active');
+        }
+        else {
+            header.classList.add('_active');
+        }
+    }
+
+    if (!targetEl.classList.contains('header__search') && !targetEl.closest('.header__search') && document.querySelector('.header__search._active') && window.innerWidth <= 768) {
+        document.querySelector('.header__search').classList.remove('_active');
+        if (menu.classList.contains('_open') || catalogMenu.classList.contains('_open')) {
+            header.classList.add('_active');
+        }
+        else {
+            header.classList.remove('_active');
+        }
     }
 })

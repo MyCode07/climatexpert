@@ -179,19 +179,6 @@
                     @media (min-width: 1025px) {
                         min-width: 200px;
                     }
-
-                    @media (max-width: 1024px) {
-                        svg {
-                            position: relative;
-                            top: 1px;
-                        }
-                    }
-
-                    @media (max-width: 768px) {
-                        input {
-                            display: none;
-                        }
-                    }
                 }
 
                 @media (any-hover: hover) {
@@ -260,6 +247,44 @@
     // .header__search
 
     &__search {
+        @media (max-width: 768px) {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:not(._active) {
+                form {
+                    display: none;
+                }
+            }
+
+            &._active {
+                .opn {
+                    display: none;
+                }
+
+                .cls {
+                    display: block;
+                }
+            }
+        }
+
+        & > svg {
+            display: none;
+            pointer-events: none;
+
+            @media (max-width: 768px) {
+                display: block;
+                width: 20px;
+                height: 20px;
+            }
+
+            &.cls {
+                display: none;
+            }
+        }
+
         form {
             padding: 24px;
             height: 100%;
@@ -276,6 +301,23 @@
             @media (max-width: 1024px) {
                 align-items: center;
                 gap: 5px;
+            }
+
+            @media (max-width: 768px) {
+                position: absolute;
+                left: 0;
+                top: 100%;
+                z-index: 1;
+                background-color: $white;
+                box-shadow: 0px 0px 2px 1px rgba($color: $black, $alpha: 0.1);
+                width: 50vw;
+                color: $blue;
+            }
+
+            @media (max-width: 600px) {
+                left: unset;
+                right: 0;
+                width: calc(70vw - 2.5px);
             }
         }
 
@@ -294,7 +336,6 @@
         display: flex;
         align-items: flex-end;
         gap: 10px;
-        height: 100%;
 
         padding: 24px;
 

@@ -41,8 +41,9 @@ export async function productFilter() {
 
     window.history.replaceState({}, '', newUrl)
 
-    formdata = Object.fromEntries(formdata)
-    console.log(formdata);
+    // formdata = Object.fromEntries(formdata)
+    formdata = getUnifiedFormData(formdata)
+    console.log('formdata', formdata);
 
     $.ajax({
         url: url,
@@ -82,6 +83,27 @@ export async function productFilter() {
     })
 }
 
+function getUnifiedFormData(formdata) {
+    return [
+        ...formdata.entries()
+    ]
+        .reduce((result, [key, value]) => {
+
+            if (Object.hasOwn(result, key)) {
+                if (Array.isArray(result[key])) {
+
+                    result[key].push(value);
+                } else {
+                    result[key] = [result[key], value];
+                }
+            } else {
+                result[key] = value;
+            }
+            return result;
+
+        }, {});
+}
+
 function activeFitlersAction() {
 
     if (filterCheckboxes.length) {
@@ -92,6 +114,12 @@ function activeFitlersAction() {
 
             if (input.checked) {
                 addActiveFilter(type, id, input.value)
+            }
+            else {
+                const active = activeFiltersWrap.querySelector(`[data-custom-field="${id}"]`)
+                if (active) {
+                    active.remove()
+                }
             }
         })
     }

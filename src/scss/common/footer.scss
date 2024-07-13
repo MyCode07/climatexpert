@@ -28,6 +28,8 @@
             }
 
             .socialmedia-arrow {
+                fill: $black;
+
                 svg {
                     fill: $black;
                 }
@@ -391,6 +393,7 @@
         width: 16px;
         height: 16px;
         flex: 0 0 auto;
+        fill: $blue;
 
         svg {
             fill: $blue;

@@ -12,26 +12,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (forms.length) {
         forms.forEach(form => {
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                removeExistingErrorMsgs(form);
-                let error = validateForm(form)
-                console.log(error);
-
-                const formData = new FormData(form);
-
-                if (formFile && formFile.files[0]) {
-                    formData.append('file', formFile.files[0]);
-                }
-
-
+            if (form.id != 'searchform') {
                 form.addEventListener('submit', async function (e) {
                     e.preventDefault();
 
+                    removeExistingErrorMsgs(form);
                     let error = validateForm(form)
+                    console.log(error);
 
-                    let formData = new FormData(form);
+                    const formData = new FormData(form);
+
                     formData.append('action', 'ajax_form');
 
                     const formFile = form.querySelector('input[name="file"]');
@@ -59,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             products.push({
                                 'name': item.querySelector('.cart-item__title').textContent,
                                 'link': item.querySelector('.cart-item__title').href,
-                                'price': item.querySelector('.cart-item__price .amount').textContent,
+                                'price': item.querySelector('.cart-item__price').dataset.price,
                                 'qty': item.querySelector('.qty').value,
                                 'services': prodServices
                             })
@@ -111,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         form.classList.remove('_sending');
                     }
                 })
-            })
 
-            checkCheckBoxes(form)
+                checkCheckBoxes(form)
+            }
         })
     }
 
