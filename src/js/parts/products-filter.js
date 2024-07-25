@@ -3,7 +3,7 @@ const productSection = document.querySelector('.products');
 const fitlersArea = document.querySelector('.filters-area');
 const productGrid = document.querySelector('.products .grid');
 const productCount = document.querySelector('.woocommerce-result-count');
-const productsPagination = document.querySelector('.woocommerce-pagination');
+const productsPagination = document.querySelector('.products-pagination');
 const body = document.body;
 const resetFiltersBtn = document.querySelector('.active-filters .reset-filters')
 const filterCheckboxes = document.querySelectorAll('.filter input[type="checkbox"]')
@@ -13,7 +13,9 @@ const minPriceInput = document.querySelector('.filter input[name="min_price"]');
 const maxPriceInput = document.querySelector('.filter input[name="max_price"]');
 const orderbyInput = document.querySelector('.filter input[name="orderby"]');
 
+const category = document.querySelector('[data-category]');
 const url = adminajaxurl.ajaxurl;
+
 
 export async function productFilter() {
     let formdata = new FormData(productFitlerForm);
@@ -30,16 +32,35 @@ export async function productFilter() {
         formdata.delete('orderby')
     }
 
+    const querydata = getUnifiedFormData(formdata)
+
+
     const queryString = new URLSearchParams(formdata).toString()
-    formdata.append('action', 'ajaxfilter')
+    let string = '';
+    for (const key in querydata) {
+        if (Object.hasOwnProperty.call(querydata, key)) {
+            const value = querydata[key];
 
+            let str = value;
+            if (Object.is(value)) {
+                str = value.split(',')
+            }
 
-    let newUrl = `${window.location.pathname}?${queryString}${window.location.hash}`;
+            string += key + '=' + str + '&';
+        }
+    }
+
+    string = string.substring(0, string.length - 1);
+
+    let newUrl = `${window.location.pathname}?${string}${window.location.hash}`;
     if (newUrl[newUrl.length - 1] == '?') {
         newUrl = newUrl.replace('?', '')
     }
 
     window.history.replaceState({}, '', newUrl)
+
+    formdata.append('action', 'ajaxfilter')
+    formdata.append('product_cat', category.dataset.category)
 
     // formdata = Object.fromEntries(formdata)
     formdata = getUnifiedFormData(formdata)
@@ -72,13 +93,26 @@ export async function productFilter() {
                     productsPagination.innerHTML = '';
                 }
             }
+
         },
         error: function (error) {
             console.log(error);
         },
+
+        // помянть также хлебные крошки и заголовки страницы 
         complete: function () {
             body.classList.remove('_loading')
             activeFitlersAction();
+
+            const queryString = new URLSearchParams(window.location.search).toString();
+
+            let newUrl = `${window.location.pathname}?${queryString}${window.location.hash}`;
+            if (newUrl[newUrl.length - 1] == '?') {
+                newUrl = newUrl.replace('?', '')
+            }
+            newUrl = newUrl.replace(/page\/\d\//, '');
+            console.log(newUrl);
+            window.history.replaceState({}, '', newUrl)
         }
     })
 }

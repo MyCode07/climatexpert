@@ -52,6 +52,7 @@ document.addEventListener('click', function (e) {
         productFilter();
     }
 
+    // принудительно вернутся ма 1 страницу при клике на ремове активе филтер
     // remove active filters
     if (targetEl.classList.contains('active-filters__item')) {
         const name = targetEl.dataset.customField;
