@@ -10,7 +10,7 @@ body {
     font-family: Rubik;
     font-weight: 400;
     background-color: $white;
-    color: $blue;
+    color: $black;
     @include adaptive-value("font-size", 16, 14, 1);
 
     &._noscroll {
@@ -82,8 +82,15 @@ h1 {
     line-height: 1.1;
 }
 
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: $blue;
+}
+
+h2 {
     font-weight: 600;
     line-height: 1;
     @include adaptive-value("font-size", 70, 26, 1);
@@ -228,7 +235,9 @@ p {
     }
 
     .new {
-        background-color: $black;
+        font-weight: 500;
+        color: $blue;
+        border: 1px solid $blue;
     }
     .sale {
         background-color: $blue;

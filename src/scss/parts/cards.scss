@@ -65,11 +65,14 @@
         }
     }
 
+    h3{
+        color: $blue;
+    }
+
     h3,
     p {
         position: relative;
         z-index: 2;
-        color: $blue;
         transition: color 0.3s ease 0s;
 
         @media (max-width: 768px) {
@@ -127,7 +130,7 @@
         gap: 5px;
     }
 
-    * {
+    span {
         color: $blue;
     }
 

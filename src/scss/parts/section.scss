@@ -470,6 +470,8 @@
             max-width: 700px;
 
             h6 {
+                color: $white;
+
                 @include adaptive-value("font-size", 30, 16, 1);
                 @include adaptive-value("margin-bottom", 50, 25, 1);
                 font-weight: 400;
@@ -643,7 +645,6 @@
             }
 
             p {
-                color: $blue;
                 font-style: italic;
                 @include adaptive-value("font-size", 20, 16, 1);
 
@@ -693,7 +694,6 @@
 
                 span,
                 label {
-                    color: $blue;
                     font-weight: 500;
                     text-transform: uppercase;
                 }
@@ -748,9 +748,8 @@
 
         button {
             opacity: 0.5;
-            color: $blue;
             padding: 0 15px 15px 15px;
-            border-bottom: 2px solid $blue;
+            border-bottom: 2px solid currentColor;
             transition: opacity 0.3s ease 0s;
 
             @media (max-width: 600px) {
