@@ -1,7 +1,8 @@
 .service-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 10px;
     border-radius: 12px;
     border: 1px solid $stroke;
     position: relative;
@@ -32,14 +33,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        opacity: 0;
-        background: linear-gradient(0deg, rgba(0, 82, 205, 0.4) 0%, rgba(0, 82, 205, 0.4) 100%);
-        transition: opacity 0.3s ease 0s;
-
-        @media (max-width: 768px) {
-            opacity: 1;
-            background: linear-gradient(0deg, rgba(0, 82, 205, 0.4) 0%, rgba(0, 82, 205, 0.4) 100%);
-        }
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
     }
 
     img {
@@ -49,15 +43,13 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0;
-        transition: all 0.8s ease 0s;
-
-        @media (max-width: 768px) {
-            opacity: 1;
-        }
+        transition: transform 4s ease 0s;
     }
 
     p {
+        @media (min-width: 769px) {
+            max-width: 75%;
+        }
         @media (max-width: 1025px) {
             br {
                 display: none;
@@ -65,35 +57,18 @@
         }
     }
 
-    h3{
-        color: $blue;
-    }
-
     h3,
     p {
+        color: $white;
         position: relative;
         z-index: 2;
         transition: color 0.3s ease 0s;
-
-        @media (max-width: 768px) {
-            color: $white;
-        }
     }
 
     @media (any-hover: hover) {
         &:hover {
-            img,
-            &:after {
-                opacity: 1;
-            }
-
             img {
-                transform: scale(1.2);
-            }
-
-            h3,
-            p {
-                color: $white;
+                transform: scale(1.4);
             }
         }
     }
@@ -104,13 +79,13 @@
     flex-direction: column;
     justify-content: space-between;
     height: auto;
-    padding: 35px;
+    padding: 30px;
     border: 1px solid $stroke;
     transition: border-color 0.3s ease 0s;
 
     @media (any-hover: hover) {
         &:hover {
-            border-color: $blue;
+            border-color: $black;
 
             .product-card__image {
                 img,
@@ -131,7 +106,7 @@
     }
 
     span {
-        color: $blue;
+        color: $black;
     }
 
     // .product-card__top
@@ -149,10 +124,17 @@
             display: flex;
             flex-direction: column;
 
+            * {
+                font-weight: 500;
+            }
+
+            h3 {
+                text-transform: inherit;
+            }
+
             h3,
             span {
                 @include adaptive-value("font-size", 18, 14, 1);
-                font-weight: 500;
                 line-height: 1;
 
                 @media (min-width: 1201px) {
@@ -163,6 +145,15 @@
             span {
                 white-space: nowrap;
             }
+        }
+
+        del {
+            font-weight: 400;
+            @include adaptive-value("font-size", 16, 12, 1);
+        }
+
+        ins {
+            @include adaptive-value("font-size", 22, 16, 1);
         }
 
         ._labels {
@@ -224,15 +215,12 @@
 
             span {
                 @include adaptive-value("font-size", 16, 12, 1);
-
-                @media (max-width: 600px) {
-                    font-weight: 500;
-                }
+                font-weight: 500;
             }
 
             svg,
             img {
-                fill: $blue;
+                fill: $black;
                 height: 17px;
 
                 @media (max-width: 768px) {
@@ -248,9 +236,8 @@
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid $stroke;
-    border-radius: 4px;
 
-    gap: 50px;
+    gap: 10px;
     padding: 25px;
 
     @media (max-width: 1440px) {
@@ -260,41 +247,33 @@
     h4 {
         font-weight: 500;
         line-height: 1;
-        @include adaptive-value("font-size", 24, 16, 1);
+        @include adaptive-value("font-size", 22, 18, 1);
     }
 
-    // .advantage-card__content
+    .icon {
+        margin-bottom: 50px;
 
-    &__top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
+        @media (max-width: 1024px) {
+            margin-bottom: 25px;
+        }
 
-        .icon {
-            svg {
-                height: 100px;
-                width: 100px;
+        svg {
+            height: 70px;
+            width: 70px;
 
-                @media (max-width: 1440px) {
-                    width: 70px;
-                    height: 70px;
-                }
+            @media (max-width: 1440px) {
+                width: 50px;
+                height: 50px;
+            }
 
-                @media (max-width: 1024px) {
-                    width: 60px;
-                    height: 60px;
-                }
+            fill: $blue;
 
-                fill: $blue;
+            rect {
+                fill: $black;
+            }
 
-                rect {
-                    fill: $blue;
-                }
-
-                path {
-                    fill: $white;
-                }
+            path {
+                fill: $white;
             }
         }
     }
@@ -371,18 +350,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 50px;
+    padding: 35px;
     border: 1px solid $stroke;
-    border-radius: 12px;
 
-    transition: all 0.3s ease 0s;
+    transition: border-color 0.3s ease 0s;
 
     @media (max-width: 1440px) {
-        padding: 25px;
+        padding: 20px;
     }
 
     @media (max-width: 1024px) {
-        border-radius: 6px;
         padding: 15px;
     }
 
@@ -421,7 +398,7 @@
             height: 100%;
             object-fit: contain;
 
-            transition: transform 0.3s ease 0s;
+            transition: transform 0.7s ease 0s;
         }
     }
 
@@ -432,7 +409,7 @@
             @include adaptive-value("font-size", 30, 16, 1);
             font-weight: 500;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
     }
 
@@ -449,30 +426,34 @@
     }
 
     ._btn-arrow {
-        transition: border-radius 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
 
         @media (max-width: 992px) {
             display: none;
+        }
+        svg {
+            fill: $black;
         }
     }
 
     @media (any-hover: hover) {
         &:hover {
-            background-color: $blue;
+            border-color: $black;
 
             ._btn-arrow {
+                background-color: $blue;
                 border-radius: 50%;
+
+                svg {
+                    fill: $white;
+                }
             }
 
             .special-card__image {
                 img,
                 picture {
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                 }
-            }
-
-            * {
-                color: $white;
             }
         }
     }

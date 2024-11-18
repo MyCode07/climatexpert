@@ -13,6 +13,8 @@ if (sliders.length) {
             new Swiper(slider, {
                 modules: [Autoplay, Pagination],
                 slidesPerView: 1,
+                centeredSlides: true,
+                spaceBetween: 50,
                 pagination: {
                     el: pagination,
                     clickable: true,

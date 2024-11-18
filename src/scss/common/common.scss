@@ -7,7 +7,7 @@ body {
     font-family: "SuisseIntl";
     font-style: normal;
     line-height: normal;
-    font-family: Rubik;
+    font-family: Inter;
     font-weight: 400;
     background-color: $white;
     color: $black;
@@ -77,8 +77,8 @@ figure {
 }
 
 h1 {
-    @include adaptive-value("font-size", 70, 26, 1);
-    font-family: Rubik;
+    @include adaptive-value("font-size", 64, 26, 1);
+    font-weight: 500;
     line-height: 1.1;
 }
 
@@ -87,19 +87,20 @@ h3,
 h4,
 h5,
 h6 {
-    color: $blue;
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
-    @include adaptive-value("font-size", 70, 26, 1);
+    @include adaptive-value("font-size", 48, 18, 1);
+    text-transform: uppercase;
 }
 
 h3 {
     @include adaptive-value("font-size", 24, 18, 1);
     font-weight: 500;
     line-height: 1;
+    text-transform: uppercase;
 }
 
 h4 {
@@ -153,22 +154,35 @@ p {
     ul {
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
-
         gap: 5px;
+        overflow-x: auto;
+        width: 100vw;
+        padding-inline: 15px;
+        margin-left: -15px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     li {
-        color: $blue;
+        color: $black;
         font-size: 14px;
 
         display: flex;
         align-items: center;
         gap: 5px;
+        font-weight: 500;
 
         a {
+            white-space: nowrap;
             transition: color 0.3s ease 0s;
-            color: rgba($color: $blue, $alpha: 0.5);
+            color: rgba($color: $black, $alpha: 0.5);
+            @include adaptive-value("font-size", 16, 12, 1);
+        }
+
+        span {
+            white-space: nowrap;
             @include adaptive-value("font-size", 16, 12, 1);
         }
 
@@ -179,7 +193,7 @@ p {
         @media (any-hover: hover) {
             &:hover {
                 a {
-                    color: $blue;
+                    color: $black;
                 }
             }
         }
@@ -236,10 +250,14 @@ p {
 
     .new {
         font-weight: 500;
-        color: $blue;
-        border: 1px solid $blue;
+        color: $black;
+        border: 1px solid $black;
     }
     .sale {
+        background-color: $black;
+    }
+
+    .guarante {
         background-color: $blue;
     }
 
@@ -254,7 +272,7 @@ p {
 
         span {
             white-space: nowrap;
-            color: $blue;
+            color: $black;
             @media (max-width: 600px) {
                 font-weight: 500;
                 font-size: 12px;
@@ -346,8 +364,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    border-radius: 4px;
+    gap: 2px;
+    border-radius: 2px;
     height: 70px;
 
     font-weight: 500;
@@ -360,12 +378,16 @@ button {
         height: 60px;
     }
 
+    @media (max-width: 768px) {
+        height: 50px;
+    }
+
     * {
         pointer-events: none;
     }
 
     div {
-        border-radius: 4px;
+        border-radius: 2px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -388,6 +410,11 @@ button {
             height: 14px;
             flex: 0 0 auto;
             transition: fill 0.3s ease 0s;
+
+            @media (max-width: 768px) {
+                width: 15px;
+                height: 12px;
+            }
         }
     }
 
@@ -398,6 +425,9 @@ button {
 
         @media (max-width: 1024px) {
             width: 60px;
+        }
+        @media (max-width: 768px) {
+            width: 50px;
         }
     }
 
@@ -562,11 +592,11 @@ button {
         width: 6px;
         height: 6px;
         border-radius: 4px;
-        background-color: rgba($color: $blue, $alpha: 0.5);
+        background-color: rgba($color: $black, $alpha: 0.5);
         transition: all 0.3s ease 0s;
 
         &.swiper-pagination-bullet-active {
-            background-color: $blue;
+            background-color: $black;
             width: 30px;
         }
     }
@@ -574,12 +604,16 @@ button {
 
 ._list-box {
     li {
-        color: $blue;
-        padding: 20px 0;
+        color: $black;
+        padding: 15px 0;
         border-bottom: 1px solid $stroke;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        &:first-child {
+            padding-top: 0;
+        }
 
         &:has(a) {
             padding: 0;

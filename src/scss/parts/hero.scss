@@ -9,7 +9,7 @@
 
         width: 100%;
         height: 100%;
-        background: linear-gradient(0deg, rgba(0, 82, 205, 0.25) 0%, rgba(0, 82, 205, 0.25) 100%);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.17) 0%, rgba(0, 0, 0, 0.5) 100%);
     }
 
     // .hero__container
@@ -23,8 +23,8 @@
         position: relative;
         z-index: 2;
 
-        @include adaptive-value("padding-top", 600, 400, 1);
-        @include adaptive-value("padding-bottom", 70, 50, 1);
+        @include adaptive-value("padding-top", 630, 400, 1);
+        @include adaptive-value("padding-bottom", 40, 20, 1);
 
         display: flex;
         align-items: flex-end;
@@ -34,17 +34,12 @@
         @media (max-width: 1024px) {
             flex-direction: column;
             align-items: flex-start;
+            gap: 30px;
         }
     }
 
     h1 {
         color: $white;
-
-        @media (max-width: 768px) {
-            br {
-                display: none;
-            }
-        }
     }
 
     ._btn {
@@ -84,7 +79,7 @@
 }
 
 .pages-hero {
-    background-color: $blue;
+    background-color: $black;
     color: $white;
 
     .section__body {
@@ -92,28 +87,24 @@
         position: relative;
         z-index: 2;
 
-        @include adaptive-value("padding-top", 150, 125, 1);
+        @include adaptive-value("padding-top", 175, 125, 1);
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 50px;
-
-        @media (max-width: 1024px) {
-            gap: 25px;
-        }
     }
 
     h1 {
         font-family: AA_Duke;
-        @include adaptive-value("font-size", 160, 35, 1);
+        @include adaptive-value("font-size", 120, 30, 1);
         line-height: 0.9;
         text-transform: uppercase;
     }
 
     p {
-        max-width: 600px;
-        @include adaptive-value("font-size", 24, 14, 1);
+        max-width: 500px;
+        @include adaptive-value("font-size", 22, 14, 1);
         font-weight: 400;
         line-height: 1.2;
     }
@@ -137,7 +128,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 1.2em;
             min-height: 100%;
 
             border: 1px solid rgba($color: $white, $alpha: 0.5);

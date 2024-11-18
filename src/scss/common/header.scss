@@ -10,7 +10,7 @@
     &._active,
     &._sticky {
         background-color: $white;
-        color: $blue;
+        color: $black;
 
         nav > ul > li {
             svg {
@@ -19,7 +19,7 @@
         }
 
         .header__burger span {
-            background-color: $blue;
+            background-color: $black;
         }
     }
 
@@ -100,6 +100,7 @@
                 cursor: pointer;
                 transition: all 0.3s ease 0s;
                 min-width: 60px;
+                font-weight: 500;
 
                 ._close {
                     display: none;
@@ -183,15 +184,14 @@
 
                 @media (any-hover: hover) {
                     &:hover {
-                        background-color: $white;
-                        color: $blue;
+                        background-color: rgba($color: $black, $alpha: 0.1);
                         border-bottom-color: transparent;
                     }
                 }
 
                 &._active {
                     background-color: $white;
-                    color: $blue;
+                    color: $black;
                     border-bottom-color: transparent;
 
                     .dropdown-menu {
@@ -206,8 +206,6 @@
 
                     ._close {
                         display: block;
-                        stroke: currentColor;
-                        stroke-width: 2px;
                     }
 
                     &.services-link > button > svg {
@@ -370,7 +368,7 @@
         button {
             position: relative;
             width: 24px !important;
-            height: 16px;
+            height: 12px;
             flex: 0 0 auto;
 
             span {
@@ -504,7 +502,7 @@
     left: 0;
     width: 100vw;
     overflow: auto;
-    color: $blue;
+    color: $black;
 
     padding: 50px;
     height: calc(100vh - 96px);
@@ -566,15 +564,10 @@
 
             @media (any-hover: hover) {
                 &:hover {
-                    color: $white;
-                    background-color: $blue;
+                    background-color: rgba($color: $black, $alpha: 0.1);
 
                     ._btn-arrow {
                         border-radius: 50%;
-
-                        svg {
-                            fill: $blue;
-                        }
                     }
                 }
             }

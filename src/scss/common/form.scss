@@ -18,7 +18,7 @@
             padding: 15px;
             display: flex;
             align-items: center;
-            border-radius: 4px;
+            border-radius: 2px;
             border: 1px solid $stroke;
 
             transition: border-color 0.3s ease 0s;
@@ -29,7 +29,7 @@
 
             @media (any-hover: hover) {
                 &:hover {
-                    border-color: $blue;
+                    border-color: $black;
                 }
             }
         }
@@ -103,10 +103,10 @@
             max-width: 280px;
             width: 100%;
             font-size: 12px;
-            color: rgba($color: $blue, $alpha: 0.5);
+            color: rgba($color: $black, $alpha: 0.7);
 
             a {
-                color: $blue;
+                color: $black;
 
                 @media (any-hover: hover) {
                     &:hover {

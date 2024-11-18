@@ -365,7 +365,7 @@
         }
     }
 
-    color: $blue;
+    color: $black;
 
     nav {
         @media (min-width: 1025px) {
@@ -399,6 +399,10 @@
                 align-items: center;
                 justify-content: space-between;
 
+                & > a {
+                    width: fit-content;
+                }
+
                 button {
                     width: 90px;
                     padding-right: 25px;
@@ -409,7 +413,7 @@
                     }
 
                     svg {
-                        stroke: $blue;
+                        stroke: $black;
                         width: 20px;
                         height: 20px;
                         margin-left: auto;
@@ -438,7 +442,7 @@
                             top: 0;
                             width: calc(100% + 140px);
                             height: 100%;
-                            background-color: $blue;
+                            background-color: $black;
                             opacity: 0;
                             transition: opacity 0.3s ease 0s;
                             z-index: -1;
@@ -448,15 +452,9 @@
                     @media (any-hover: hover) {
                         &:hover {
                             & > a {
-                                color: $white;
-
                                 &:before {
-                                    opacity: 1;
+                                    opacity: 0.1;
                                 }
-                            }
-
-                            & > button svg {
-                                stroke: $white;
                             }
                         }
                     }
@@ -524,12 +522,7 @@
 
                                 @media (any-hover: hover) {
                                     &:hover {
-                                        background-color: $blue;
-                                        color: $white;
-
-                                        &:after {
-                                            background-image: url("@img/icons/link-arrow-white.svg");
-                                        }
+                                        background-color: rgba($color: $black, $alpha: 0.1);
                                     }
                                 }
 
@@ -610,19 +603,16 @@
 
     &__links {
         margin-top: auto;
-
         width: 50%;
-        padding-top: 50px;
-
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        border-top: 1px solid $stroke;
 
         @media (max-width: 1440px) {
             padding-top: 25px;
         }
 
         @media (max-width: 1024px) {
-            padding-top: 15px;
             width: 100%;
         }
 
@@ -637,17 +627,19 @@
             justify-content: flex-end;
 
             text-transform: uppercase;
-            color: $white;
+            color: $black;
             padding: 25px 50px;
+            transition: background-color 0.3s ease 0s;
 
             @include adaptive-value("font-size", 24, 20, 1);
 
             &:first-child {
-                background-color: $blue;
+                // background-color: $blue;
+                border-right: 1px solid $stroke;
             }
 
             &:last-child {
-                background-color: $black;
+                // background-color: $black;
             }
 
             span {
@@ -656,6 +648,8 @@
 
             @media (any-hover: hover) {
                 &:hover {
+                    background-color: rgba($color: $black, $alpha: 0.1);
+
                     span {
                         transform: translate(0, -15px);
                     }
