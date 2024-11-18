@@ -92,12 +92,12 @@ h6 {
 h2 {
     font-weight: 500;
     line-height: 1;
-    @include adaptive-value("font-size", 48, 18, 1);
+    @include adaptive-value("font-size", 48, 20, 1);
     text-transform: uppercase;
 }
 
 h3 {
-    @include adaptive-value("font-size", 24, 18, 1);
+    @include adaptive-value("font-size", 24, 16, 1);
     font-weight: 500;
     line-height: 1;
     text-transform: uppercase;
@@ -127,8 +127,9 @@ p {
 
 .text-box {
     position: relative;
-    padding: 100px 0;
     @include adaptive-value("margin-bottom", 150, 50, 1);
+    @include adaptive-value("padding-top", 100, 50, 1);
+    @include adaptive-value("padding-bottom", 100, 50, 1);
 
     &:after {
         position: absolute;
@@ -603,6 +604,12 @@ button {
 }
 
 ._list-box {
+    margin: 30px 0;
+
+    @media (max-width: 768px) {
+        margin: 15px 0;
+    }
+
     li {
         color: $black;
         padding: 15px 0;
@@ -670,7 +677,11 @@ button {
 
 ._text-box {
     p {
-        color: $blue;
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 30, 15, 1);
+        }
+        line-height: 1.4;
+        color: $black;
 
         @media (min-width: 768px) {
             max-width: 50%;

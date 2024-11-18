@@ -20,7 +20,7 @@
     }
 
     * {
-        color: $blue;
+        color: $black;
     }
 
     &._open {
@@ -37,7 +37,7 @@
         min-height: 100%;
 
         padding-top: 75px;
-        padding-bottom: 50px;
+        padding-bottom: 25px;
 
         @media (max-width: 1024px) {
             padding-top: 100px;
@@ -49,7 +49,7 @@
     }
 
     nav {
-        margin-bottom: 50px;
+        margin-bottom: 100px;
 
         @media (min-width: 1025px) {
             &:before {
@@ -91,7 +91,7 @@
                     }
 
                     svg {
-                        stroke: $blue;
+                        stroke: $black;
                         width: 20px;
                         height: 20px;
                         margin-left: auto;
@@ -300,7 +300,7 @@
         }
 
         a {
-            font-size: 18px;
+            @include adaptive-value("font-size", 18, 16, 1);
             line-height: 1.1;
         }
     }
@@ -309,7 +309,6 @@
 
     &__socialmedias {
         display: flex;
-        justify-content: flex-end;
         align-items: center;
         gap: 15px;
     }
@@ -346,7 +345,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 50px;
+        gap: 100px;
         min-height: 100%;
 
         padding-top: 150px;
@@ -549,10 +548,8 @@
                 @media (max-width: 1024px) {
                     flex-wrap: wrap;
 
-                    &:not(:last-child) {
-                        padding-bottom: 25px;
-                        border-bottom: 1px solid $stroke;
-                    }
+                    padding-bottom: 25px;
+                    border-bottom: 1px solid $stroke;
 
                     & > a {
                         max-width: calc(100% - 60px);
@@ -606,18 +603,9 @@
         width: 50%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        border-top: 1px solid $stroke;
-
-        @media (max-width: 1440px) {
-            padding-top: 25px;
-        }
 
         @media (max-width: 1024px) {
             width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
         }
 
         a {
@@ -625,13 +613,13 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-
+            border-top: 1px solid $stroke;
             text-transform: uppercase;
             color: $black;
             padding: 25px 50px;
             transition: background-color 0.3s ease 0s;
-
-            @include adaptive-value("font-size", 24, 20, 1);
+            font-weight: 500;
+            @include adaptive-value("font-size", 24, 16, 1);
 
             &:first-child {
                 // background-color: $blue;
@@ -663,6 +651,10 @@
 
             @media (max-width: 1024px) {
                 padding: 15px;
+            }
+
+            @media (max-width: 768px) {
+                height: 100px;
             }
         }
     }

@@ -307,15 +307,23 @@
                 top: 100%;
                 z-index: 1;
                 background-color: $white;
-                box-shadow: 0px 0px 2px 1px rgba($color: $black, $alpha: 0.1);
+                box-shadow: 0px 2px 2px 0px rgba($color: $black, $alpha: 0.1);
                 width: 50vw;
-                color: $blue;
+                color: $black;
             }
 
             @media (max-width: 600px) {
                 left: unset;
-                right: 0;
-                width: calc(70vw - 2.5px);
+                right: -1px;
+                width: calc(71vw - 2px);
+            }
+
+            @media (max-width: 500px) {
+                width: 69vw;
+            }
+
+            @media (max-width: 425px) {
+                width: 67.5vw;
             }
         }
 

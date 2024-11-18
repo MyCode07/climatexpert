@@ -73,8 +73,10 @@
                 margin-top: 15px;
                 padding-top: 15px;
                 border-top: 1px solid $stroke;
-                flex-wrap: wrap;
 
+                @media (max-width: 1240px) {
+                    flex-wrap: wrap;
+                }
                 @media (max-width: 768px) {
                     flex-wrap: nowrap;
                     gap: 10px;
@@ -229,9 +231,9 @@
     h1 {
         color: $black;
         font-weight: 600;
-        line-height: 1;
+        line-height: 1.1;
         font-family: inherit;
-        @include adaptive-value("font-size", 70, 26, 1);
+        @include adaptive-value("font-size", 64, 26, 1);
         text-transform: unset;
     }
 
