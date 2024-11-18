@@ -686,10 +686,12 @@ del {
         margin-right: 15px;
         @include adaptive-value("font-size", 16, 12, 1);
         flex: 1 1 100%;
+        pointer-events: none;
     }
 
     span {
         @include adaptive-value("font-size", 16, 12, 1);
+        pointer-events: none;
         white-space: nowrap;
     }
 
@@ -716,6 +718,7 @@ del {
         justify-content: center;
 
         position: relative;
+        pointer-events: none;
 
         @media (max-width: 1024px) {
             width: 18px;
