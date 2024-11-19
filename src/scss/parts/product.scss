@@ -741,3 +741,19 @@ del {
         }
     }
 }
+
+form.cart {
+    position: relative;
+}
+
+a.added_to_cart {
+    @media (min-width: 1241px) {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        bottom: 0;
+        width: fit-content;
+        z-index: 2;
+        white-space: nowrap;
+    }
+}
