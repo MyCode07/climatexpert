@@ -168,23 +168,22 @@ p {
 
     li {
         color: $black;
-        font-size: 14px;
+        font-size: 12px;
 
         display: flex;
         align-items: center;
         gap: 5px;
-        font-weight: 500;
 
         a {
             white-space: nowrap;
             transition: color 0.3s ease 0s;
             color: rgba($color: $black, $alpha: 0.5);
-            @include adaptive-value("font-size", 16, 12, 1);
+            @include adaptive-value("font-size", 14, 12, 1);
         }
 
         span {
             white-space: nowrap;
-            @include adaptive-value("font-size", 16, 12, 1);
+            @include adaptive-value("font-size", 14, 12, 1);
         }
 
         div {
@@ -403,6 +402,10 @@ button {
 
         @media (max-width: 1024px) {
             padding: 0 30px;
+        }
+
+        @media (max-width: 768px) {
+            padding: 0 15px;
         }
 
         svg {
@@ -682,7 +685,7 @@ button {
         &:not(:last-child) {
             @include adaptive-value("margin-bottom", 30, 15, 1);
         }
-        
+
         line-height: 1.4;
         color: $black;
 

@@ -1561,16 +1561,6 @@
 }
 
 .about-hero {
-    h1 {
-        font-family: AA_Duke;
-        @include adaptive-value("font-size", 200, 65, 1);
-        font-weight: 100;
-        letter-spacing: -2px;
-
-        @media (max-width: 425px) {
-            letter-spacing: 0;
-        }
-    }
 
     .breadcrumbs {
     }
@@ -2008,7 +1998,7 @@
             gap: 25px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1240px) {
             display: block;
 
             & > :not(:last-child) {
@@ -2056,7 +2046,7 @@
         position: sticky;
         top: 120px;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1240px) {
             padding: 25px 15px 50px 15px;
             width: 100%;
 
@@ -2200,7 +2190,7 @@
 
     display: none;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1240px) {
         display: block;
     }
 

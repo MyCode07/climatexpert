@@ -152,12 +152,6 @@
         ins {
             @include adaptive-value("font-size", 22, 16, 1);
         }
-
-        ._labels {
-            @media (max-width: 768px) {
-                flex-direction: row;
-            }
-        }
     }
 
     // .product-card__name
@@ -570,16 +564,20 @@
         align-items: center;
         justify-content: center;
         height: auto;
-        background-color: $background;
         position: relative;
         flex: 0 0 auto;
         width: 160px;
         min-height: 140px;
         grid-row: span 3;
+        border: 1px solid $stroke;
 
         @media (max-width: 600px) {
             width: 120px;
             min-height: 120px;
+        }
+
+        @media (max-width: 425px) {
+            width: 90px;
         }
 
         img,
@@ -593,8 +591,8 @@
     // .cart-item__title
 
     &__title {
+        font-weight: 600;
         @include adaptive-value("font-size", 20, 14, 1);
-        text-decoration: underline;
     }
 
     // .cart-item__price
@@ -605,7 +603,7 @@
         gap: 25px;
 
         @media (min-width: 1241px) {
-            max-width: 50%;
+            max-width: 60%;
             width: 100%;
         }
 
@@ -613,6 +611,11 @@
             flex-direction: row;
             align-items: center;
             gap: 15px;
+        }
+
+        @media (max-width: 425px) {
+            justify-content: space-between;
+            gap: 5px;
         }
     }
 
@@ -655,31 +658,23 @@
     .amount {
         font-weight: 500;
         white-space: nowrap;
+        @include adaptive-value("font-size", 18, 14, 1);
     }
 
     // .cart-item__total
 
     &__total {
-        font-size: 18px;
         white-space: nowrap;
         font-weight: 500;
-
-        @media (max-width: 768px) {
-            @include adaptive-value("margin-left", 25, 5, 1);
-        }
-
-        @media (max-width: 600px) {
-            font-size: 16px;
-        }
+        @include adaptive-value("font-size", 18, 14, 1);
     }
 
     // .cart-item__delete
 
     &__delete {
         font-size: 14px;
-        text-decoration: underline;
         width: fit-content;
-        margin-left: auto;
+        margin-right: auto;
 
         transition: opacity 0.3s ease 0s;
         opacity: 0.5;

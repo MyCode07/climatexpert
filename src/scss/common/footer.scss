@@ -209,14 +209,8 @@
         display: flex;
         gap: 25px;
 
-        @media (max-width: 1024px) {
-            gap: 15px;
-        }
-
-        .socialmedia {
-            @media (max-width: 1024px) {
-                width: 100%;
-            }
+        @media (max-width: 600px) {
+            flex-wrap: wrap;
         }
     }
 
@@ -342,46 +336,22 @@
 }
 
 .socialmedia {
-    padding: 7px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: opacity 0.3s ease 0s;
 
-    @media (min-width: 1025px) {
-        flex: 0 0 auto;
-        height: 150px;
-        width: 150px;
-
-        @media (max-width: 1440px) {
-            width: 120px;
-            height: 120px;
-        }
+    @media (max-width: 768px) {
+        gap: 5px;
     }
 
-    div {
-        display: flex;
+    @media (max-width: 425px) {
         flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        width: 100%;
-        height: 100%;
-        padding: 12px;
-        transition: background-color 0.3s ease 0s;
     }
 
     @media (any-hover: hover) {
         &:hover {
-            div {
-                background-color: $white;
-            }
-            .socialmedia-icon {
-                fill: $black;
-            }
-
-            span {
-                color: $black;
-            }
+            opacity: 0.6;
         }
     }
 
@@ -391,15 +361,14 @@
         height: 34px;
         width: 34px;
         fill: $white;
-        transition: fill 0.3s ease 0s;
+        flex: 0 0 auto;
     }
 
     span {
         font-weight: 400;
-        transition: color 0.3s ease 0s;
         width: 100%;
 
-        @media (max-width: 425px) {
+        @media (max-width: 768px) {
             text-align: center;
         }
     }
