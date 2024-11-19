@@ -647,7 +647,6 @@
         // .map__content-top
 
         &-top {
-            
             h2 {
                 @include adaptive-value("font-size", 40, 30, 1);
                 font-weight: 500;
@@ -2130,16 +2129,18 @@
             color: $black;
 
             @media (max-width: 1024px) {
-                justify-content: flex-start;
                 gap: 10px;
             }
 
             h3 {
+                @media (max-width: 768px) {
+                    font-size: 22px;
+                }
             }
 
             p,
             span {
-                @include adaptive-value("font-size", 32, 18, 1);
+                @include adaptive-value("font-size", 32, 22, 1);
                 font-weight: 600;
                 line-height: 1;
                 text-transform: uppercase;

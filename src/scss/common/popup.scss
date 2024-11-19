@@ -56,8 +56,6 @@
             @include adaptive-value("padding", 40, 15, 1);
             @include adaptive-value("padding-top", 40, 25, 1);
 
-            @include adaptive-value("border-radius", 12, 6, 1);
-
             h3 {
                 margin-bottom: 1em;
                 margin-top: 0.5em;
@@ -106,6 +104,13 @@
                 }
             }
         }
+
+        #check {
+            margin-bottom: 1em;
+            width: 50px;
+            height: 50px;
+            flex: 0 0 auto;
+        }
     }
 
     // .popup__container
@@ -149,9 +154,6 @@
         svg {
             flex: 0 0 auto;
             width: 24px;
-
-            stroke-width: 1.5px;
-            stroke: currentColor;
 
             pointer-events: none;
             transition: transform 0.3s ease 0s;
