@@ -161,6 +161,10 @@
                     @media (max-width: 1024px) {
                         height: 16px;
                     }
+
+                    @media (max-width: 359px) {
+                        height: 14px;
+                    }
                 }
 
                 &.header__services {
@@ -179,6 +183,20 @@
 
                     @media (min-width: 1025px) {
                         min-width: 200px;
+                    }
+
+                    button{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .opn {
+                        height: 20px;
+
+                        @media (max-width: 359px) {
+                            height: 16px;
+                        }
                     }
                 }
 

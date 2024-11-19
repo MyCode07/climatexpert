@@ -337,13 +337,9 @@
 
 .socialmedia {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     transition: opacity 0.3s ease 0s;
-
-    @media (max-width: 768px) {
-        gap: 5px;
-    }
 
     @media (max-width: 425px) {
         flex-direction: column;
