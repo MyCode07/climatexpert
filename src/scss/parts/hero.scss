@@ -136,12 +136,9 @@
             gap: 1.2em;
             min-height: 100%;
 
-            border: 1px solid rgba($color: $white, $alpha: 0.5);
+            border: 1px solid rgba($color: $white, $alpha: 0.1);
             @include adaptive-value("font-size", 16, 12, 1);
             padding: 0.5em 1.2em;
-
-            border-radius: 4px;
-
             transition: all 0.3s ease 0s;
 
             svg {
@@ -153,7 +150,7 @@
             @media (any-hover: hover) {
                 &:hover {
                     background-color: $white;
-                    color: $blue;
+                    color: $black;
                 }
             }
         }

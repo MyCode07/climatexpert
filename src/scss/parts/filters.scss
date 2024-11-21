@@ -138,7 +138,6 @@
             svg {
                 width: 40%;
                 height: 40%;
-                stroke: $white;
                 transition: transform 0.3s ease 0s;
             }
 
@@ -146,7 +145,7 @@
                 &:hover {
                     img,
                     svg {
-                        transform: scale(1.2);
+                        transform: scale(1.1);
                     }
                 }
             }
@@ -206,7 +205,7 @@
             }
 
             &::-webkit-scrollbar-thumb {
-                background: $blue;
+                background: $black;
             }
 
             &::-webkit-scrollbar {
@@ -242,14 +241,14 @@
 
                 @media (any-hover: hover) {
                     &:hover {
-                        border-color: $blue;
+                        border-color: $black;
                     }
                 }
 
                 &:has(input:checked) {
                     color: $white;
-                    background-color: $blue;
-                    border-color: $blue;
+                    background-color: $black;
+                    border-color: $black;
                 }
             }
         }
@@ -498,7 +497,7 @@
 
         @media (any-hover: hover) {
             &:hover {
-                border-color: $blue;
+                border-color: $black;
             }
         }
 
@@ -571,7 +570,7 @@
 
             @media (any-hover: hover) {
                 &:hover {
-                    background-color: rgba($color: $blue, $alpha: 0.2);
+                    background-color: $stroke;
                 }
             }
 
